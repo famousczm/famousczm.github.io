@@ -6,22 +6,22 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <title>Hexo的评论功能 | 柱铭</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="换了==LItten==的==yilias==主题，简洁、舒服，深得我心。然后在==多说==创建了站点为博客设置评论的功能。多说能够使用户方便地在后台管理留言，嗯，看起来还是很好用的（如果留言人数多的话）
+  <meta name="description" content="换了++LItten++的yilias主题，简洁、舒服，深得我心。然后在多说创建了站点为博客设置评论的功能。多说能够使用户方便地在后台管理留言，嗯，看起来还是很好用的（如果留言人数多的话）
 复制多说提供的代码，打开themes/yilias/layout/_partial/下的文件article.ejs，把最后一段:
-1234&amp;lt;% if (!index &amp;amp;&amp;amp;">
+1234&amp;lt;% if (!index &amp;amp;&amp;amp; post.com">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo的评论功能">
 <meta property="og:url" content="http://yoursite.com/2016/10/06/Hexo的评论功能/index.html">
 <meta property="og:site_name" content="柱铭">
-<meta property="og:description" content="换了==LItten==的==yilias==主题，简洁、舒服，深得我心。然后在==多说==创建了站点为博客设置评论的功能。多说能够使用户方便地在后台管理留言，嗯，看起来还是很好用的（如果留言人数多的话）
+<meta property="og:description" content="换了++LItten++的yilias主题，简洁、舒服，深得我心。然后在多说创建了站点为博客设置评论的功能。多说能够使用户方便地在后台管理留言，嗯，看起来还是很好用的（如果留言人数多的话）
 复制多说提供的代码，打开themes/yilias/layout/_partial/下的文件article.ejs，把最后一段:
-1234&amp;lt;% if (!index &amp;amp;&amp;amp;">
-<meta property="og:updated_time" content="2016-10-06T07:11:10.823Z">
+1234&amp;lt;% if (!index &amp;amp;&amp;amp; post.com">
+<meta property="og:updated_time" content="2016-10-06T07:17:36.290Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo的评论功能">
-<meta name="twitter:description" content="换了==LItten==的==yilias==主题，简洁、舒服，深得我心。然后在==多说==创建了站点为博客设置评论的功能。多说能够使用户方便地在后台管理留言，嗯，看起来还是很好用的（如果留言人数多的话）
+<meta name="twitter:description" content="换了++LItten++的yilias主题，简洁、舒服，深得我心。然后在多说创建了站点为博客设置评论的功能。多说能够使用户方便地在后台管理留言，嗯，看起来还是很好用的（如果留言人数多的话）
 复制多说提供的代码，打开themes/yilias/layout/_partial/下的文件article.ejs，把最后一段:
-1234&amp;lt;% if (!index &amp;amp;&amp;amp;">
+1234&amp;lt;% if (!index &amp;amp;&amp;amp; post.com">
   
   
     <link rel="icon" href="//favicon.ico">
@@ -165,21 +165,21 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>换了==LItten==的==<em>yilias</em>==主题，简洁、舒服，深得我心。然后在==多说==创建了站点为博客设置评论的功能。多说能够使用户方便地在后台管理留言，嗯，看起来还是很好用的（如果留言人数多的话）</p>
+        <p>换了++LItten++的<em>yilias</em>主题，简洁、舒服，深得我心。然后在<strong>多说</strong>创建了站点为博客设置评论的功能。多说能够使用户方便地在后台管理留言，嗯，看起来还是很好用的（如果留言人数多的话）</p>
 <p>复制多说提供的代码，打开themes/yilias/layout/_partial/下的文件article.ejs，把最后一段:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;% if (!index &amp;&amp; post.comments &amp;&amp; config.duoshuo_shortname)&#123; %&gt;</div><div class="line">  &lt;section id=&quot;comments&quot;&gt;</div><div class="line">  &lt;/section&gt;</div><div class="line">&lt;% &#125; %&gt;</div></pre></td></tr></table></figure>
 <p>替换成</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">&lt;% if (!index &amp;&amp; post.comments &amp;&amp; config.duoshuo_shortname)&#123; %&gt;</div><div class="line">  &lt;section id=&quot;comments&quot;&gt;</div><div class="line">    &lt;!-- 多说评论框 start --&gt;</div><div class="line">    &lt;div class=&quot;ds-thread&quot; data-thread-key=&quot;&lt;%= post.layout %&gt;-&lt;%= post.slug %&gt;&quot; data-title=&quot;&lt;%= post.title %&gt;&quot; data-url=&quot;&lt;%= page.permalink %&gt;&quot;&gt;&lt;/div&gt;</div><div class="line">    &lt;!-- 多说评论框 end --&gt;</div><div class="line">    &lt;!-- 多说公共JS代码 start (一个网页只需插入一次) --&gt;</div><div class="line">    &lt;script type=&quot;text/javascript&quot;&gt;</div><div class="line">    var duoshuoQuery = &#123;short_name:&quot;famousczm&quot;&#125;;</div><div class="line">      (function() &#123;</div><div class="line">        var ds = document.createElement(&apos;script&apos;);</div><div class="line">        ds.type = &apos;text/javascript&apos;;ds.async = true;</div><div class="line">        ds.src = (document.location.protocol == &apos;https:&apos; ? &apos;https:&apos; : &apos;http:&apos;) + &apos;//static.duoshuo.com/embed.js&apos;;</div><div class="line">        ds.charset = &apos;UTF-8&apos;;</div><div class="line">        (document.getElementsByTagName(&apos;head&apos;)[0] </div><div class="line">         || document.getElementsByTagName(&apos;body&apos;)[0]).appendChild(ds);</div><div class="line">      &#125;)();</div><div class="line">      &lt;/script&gt;</div><div class="line">    &lt;!-- 多说公共JS代码 end --&gt;</div><div class="line">  &lt;/section&gt;</div><div class="line">&lt;% &#125; %&gt;</div></pre></td></tr></table></figure>
-<p>==注意：short_name: 后面要填自己站点的short_name，即在创建站点时的站点名称==</p>
+<p><strong>注意：short_name: 后面要填自己站点的short_name，即在创建站点时的站点名称</strong></p>
 <p>保存后，打开站点配置文件_config.yml，在最后一行写上：</p>
-<p>==<code>duoshuo_shortname: famousczm</code>==（自己的short_name）</p>
-<p>完成这些后，我发现博客虽然已经有了评论功能，但是不单单每篇文章下有评论，主页上用来预览的文章下也堆满评论，这很傻啊！找了很久原因，才发现是主题配置文件忘记设置了，只要把duoshuo改成这样就好了</p>
-<p>==<code>duoshuo: &quot;famousczm&quot;</code>==</p>
+<p><code>duoshuo_shortname: famousczm</code>（自己的short_name）</p>
+<p>完成这些后，我发现博客虽然已经有了评论功能，但是不单单每篇文章下有评论，主页上用来预览的文章下也堆满评论，这很傻啊！找了很久原因，才发现是主题配置文件_config.yml忘记设置了，只要把duoshuo改成这样就好了</p>
+<p><code>duoshuo: &quot;famousczm&quot;</code></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/10/06/Hexo的评论功能/" data-id="city0b0xe0004sgqp6tbmzpcc" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/10/06/Hexo的评论功能/" data-id="city0h1rb0004q0qp4fm4lxfm" class="article-share-link">Partager</a>
       
       
 	<div class="article-tag tagcloud">
