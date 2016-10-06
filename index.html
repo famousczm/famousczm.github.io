@@ -137,6 +137,81 @@
       <div class="body-wrap">
         
   
+    <article id="post-Linux的目录" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/10/06/Linux的目录/" class="article-date">
+  	<time datetime="2016-10-06T14:55:37.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-10-06</time>
+</a>
+    
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/06/Linux的目录/">Linux的目录</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>学习Linux中，很多操作和设置都要涉及各个目录，所以认识明白Linux各个目录的作用非常重要，而且我为了省内存没有安装图形界面<em>(:з」∠)</em>于是就在网上找来了关于linux目录的资料来学习学习啦。</p>
+<p>首先“/”代表了linux的根目录，就相当于树根一样。在linux系统中文 根文件系统，linux所有的一切全部在这里面存放着。</p>
+<ol>
+<li><p>/bin：（binary）用来存放二进制可执行的命令，包含了普通用户可能用到的命令，这些命令都是二进制文件。/usr/bin在此目录下也可存放二进制命令</p>
+</li>
+<li><p>/home 这个目录就不用说了，就是存放用户的目录。系统里新建一个用户就会在/home目录下为用户创建一个目录。</p>
+</li>
+<li><p>/sbin：目录类似/bin也是用于存储二进制文件，非普通用户所使用的命令，大多为系统管理员使用的基本的系统程序。</p>
+</li>
+<li><p>/etc：目录存放着各种系统配置文件，一些应用程序服务配置文件，用户和组信息文件（/etc/passwd 和/etc/group）linux也正是由这些文件才得以正常地运行。</p>
+</li>
+<li><p>/root: 是超级用户的目录。</p>
+</li>
+<li><p>/lib：目录是根文件系统上的程序所需的共享库，存放了根文件系统程序运行所需的共享文 件。这些文件包含了可被许多程序共享的代码，以避免每个程序都包含有相同的子程序的副 本，故可以使得可执行文件变得更小，节省空间。</p>
+<p> 在/lib/modules目录包含系统核心可加载各种模块，尤其是那些在恢复损坏的系统时重新引导系统所需的模块(例如网络和文件系统驱动)。</p>
+</li>
+<li><p>/dev目录存放了设备文件，即设备驱动程序，用户通过这些文件访问外部设备。比如，用 户可以通过访问/dev/mouse来访问鼠标的输入，就像访问其他文件一样。</p>
+</li>
+<li><p>/tmp目录存放程序的运行是的缓存信息和数据，但在引导启动后，运行程序最好使用/var/tmp来代替/tmp，因为/var/tmp可能拥有更大的磁盘空间，分区时一般会把/var单独挂到一个磁盘上。</p>
+</li>
+<li><p>/boot 目录存放的引导加载器使用的文件，核心映像也经常放在这里，而不是放在根目录中。但是如果有许多核心映像，这个目录就可能变得很大，这时使用单独的 文件系统会更好一些。还有一点要注意的是，要确保核心映像必须在IDE硬盘的前1024柱面内。</p>
+</li>
+<li><p>/mnt 目录是系统管理员临时安装挂载（mount）文件系统的安装点。系统并不自动支持安装到/mnt。/mnt 下面可以分为许多子目录，例如/mnt/dosa 可能是使用msdos文件系统的软驱，而/mnt/exta 可能是使用ext2文件系统的软驱，/mnt/cdrom 光驱等等。</p>
+</li>
+<li><p>/var 包含系统一般运行时要改变的数据。通常这些数据所在的目录的大小是要经常变化 或扩充的。原来/var目录中有些内容是在/usr中的，但为了保持/usr目录的相对稳定，就把那 些需要经常改变的目录放到/var中了，各种服务的日志信息。</p>
+</li>
+<li><p>/usr 是个很重要的目录，通常这一文件系统很大，因为所有程序安装在这里。/usr 里的 所有文件一般来自linux发行版(distribution)；本地安装的程序和其他东西在/usr/local 下，因为这样可以在升级新版系统或新发行版时无须重新安装全部程序。/usr 目录下的许多内容是 可选的，但这些功能会使用户使用系统更加有效。/usr可容纳许多大型的软件包和它们的配置 文件。</p>
+</li>
+<li><p>/proc文件系统<br>/proc 文件系统是一个伪的文件系统，就是说它是一个实际上不存在的目录，因而这是一 个非  常特殊的目录。它并不存在于某个磁盘上，而是由核心在内存中产生。这个目录用于提供关于系   统的信息。</p>
+</li>
+</ol>
+<p>这趟水还真深</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/10/06/Linux的目录/" data-id="cityhgt2i00026wqp21vcte41" class="article-share-link">Share</a>
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
+	</div>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-Hexo的评论功能" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/10/06/Hexo的评论功能/" class="article-date">
@@ -174,7 +249,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/10/06/Hexo的评论功能/" data-id="city1iclb0004p0qphbfi6lx4" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/10/06/Hexo的评论功能/" data-id="cityhgt6d000d6wqpoufqf2cv" class="article-share-link">Share</a>
       
       
 	<div class="article-tag tagcloud">
@@ -221,7 +296,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/10/05/Eclispe不能导入java-util-Arrays/" data-id="city1ick90000p0qpcnmxsg5j" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/10/05/Eclispe不能导入java-util-Arrays/" data-id="cityhgt0500006wqpcwwptd9a" class="article-share-link">Share</a>
       
       
 	<div class="article-tag tagcloud">
@@ -275,7 +350,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/10/05/Hexo中文乱码/" data-id="city1ickr0002p0qpjtwt6lom" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/10/05/Hexo中文乱码/" data-id="cityhgt3200046wqpslduvkv3" class="article-share-link">Share</a>
       
       
 	<div class="article-tag tagcloud">
@@ -321,7 +396,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/10/05/第一篇博客/" data-id="city1iclk0005p0qp1w3e9w48" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/10/05/第一篇博客/" data-id="cityhgt3e00056wqp32fohlmf" class="article-share-link">Share</a>
       
       
 	<div class="article-tag tagcloud">
@@ -414,7 +489,7 @@ MathJax.Hub.Queue(function() {
     
     	<section class="tools-section tools-section-tag">
     			<div class="widget tagcloud" id="js-tagcloud">
-    				<a href="/tags/Hexo/" style="font-size: 20px;">Hexo</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/学习心得/" style="font-size: 10px;">学习心得</a>
+    				<a href="/tags/Hexo/" style="font-size: 20px;">Hexo</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/学习心得/" style="font-size: 10px;">学习心得</a>
     			</div>
     	</section>
     
@@ -431,6 +506,8 @@ MathJax.Hub.Queue(function() {
   	          <a target="_blank" class="main-nav-link switch-friends-link" href="http://yuanx.in">Crossin老师</a>
   	        
   	          <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.ruanyifeng.com/blog/">阮一峰的网络日志</a>
+  	        
+  	          <a target="_blank" class="main-nav-link switch-friends-link" href="https://xuanwo.org/">Xuanwo</a>
   	        
   	        </div>
   		
