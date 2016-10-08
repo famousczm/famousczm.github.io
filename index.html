@@ -137,6 +137,84 @@
       <div class="body-wrap">
         
   
+    <article id="post-Linux添加磁盘" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/10/08/Linux添加磁盘/" class="article-date">
+  	<time datetime="2016-10-08T12:01:37.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-10-08</time>
+</a>
+    
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/08/Linux添加磁盘/">Linux添加磁盘</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>今天学习了Linux关于磁盘的知识，以添加磁盘为例总结一下：</p>
+<ol>
+<li><p>我用的是VirtualBox虚拟机，先关掉Linux，然后在VBox的设置-&gt;存储-&gt;控制器，右键添加虚拟硬盘-&gt;选创建一个新的虚拟盘-&gt;选VDI-&gt;动态分配-&gt;然后就分配自己想要的磁盘大小，不过要在分配的那个盘所接受的范围内就行。</p>
+</li>
+<li><p>创建好后，运行Linux。</p>
+</li>
+<li>为新添加的磁盘分区。用管理员权限输入命令<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">fdisk -l</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>查看目前磁盘信息，看到<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Disk /dev/sdb: 8589 MB, 8589934592 bytes</div></pre></td></tr></table></figure></p>
+<p>这一行信息中的/dev/sdb就是新添加的磁盘了（不知道是不是都是叫sdb的…检查一下大小与自己划分的一样就是了，这里我用了默认的8G）</p>
+<ol>
+<li>确认好新增的磁盘后，再输入：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">fdisk /dev/sdb</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>进入分区模式，这里有一堆命令可操作，用常见的’p’查看当前磁盘的分区情况、’n’建立一个新分区和’d’删除一个分区，这几个命令即可。输入p，可以看见磁盘sdb并没有被分过区</p>
+<p>  再输入n，开始分区，可以选择’e’扩展分区，’p’主分区，之前看鸟哥的教程时看得糊里糊涂，实操之后就知道是怎么回事了，总共可以分4个分区，可以是四个主分区，但是如果想要分不止四个分区的话，就要用扩展分区了，可以三个主分区+一个扩展分区，然后再从扩展分区里划分逻辑分区，前三个主分区的标识是sdb1，sdb2，sdb3，扩展分区是sdb4，逻辑分区是由sdb5开始一直推算下去的。这里无论前面四个分区怎么设置，只划分一个也好，逻辑分区都是从sdb5开始的。还有一点必须要注意的是，划分了扩展分区后，剩下的只能从扩展分区中划分逻辑分区了，不管你之前的空间有没有分配完，所以一般主分区划分完后，剩下的所有空间一股脑的全塞给扩展分区就对了，不要省着，省着就是浪费了。</p>
+<p>  不小心分错了也不要紧张，因为还没有保存，可以用ctrl+c快速退出，再重新分区，所以可以好好研究研究一下吧，不过怎么说分区都是个高危工作，如果磁盘里有重要资料的话还是小心一点为妙。</p>
+<ol>
+<li>格式化磁盘。分好区后，输入命令：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mke2fs -t ext4 -L TEST /dev/sdb5</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>我系统是CentOS6.5，所以文件系统用的是ext4，设置了标签TEST</p>
+<ol>
+<li>挂载磁盘。磁盘要挂载在一个目录中，才能使用这个磁盘，但是如果一个目录原先有文件存在的话，挂载磁盘后所有数据将会被覆盖，消失了。卸载磁盘后才可以看到。就是这么回事，所以就要找个空目录来挂载咯。 我在根目录下新建一个目录newdir，输入命令：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mount /dev/sdb5 /newdir/</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>再看看磁盘信息<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">df -h</div></pre></td></tr></table></figure></p>
+<p>显示信息，挂载成功<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">[root@localhost user1]# df -h</div><div class="line">Filesystem                    Size  Used Avail Use% Mounted on</div><div class="line">/dev/mapper/VolGroup-lv_root  7.5G  738M  6.4G  11% /</div><div class="line">tmpfs                         250M     0  250M   0% /dev/shm</div><div class="line">/dev/sda1                     485M   31M  429M   7% /boot</div><div class="line">/dev/sdb5                     989M   18M  921M   2% /newdir</div></pre></td></tr></table></figure></p>
+<ol>
+<li>设置开机挂载。在文件/etc/fstab最后一行，添加我新磁盘sdb5的信息<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">LABEL=TEST        /newdir         ext4    defaults        0 0</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>保存退出，设置完成</p>
+<p>不懂的地方还是有很多，不过思路总算明朗了一点，最后想说的是LABEL经常打错成LABLE啊啊啊，导致好几次运行出错，英语也要好好学啊，切记切记…</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/10/08/Linux添加磁盘/" data-id="ciu1a7uni00027kqpr1m60ykk" class="article-share-link">Share</a>
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
+	</div>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-Linux的目录" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/10/06/Linux的目录/" class="article-date">
@@ -196,7 +274,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/10/06/Linux的目录/" data-id="cityhgt2i00026wqp21vcte41" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/10/06/Linux的目录/" data-id="ciu1a7uol00067kqpe6qfa4za" class="article-share-link">Share</a>
       
       
 	<div class="article-tag tagcloud">
@@ -249,7 +327,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/10/06/Hexo的评论功能/" data-id="cityhgt6d000d6wqpoufqf2cv" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/10/06/Hexo的评论功能/" data-id="ciu1a7uot00097kqpbfm5cchp" class="article-share-link">Share</a>
       
       
 	<div class="article-tag tagcloud">
@@ -296,7 +374,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/10/05/Eclispe不能导入java-util-Arrays/" data-id="cityhgt0500006wqpcwwptd9a" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/10/05/Eclispe不能导入java-util-Arrays/" data-id="ciu1a7uml00007kqph2zqolqu" class="article-share-link">Share</a>
       
       
 	<div class="article-tag tagcloud">
@@ -350,7 +428,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/10/05/Hexo中文乱码/" data-id="cityhgt3200046wqpslduvkv3" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/10/05/Hexo中文乱码/" data-id="ciu1a7uo400047kqp50h1sltz" class="article-share-link">Share</a>
       
       
 	<div class="article-tag tagcloud">
@@ -366,52 +444,10 @@
 
 
   
-    <article id="post-第一篇博客" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/10/05/第一篇博客/" class="article-date">
-  	<time datetime="2016-10-05T07:50:30.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-10-05</time>
-</a>
-    
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/10/05/第一篇博客/">第一篇博客</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><em>Markdown</em> 是一种用来写作的轻量级<em>「标记语言」</em>，即跟<em>HTML</em>差不多，不过更为简洁和高效。使用的标签既简单又少，很容易就能记住了，而且<strong>Markdown</strong>相比格式更注重内容，所以写起来并不麻烦。文件后缀为md，因为在<strong>Github</strong>里要用到这个标记语言，所以就技多不压身地学习了咯</p>
-<p>这是我的第一篇博客，有点简陋</p>
-<p><img src="http://i1.piimg.com/4851/15b2d40d9546142f.jpg" alt="崎玉老师镇楼"></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/10/05/第一篇博客/" data-id="cityhgt3e00056wqp32fohlmf" class="article-share-link">Share</a>
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学习心得/">学习心得</a></li></ul>
-	</div>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+    </nav>
   
 
 
@@ -489,7 +525,7 @@ MathJax.Hub.Queue(function() {
     
     	<section class="tools-section tools-section-tag">
     			<div class="widget tagcloud" id="js-tagcloud">
-    				<a href="/tags/Hexo/" style="font-size: 20px;">Hexo</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/学习心得/" style="font-size: 10px;">学习心得</a>
+    				<a href="/tags/Hexo/" style="font-size: 20px;">Hexo</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/Linux/" style="font-size: 20px;">Linux</a> <a href="/tags/学习心得/" style="font-size: 10px;">学习心得</a>
     			</div>
     	</section>
     
