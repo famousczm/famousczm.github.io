@@ -137,6 +137,60 @@
       <div class="body-wrap">
         
   
+    <article id="post-Hexo中文乱码" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/10/05/Hexo中文乱码/" class="article-date">
+  	<time datetime="2016-10-05T12:39:30.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-10-05</time>
+</a>
+    
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/05/Hexo中文乱码/">Hexo中文乱码</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>用<em>Hexo</em>搭建的博客title默认为Hexo，我想修改为自己设置的值。于是在public文件夹下的index.html中修改title的值，可是重新生成静态文件时一切又恢复为默认值Hexo。</p>
+<p>原因是每次更新博客时都是在<strong>Git Shell</strong>中清除缓存文件和已生成的静态文件，然后再重新生成新的静态文件。最后depploy到github上，所以原来的index.html文件已经被毁灭了再生成，原先的设置也不复存在了</p>
+<p>这要在文件_config.yml中修改title的值，把</p>
+<p><code>title： Hexo</code></p>
+<p>修改为</p>
+<p><code>title: 柱铭（填要修改的值）</code></p>
+<p>即可，要注意的是，：后面要空一个格</p>
+<p>到这里重新部署时，网页的title出现乱码</p>
+<p><strong>解决方法</strong>：</p>
+<p>把_config.yml文件编码成UTF-8即可</p>
+<p>我用Notepad++的操作是：<strong>格式</strong>-&gt;<strong>转为UTF-8编码格式</strong>-&gt;<strong>保存</strong></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/10/05/Hexo中文乱码/" data-id="ciu730ueq0002a0qp76ilhvh3" class="article-share-link">Share</a>
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
+	</div>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-第一篇博客" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/10/05/第一篇博客/" class="article-date">
@@ -167,7 +221,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/10/05/第一篇博客/" data-id="ciu1a7uoe00057kqpz6p3hvrt" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/10/05/第一篇博客/" data-id="ciu730ufl0006a0qpzocfwp23" class="article-share-link">Share</a>
       
       
 	<div class="article-tag tagcloud">
@@ -264,7 +318,7 @@ MathJax.Hub.Queue(function() {
     
     	<section class="tools-section tools-section-tag">
     			<div class="widget tagcloud" id="js-tagcloud">
-    				<a href="/tags/Hexo/" style="font-size: 20px;">Hexo</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/Linux/" style="font-size: 20px;">Linux</a> <a href="/tags/学习心得/" style="font-size: 10px;">学习心得</a>
+    				<a href="/tags/Hexo/" style="font-size: 20px;">Hexo</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/Linux/" style="font-size: 20px;">Linux</a> <a href="/tags/学习心得/" style="font-size: 10px;">学习心得</a> <a href="/tags/树莓派/" style="font-size: 10px;">树莓派</a>
     			</div>
     	</section>
     

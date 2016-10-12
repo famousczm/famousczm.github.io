@@ -137,6 +137,73 @@
       <div class="body-wrap">
         
   
+    <article id="post-树莓派初体验" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/10/12/树莓派初体验/" class="article-date">
+  	<time datetime="2016-10-12T13:54:34.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-10-12</time>
+</a>
+    
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/12/树莓派初体验/">树莓派初体验</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>上课的时候突然想买个树莓派来玩玩，就马上入手了<em>Raspberry Pi3 B+</em>，等了三天，今天终于来了。这玩意看似便宜，其实为了能真正使用它，还要配备其它器件啊。我顺带买了32G的内存卡（树莓派要外带硬盘），电源适配器（Pi3要求有5V，2.5A的电源，懒得找，就买了）还有个官方外壳（保护作用，没错，树莓派来的时候是裸着的）。本来还需要个显示器的，因为树莓派的视频接口是HDMI，很遗憾我宿舍没有电视机，台式显示屏倒是有一个，可是我忘了买转VGA的转换器，而且人家也要用。所以就按照网上说的用笔记本远程连接咯。于是我又买了路由器，两条网线。一切准备就绪！</p>
+<p><img src="http://i1.piimg.com/4851/cad680e0b2b57bf1.jpg" alt="运行中的树莓派"><br><img src="http://i1.piimg.com/4851/6f62da8832b7f139.jpg" alt="漂亮"></p>
+<p>首先，格式化并烧录SD卡，格式化的时候系统提示磁盘写保护，不能写入数据也不能格式化。把读卡器的LOCK来回拨了几次，修改注册表也不行。其实是读卡器的问题，换一个就好了</p>
+<p>用软件<em>Win32DiskImager</em>把下载好的<em>2016-05-10-raspbian-jessie.img</em>镜像烧录进SD卡，几分钟就完事了</p>
+<p>把内存卡插进树莓派，接上电源，用网线连上路由器。打开软件<em>advanced_ip_scanner</em>，检索树莓派的IP地址</p>
+<p>再用<em>putty</em>输入IP，端口22连接。默认用户名：pi   密码：raspberry</p>
+<p><img src="http://i1.piimg.com/4851/c773e7d0ad053886.png" alt="跟平时登陆Linux一样"></p>
+<p>登陆进之后，输入命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo raspi-config</div></pre></td></tr></table></figure></p>
+<p>进入配置界面</p>
+<p><img src="http://i1.piimg.com/4851/8de3b85be8f69a85.png" alt="配置界面"></p>
+<p>这里我选第一个扩展SD空间，因为树莓派安装完成后只用了部分SD卡的空间，所以不浪费资源，就扩展SD空间咯。另外我还改了登陆密码，其它就先不管它。</p>
+<p>接下来进行基础配置。添加国内的软件源，因为树莓派默认的服务器比较慢<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo vi /etc/apt/sources.list</div></pre></td></tr></table></figure></p>
+<p>把里面的内容删了，复制粘贴下面的内容<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">deb http://mirrors.ustc.edu.cn/raspbian/raspbian/ wheezy main non-free contrib</div><div class="line">deb-src http://mirrors.ustc.edu.cn/raspbian/raspbian/ wheezy main non-free contrib</div></pre></td></tr></table></figure></p>
+<p>保存退出，运行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get update</div></pre></td></tr></table></figure></p>
+<p>配置一个静态地址，现在的ip地址是自动分配的，每次登陆都不相同，找ip地址也会费一些功夫，所以设置一个固定的地址方便以后登陆。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo vi /etc/network/interfaces</div></pre></td></tr></table></figure></p>
+<p>找到iface eth0 inet manual，改为<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">iface eth0 inet static</div><div class="line">address 192.168.1.102</div><div class="line">netmask 255.255.255.0</div></pre></td></tr></table></figure></p>
+<p>保存退出，重启网络<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo /etc/init.d/networking restart</div></pre></td></tr></table></figure></p>
+<p>为了能操作树莓派的界面，我用VNC来远程登陆，首先添加安装vnc server<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install tightvncserver</div></pre></td></tr></table></figure></p>
+<p>运行tightvncserver<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">tightvncserver</div></pre></td></tr></table></figure></p>
+<p>这时会要求输入几次密码，网上说这是控制密码，然后选择性输入查看密码，查看密码只能用来查看桌面，而控制密码才能对桌面进行操作。</p>
+<p>然后下载VNC软件安装后，输入ip地址：端口号（1,2,3都可以），端口号不同区分不同的用户</p>
+<p>连接后要求输入树莓派密码，输入后就能登陆树莓派操作界面了，尝试上网，能行。发现树莓派这个Liunx系统默认安装python2和3啊，以后编程还是以python为主了。</p>
+<p><img src="http://i1.piimg.com/4851/2cbf50924849e3af.png" alt="界面其实挺难看的"></p>
+<p>嗯，有意思</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/10/12/树莓派初体验/" data-id="ciu730uf60005a0qpqsyrtnpa" class="article-share-link">Share</a>
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/树莓派/">树莓派</a></li></ul>
+	</div>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-Linux添加磁盘" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/10/08/Linux添加磁盘/" class="article-date">
@@ -199,7 +266,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/10/08/Linux添加磁盘/" data-id="ciu1a7uni00027kqpr1m60ykk" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/10/08/Linux添加磁盘/" data-id="ciu730ufl0009a0qp4cdflexb" class="article-share-link">Share</a>
       
       
 	<div class="article-tag tagcloud">
@@ -274,7 +341,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/10/06/Linux的目录/" data-id="ciu1a7uol00067kqpe6qfa4za" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/10/06/Linux的目录/" data-id="ciu730uf60004a0qpw4cbyoz1" class="article-share-link">Share</a>
       
       
 	<div class="article-tag tagcloud">
@@ -327,7 +394,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/10/06/Hexo的评论功能/" data-id="ciu1a7uot00097kqpbfm5cchp" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/10/06/Hexo的评论功能/" data-id="ciu730uhc000ja0qpj5quuhqb" class="article-share-link">Share</a>
       
       
 	<div class="article-tag tagcloud">
@@ -374,66 +441,12 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/10/05/Eclispe不能导入java-util-Arrays/" data-id="ciu1a7uml00007kqph2zqolqu" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/10/05/Eclispe不能导入java-util-Arrays/" data-id="ciu730uea0000a0qpt121wxcu" class="article-share-link">Share</a>
       
       
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags"></i>
 		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
-	</div>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-Hexo中文乱码" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/10/05/Hexo中文乱码/" class="article-date">
-  	<time datetime="2016-10-05T12:39:30.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-10-05</time>
-</a>
-    
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/10/05/Hexo中文乱码/">Hexo中文乱码</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>用<em>Hexo</em>搭建的博客title默认为Hexo，我想修改为自己设置的值。于是在public文件夹下的index.html中修改title的值，可是重新生成静态文件时一切又恢复为默认值Hexo。</p>
-<p>原因是每次更新博客时都是在<strong>Git Shell</strong>中清除缓存文件和已生成的静态文件，然后再重新生成新的静态文件。最后depploy到github上，所以原来的index.html文件已经被毁灭了再生成，原先的设置也不复存在了</p>
-<p>这要在文件_config.yml中修改title的值，把</p>
-<p><code>title： Hexo</code></p>
-<p>修改为</p>
-<p><code>title: 柱铭（填要修改的值）</code></p>
-<p>即可，要注意的是，：后面要空一个格</p>
-<p>到这里重新部署时，网页的title出现乱码</p>
-<p><strong>解决方法</strong>：</p>
-<p>把_config.yml文件编码成UTF-8即可</p>
-<p>我用Notepad++的操作是：<strong>格式</strong>-&gt;<strong>转为UTF-8编码格式</strong>-&gt;<strong>保存</strong></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/10/05/Hexo中文乱码/" data-id="ciu1a7uo400047kqp50h1sltz" class="article-share-link">Share</a>
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
 	</div>
 
     </footer>
@@ -525,7 +538,7 @@ MathJax.Hub.Queue(function() {
     
     	<section class="tools-section tools-section-tag">
     			<div class="widget tagcloud" id="js-tagcloud">
-    				<a href="/tags/Hexo/" style="font-size: 20px;">Hexo</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/Linux/" style="font-size: 20px;">Linux</a> <a href="/tags/学习心得/" style="font-size: 10px;">学习心得</a>
+    				<a href="/tags/Hexo/" style="font-size: 20px;">Hexo</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/Linux/" style="font-size: 20px;">Linux</a> <a href="/tags/学习心得/" style="font-size: 10px;">学习心得</a> <a href="/tags/树莓派/" style="font-size: 10px;">树莓派</a>
     			</div>
     	</section>
     
