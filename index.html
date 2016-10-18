@@ -137,6 +137,57 @@
       <div class="body-wrap">
         
   
+    <article id="post-PHP字符编码" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/10/18/PHP字符编码/" class="article-date">
+  	<time datetime="2016-10-18T04:56:02.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-10-18</time>
+</a>
+    
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/18/PHP字符编码/">PHP字符编码</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>昨天用PHP做项目的时候遇到了浏览器字符编码的问题，用Chrome和FF来做测试。本想着改浏览器网页显示的字符编码就可以了，结果一刷新或重新打开就又乱码了。解决方法是设置要浏览器的默认字符编码</p>
+<p><em>Chrome</em>很简单，打开设置-&gt;显示高级设置-&gt;网络内容-&gt;自定义字体-&gt;编码，设置为UTF-8即可</p>
+<p><em>FireFox</em>的49.01版设置不了UTF-8编码，只有各种语言的选择。只能用alt弹出隐藏的菜单栏，在查看那里设置文字编码，不过这不是默认的，刷新就又重置了。</p>
+<p>所以以上都不是办法，别人访问你的网站可不能要让别人要先设置默认的字符编码才能看到中文啊。真正的方法是在PHP中设置<em>meta</em>标签<br>
+        
+          <p class="article-more-link">
+            <a href="/2016/10/18/PHP字符编码/#more">more</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/10/18/PHP字符编码/" data-id="ciuf2dbey0009lwqpbvby5uws" class="article-share-link">Share</a>
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PHP/">PHP</a></li></ul>
+	</div>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-树莓派初体验" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/10/12/树莓派初体验/" class="article-date">
@@ -161,35 +212,16 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>上课的时候突然想买个树莓派来玩玩，就马上入手了<em>Raspberry Pi3 B+</em>，等了三天，今天终于来了。这玩意看似便宜，其实为了能真正使用它，还要配备其它器件啊。我顺带买了32G的内存卡（树莓派要外带硬盘），电源适配器（Pi3要求有5V，2.5A的电源，懒得找，就买了）还有个官方外壳（保护作用，没错，树莓派来的时候是裸着的）。本来还需要个显示器的，因为树莓派的视频接口是HDMI，很遗憾我宿舍没有电视机，台式显示屏倒是有一个，可是我忘了买转VGA的转换器，而且人家也要用。所以就按照网上说的用笔记本远程连接咯。于是我又买了路由器，两条网线。一切准备就绪！</p>
-<p><img src="http://i1.piimg.com/4851/cad680e0b2b57bf1.jpg" alt="运行中的树莓派"><br><img src="http://i1.piimg.com/4851/6f62da8832b7f139.jpg" alt="漂亮"></p>
-<p>首先，格式化并烧录SD卡，格式化的时候系统提示磁盘写保护，不能写入数据也不能格式化。把读卡器的LOCK来回拨了几次，修改注册表也不行。其实是读卡器的问题，换一个就好了</p>
-<p>用软件<em>Win32DiskImager</em>把下载好的<em>2016-05-10-raspbian-jessie.img</em>镜像烧录进SD卡，几分钟就完事了</p>
-<p>把内存卡插进树莓派，接上电源，用网线连上路由器。打开软件<em>advanced_ip_scanner</em>，检索树莓派的IP地址</p>
-<p>再用<em>putty</em>输入IP，端口22连接。默认用户名：pi   密码：raspberry</p>
-<p><img src="http://i1.piimg.com/4851/c773e7d0ad053886.png" alt="跟平时登陆Linux一样"></p>
-<p>登陆进之后，输入命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo raspi-config</div></pre></td></tr></table></figure></p>
-<p>进入配置界面</p>
-<p><img src="http://i1.piimg.com/4851/8de3b85be8f69a85.png" alt="配置界面"></p>
-<p>这里我选第一个扩展SD空间，因为树莓派安装完成后只用了部分SD卡的空间，所以不浪费资源，就扩展SD空间咯。另外我还改了登陆密码，其它就先不管它。</p>
-<p>接下来进行基础配置。添加国内的软件源，因为树莓派默认的服务器比较慢<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo vi /etc/apt/sources.list</div></pre></td></tr></table></figure></p>
-<p>把里面的内容删了，复制粘贴下面的内容<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">deb http://mirrors.ustc.edu.cn/raspbian/raspbian/ wheezy main non-free contrib</div><div class="line">deb-src http://mirrors.ustc.edu.cn/raspbian/raspbian/ wheezy main non-free contrib</div></pre></td></tr></table></figure></p>
-<p>保存退出，运行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get update</div></pre></td></tr></table></figure></p>
-<p>配置一个静态地址，现在的ip地址是自动分配的，每次登陆都不相同，找ip地址也会费一些功夫，所以设置一个固定的地址方便以后登陆。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo vi /etc/network/interfaces</div></pre></td></tr></table></figure></p>
-<p>找到iface eth0 inet manual，改为<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">iface eth0 inet static</div><div class="line">address 192.168.1.102</div><div class="line">netmask 255.255.255.0</div></pre></td></tr></table></figure></p>
-<p>保存退出，重启网络<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo /etc/init.d/networking restart</div></pre></td></tr></table></figure></p>
-<p>为了能操作树莓派的界面，我用VNC来远程登陆，首先添加安装vnc server<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install tightvncserver</div></pre></td></tr></table></figure></p>
-<p>运行tightvncserver<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">tightvncserver</div></pre></td></tr></table></figure></p>
-<p>这时会要求输入几次密码，网上说这是控制密码，然后选择性输入查看密码，查看密码只能用来查看桌面，而控制密码才能对桌面进行操作。</p>
-<p>然后下载VNC软件安装后，输入ip地址：端口号（1,2,3都可以），端口号不同区分不同的用户</p>
-<p>连接后要求输入树莓派密码，输入后就能登陆树莓派操作界面了，尝试上网，能行。发现树莓派这个Liunx系统默认安装python2和3啊，以后编程还是以python为主了。</p>
-<p><img src="http://i1.piimg.com/4851/2cbf50924849e3af.png" alt="界面其实挺难看的"></p>
-<p>最后就是如何关闭树莓派了，树莓派插上电源就自动开机，关闭它当然不是直接拔开，这算非正常断电，很容易损坏树莓派，正确方法是<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo shutdown -h now(或其它一切关机的命令)</div></pre></td></tr></table></figure></p>
-<p>然后知道黄色的指示灯不闪了，只剩红色的电源指示灯，这时就表明树莓派已经关机了，然后就可以拔电源了</p>
-
+<p><img src="http://i1.piimg.com/4851/cad680e0b2b57bf1.jpg" alt="运行中的树莓派"><br><img src="http://i1.piimg.com/4851/6f62da8832b7f139.jpg" alt="漂亮"><br>
+        
+          <p class="article-more-link">
+            <a href="/2016/10/12/树莓派初体验/#more">more</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/10/12/树莓派初体验/" data-id="ciu738kdd0009dgqp6frydqrd" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/10/12/树莓派初体验/" data-id="ciuf2dbf8000alwqp7afv3wyz" class="article-share-link">Share</a>
       
       
 	<div class="article-tag tagcloud">
@@ -233,41 +265,15 @@
 <li><p>我用的是VirtualBox虚拟机，先关掉Linux，然后在VBox的设置-&gt;存储-&gt;控制器，右键添加虚拟硬盘-&gt;选创建一个新的虚拟盘-&gt;选VDI-&gt;动态分配-&gt;然后就分配自己想要的磁盘大小，不过要在分配的那个盘所接受的范围内就行。</p>
 </li>
 <li><p>创建好后，运行Linux。</p>
-</li>
-<li>为新添加的磁盘分区。用管理员权限输入命令<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">fdisk -l</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>查看目前磁盘信息，看到<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Disk /dev/sdb: 8589 MB, 8589934592 bytes</div></pre></td></tr></table></figure></p>
-<p>这一行信息中的/dev/sdb就是新添加的磁盘了（不知道是不是都是叫sdb的…检查一下大小与自己划分的一样就是了，这里我用了默认的8G）</p>
-<ol>
-<li>确认好新增的磁盘后，再输入：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">fdisk /dev/sdb</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>进入分区模式，这里有一堆命令可操作，用常见的’p’查看当前磁盘的分区情况、’n’建立一个新分区和’d’删除一个分区，这几个命令即可。输入p，可以看见磁盘sdb并没有被分过区</p>
-<p>  再输入n，开始分区，可以选择’e’扩展分区，’p’主分区，之前看鸟哥的教程时看得糊里糊涂，实操之后就知道是怎么回事了，总共可以分4个分区，可以是四个主分区，但是如果想要分不止四个分区的话，就要用扩展分区了，可以三个主分区+一个扩展分区，然后再从扩展分区里划分逻辑分区，前三个主分区的标识是sdb1，sdb2，sdb3，扩展分区是sdb4，逻辑分区是由sdb5开始一直推算下去的。这里无论前面四个分区怎么设置，只划分一个也好，逻辑分区都是从sdb5开始的。还有一点必须要注意的是，划分了扩展分区后，剩下的只能从扩展分区中划分逻辑分区了，不管你之前的空间有没有分配完，所以一般主分区划分完后，剩下的所有空间一股脑的全塞给扩展分区就对了，不要省着，省着就是浪费了。</p>
-<p>  不小心分错了也不要紧张，因为还没有保存，可以用ctrl+c快速退出，再重新分区，所以可以好好研究研究一下吧，不过怎么说分区都是个高危工作，如果磁盘里有重要资料的话还是小心一点为妙。</p>
-<ol>
-<li>格式化磁盘。分好区后，输入命令：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mke2fs -t ext4 -L TEST /dev/sdb5</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>我系统是CentOS6.5，所以文件系统用的是ext4，设置了标签TEST</p>
-<ol>
-<li>挂载磁盘。磁盘要挂载在一个目录中，才能使用这个磁盘，但是如果一个目录原先有文件存在的话，挂载磁盘后所有数据将会被覆盖，消失了。卸载磁盘后才可以看到。就是这么回事，所以就要找个空目录来挂载咯。 我在根目录下新建一个目录newdir，输入命令：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mount /dev/sdb5 /newdir/</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>再看看磁盘信息<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">df -h</div></pre></td></tr></table></figure></p>
-<p>显示信息，挂载成功<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">[root@localhost user1]# df -h</div><div class="line">Filesystem                    Size  Used Avail Use% Mounted on</div><div class="line">/dev/mapper/VolGroup-lv_root  7.5G  738M  6.4G  11% /</div><div class="line">tmpfs                         250M     0  250M   0% /dev/shm</div><div class="line">/dev/sda1                     485M   31M  429M   7% /boot</div><div class="line">/dev/sdb5                     989M   18M  921M   2% /newdir</div></pre></td></tr></table></figure></p>
-<ol>
-<li>设置开机挂载。在文件/etc/fstab最后一行，添加我新磁盘sdb5的信息<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">LABEL=TEST        /newdir         ext4    defaults        0 0</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>保存退出，设置完成</p>
-<p>不懂的地方还是有很多，不过思路总算明朗了一点，最后想说的是LABEL经常打错成LABLE啊啊啊，导致好几次运行出错，英语也要好好学啊，切记切记…</p>
-
+        
+          <p class="article-more-link">
+            <a href="/2016/10/08/Linux添加磁盘/#more">more</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/10/08/Linux添加磁盘/" data-id="ciu738kcx0004dgqplw3e2uc0" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/10/08/Linux添加磁盘/" data-id="ciuf2dbeg0005lwqp0t80davz" class="article-share-link">Share</a>
       
       
 	<div class="article-tag tagcloud">
@@ -306,43 +312,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>学习Linux中，很多操作和设置都要涉及各个目录，所以认识明白Linux各个目录的作用非常重要，而且我为了省内存没有安装图形界面<em>(:з」∠)</em>于是就在网上找来了关于linux目录的资料来学习学习啦。</p>
-<p>首先“/”代表了linux的根目录，就相当于树根一样。在linux系统中文 根文件系统，linux所有的一切全部在这里面存放着。</p>
-<ol>
-<li><p>/bin：（binary）用来存放二进制可执行的命令，包含了普通用户可能用到的命令，这些命令都是二进制文件。/usr/bin在此目录下也可存放二进制命令</p>
-</li>
-<li><p>/home 这个目录就不用说了，就是存放用户的目录。系统里新建一个用户就会在/home目录下为用户创建一个目录。</p>
-</li>
-<li><p>/sbin：目录类似/bin也是用于存储二进制文件，非普通用户所使用的命令，大多为系统管理员使用的基本的系统程序。</p>
-</li>
-<li><p>/etc：目录存放着各种系统配置文件，一些应用程序服务配置文件，用户和组信息文件（/etc/passwd 和/etc/group）linux也正是由这些文件才得以正常地运行。</p>
-</li>
-<li><p>/root: 是超级用户的目录。</p>
-</li>
-<li><p>/lib：目录是根文件系统上的程序所需的共享库，存放了根文件系统程序运行所需的共享文 件。这些文件包含了可被许多程序共享的代码，以避免每个程序都包含有相同的子程序的副 本，故可以使得可执行文件变得更小，节省空间。</p>
-<p> 在/lib/modules目录包含系统核心可加载各种模块，尤其是那些在恢复损坏的系统时重新引导系统所需的模块(例如网络和文件系统驱动)。</p>
-</li>
-<li><p>/dev目录存放了设备文件，即设备驱动程序，用户通过这些文件访问外部设备。比如，用 户可以通过访问/dev/mouse来访问鼠标的输入，就像访问其他文件一样。</p>
-</li>
-<li><p>/tmp目录存放程序的运行是的缓存信息和数据，但在引导启动后，运行程序最好使用/var/tmp来代替/tmp，因为/var/tmp可能拥有更大的磁盘空间，分区时一般会把/var单独挂到一个磁盘上。</p>
-</li>
-<li><p>/boot 目录存放的引导加载器使用的文件，核心映像也经常放在这里，而不是放在根目录中。但是如果有许多核心映像，这个目录就可能变得很大，这时使用单独的 文件系统会更好一些。还有一点要注意的是，要确保核心映像必须在IDE硬盘的前1024柱面内。</p>
-</li>
-<li><p>/mnt 目录是系统管理员临时安装挂载（mount）文件系统的安装点。系统并不自动支持安装到/mnt。/mnt 下面可以分为许多子目录，例如/mnt/dosa 可能是使用msdos文件系统的软驱，而/mnt/exta 可能是使用ext2文件系统的软驱，/mnt/cdrom 光驱等等。</p>
-</li>
-<li><p>/var 包含系统一般运行时要改变的数据。通常这些数据所在的目录的大小是要经常变化 或扩充的。原来/var目录中有些内容是在/usr中的，但为了保持/usr目录的相对稳定，就把那 些需要经常改变的目录放到/var中了，各种服务的日志信息。</p>
-</li>
-<li><p>/usr 是个很重要的目录，通常这一文件系统很大，因为所有程序安装在这里。/usr 里的 所有文件一般来自linux发行版(distribution)；本地安装的程序和其他东西在/usr/local 下，因为这样可以在升级新版系统或新发行版时无须重新安装全部程序。/usr 目录下的许多内容是 可选的，但这些功能会使用户使用系统更加有效。/usr可容纳许多大型的软件包和它们的配置 文件。</p>
-</li>
-<li><p>/proc文件系统<br>/proc 文件系统是一个伪的文件系统，就是说它是一个实际上不存在的目录，因而这是一 个非  常特殊的目录。它并不存在于某个磁盘上，而是由核心在内存中产生。这个目录用于提供关于系   统的信息。</p>
-</li>
-</ol>
-<p>这趟水还真深</p>
-
+        <p>学习Linux中，很多操作和设置都要涉及各个目录，所以认识明白Linux各个目录的作用非常重要，而且我为了省内存没有安装图形界面<em>(:з」∠)</em>于是就在网上找来了关于linux目录的资料来学习学习啦。<br>
+        
+          <p class="article-more-link">
+            <a href="/2016/10/06/Linux的目录/#more">more</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/10/06/Linux的目录/" data-id="ciu738kdd0006dgqpcsxrfmmg" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/10/06/Linux的目录/" data-id="ciuf2dben0006lwqp7pxikxk9" class="article-share-link">Share</a>
       
       
 	<div class="article-tag tagcloud">
@@ -381,73 +360,21 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>换了Litten的<em>yilias</em>主题，简洁、舒服，深得我心。然后在<strong>多说</strong>创建了站点为博客设置评论的功能。多说能够使用户方便地在后台管理留言，嗯，看起来还是很好用的（如果留言人数多的话）</p>
-<p>复制多说提供的代码，打开themes/yilias/layout/_partial/下的文件article.ejs，把最后一段:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;% if (!index &amp;&amp; post.comments &amp;&amp; config.duoshuo_shortname)&#123; %&gt;</div><div class="line">  &lt;section id=&quot;comments&quot;&gt;</div><div class="line">  &lt;/section&gt;</div><div class="line">&lt;% &#125; %&gt;</div></pre></td></tr></table></figure>
-<p>替换成</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">&lt;% if (!index &amp;&amp; post.comments &amp;&amp; config.duoshuo_shortname)&#123; %&gt;</div><div class="line">  &lt;section id=&quot;comments&quot;&gt;</div><div class="line">    &lt;!-- 多说评论框 start --&gt;</div><div class="line">    &lt;div class=&quot;ds-thread&quot; data-thread-key=&quot;&lt;%= post.layout %&gt;-&lt;%= post.slug %&gt;&quot; data-title=&quot;&lt;%= post.title %&gt;&quot; data-url=&quot;&lt;%= page.permalink %&gt;&quot;&gt;&lt;/div&gt;</div><div class="line">    &lt;!-- 多说评论框 end --&gt;</div><div class="line">    &lt;!-- 多说公共JS代码 start (一个网页只需插入一次) --&gt;</div><div class="line">    &lt;script type=&quot;text/javascript&quot;&gt;</div><div class="line">    var duoshuoQuery = &#123;short_name:&quot;famousczm&quot;&#125;;</div><div class="line">      (function() &#123;</div><div class="line">        var ds = document.createElement(&apos;script&apos;);</div><div class="line">        ds.type = &apos;text/javascript&apos;;ds.async = true;</div><div class="line">        ds.src = (document.location.protocol == &apos;https:&apos; ? &apos;https:&apos; : &apos;http:&apos;) + &apos;//static.duoshuo.com/embed.js&apos;;</div><div class="line">        ds.charset = &apos;UTF-8&apos;;</div><div class="line">        (document.getElementsByTagName(&apos;head&apos;)[0] </div><div class="line">         || document.getElementsByTagName(&apos;body&apos;)[0]).appendChild(ds);</div><div class="line">      &#125;)();</div><div class="line">      &lt;/script&gt;</div><div class="line">    &lt;!-- 多说公共JS代码 end --&gt;</div><div class="line">  &lt;/section&gt;</div><div class="line">&lt;% &#125; %&gt;</div></pre></td></tr></table></figure>
-<p><strong>注意：short_name: 后面要填自己站点的short_name，即在创建站点时的站点名称</strong></p>
-<p>保存后，打开站点配置文件_config.yml，在最后一行写上：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">duoshuo_shortname: famousczm（自己的short_name）</div></pre></td></tr></table></figure>
-<p>完成这些后，我发现博客虽然已经有了评论功能，但是不单单每篇文章下有评论，主页上用来预览的文章下也堆满评论，这很傻啊！找了很久原因，才发现是主题配置文件_config.yml忘记设置了，只要把duoshuo改成这样就好了</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">duoshuo: &quot;famousczm&quot;</div></pre></td></tr></table></figure>
-
+        <p>换了Litten的<em>yilias</em>主题，简洁、舒服，深得我心。然后在<strong>多说</strong>创建了站点为博客设置评论的功能。多说能够使用户方便地在后台管理留言，嗯，看起来还是很好用的（如果留言人数多的话）<br>
+        
+          <p class="article-more-link">
+            <a href="/2016/10/06/Hexo的评论功能/#more">more</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/10/06/Hexo的评论功能/" data-id="ciu738kci0002dgqpm4a62q7o" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/10/06/Hexo的评论功能/" data-id="ciuf2dbea0004lwqpalm331ew" class="article-share-link">Share</a>
       
       
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags"></i>
 		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
-	</div>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-Eclispe不能导入java-util-Arrays" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/10/05/Eclispe不能导入java-util-Arrays/" class="article-date">
-  	<time datetime="2016-10-05T13:13:28.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-10-05</time>
-</a>
-    
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/10/05/Eclispe不能导入java-util-Arrays/">Eclispe不能导入java.util.Arrays</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>做练习的时候，出现了不能导入<em>java.util.Arrays</em>的问题，找来两大java高手（反正java方面比我厉害）来研究了很久都没法解决。</p>
-<p>这个问题看起来的确很诡异，Arrays类确确实实存在着，能找到，其它类也能导入，但就是没办法导入这个。网上众说纷纷，都是没有什么好解决方法。</p>
-<p>今天把JDK1.8换成了1.7，就成功了，看来确实是版本的问题，据说是JDK1.8太新了，不太稳定。而且顺带发现并解决了在命令行中无法编译java文件的问题 ，原因是安装JDK和jre的过程中，不能放在同一文件夹下，会有冲突。</p>
-<p>这下可以继续做作业了。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/10/05/Eclispe不能导入java-util-Arrays/" data-id="ciu738kbs0000dgqpwoli3xzl" class="article-share-link">Share</a>
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
 	</div>
 
     </footer>
@@ -539,7 +466,7 @@ MathJax.Hub.Queue(function() {
     
     	<section class="tools-section tools-section-tag">
     			<div class="widget tagcloud" id="js-tagcloud">
-    				<a href="/tags/Hexo/" style="font-size: 20px;">Hexo</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/Linux/" style="font-size: 20px;">Linux</a> <a href="/tags/学习心得/" style="font-size: 10px;">学习心得</a> <a href="/tags/树莓派/" style="font-size: 10px;">树莓派</a>
+    				<a href="/tags/Hexo/" style="font-size: 20px;">Hexo</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/Linux/" style="font-size: 20px;">Linux</a> <a href="/tags/PHP/" style="font-size: 10px;">PHP</a> <a href="/tags/学习心得/" style="font-size: 10px;">学习心得</a> <a href="/tags/树莓派/" style="font-size: 10px;">树莓派</a>
     			</div>
     	</section>
     
