@@ -71,3 +71,5 @@ deploy:
   type: git
   repository: https://github.com/famousczm/famousczm.github.io
   branch: master
+  
+  duoshuo_shortname: famousczm

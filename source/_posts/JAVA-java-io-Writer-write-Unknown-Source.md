@@ -11,6 +11,7 @@ Exception in thread "main" java.lang.NullPointerException
 	at sy_10.sy10_7.main(sy10_7.java:26)
 ```
 
+<!-- more -->
 我程序代码是：
 
 ```

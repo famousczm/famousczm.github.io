@@ -15,7 +15,7 @@ tags: Hexo
 ```
 
 替换成
-
+<!-- more -->
 ```
 <% if (!index && post.comments && config.duoshuo_shortname){ %>
   <section id="comments">
