@@ -150,6 +150,74 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-换电脑后的博客管理" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/03/18/换电脑后的博客管理/">换电脑后的博客管理</a>
+    </h1>
+  
+
+        
+        <a href="/2017/03/18/换电脑后的博客管理/" class="archive-article-date">
+  	<time datetime="2017-03-18T12:31:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-18</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>之前硬盘坏了，换硬盘后，一切都是空白，以前所有的设置都没有了，包括这博客的更新。最近查阅了网上的资料，终于可以重新更新了，而且这次也吸收教训，要做好备份。</p>
+<p>以前我写完博客deploy到<em>github</em>上，只是把编译后的静态网页给保存了，以至于我clone下来也没什么用。所以这次我新开一个分支用来存放博客的原始文件，另一个分支则用来保存静态网页文件。这样维护起来也简单明了。新分支命名为Hexo。设定为默认分支。</p>
+<p>然后在本地新建个文件夹，shift+鼠标右键打开Git Bash输入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git clone git@github.com:famousczm/famousczm.github.io.git</div></pre></td></tr></table></figure>
+<p>拷贝仓库<br>
+        
+          <a class="article-more-a" href="/2017/03/18/换电脑后的博客管理/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Hexo</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/03/18/换电脑后的博客管理/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-JAVA-java-io-Writer-write-Unknown-Source" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -172,19 +240,9 @@
       
         <p>今天在做一个使用JAVA的输入输出流将一个文本文件的内容按行读出，每读出一行就顺序添加行号，并写入到另一个文件中的练习时，写入文件的过程中遇到未知错误如下：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Exception in thread &quot;main&quot; java.lang.NullPointerException</div><div class="line">	at java.io.Writer.write(Unknown Source)</div><div class="line">	at sy_10.sy10_7.main(sy10_7.java:26)</div></pre></td></tr></table></figure>
-<p>我程序代码是：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line">package sy_10;</div><div class="line">import java.io.*;</div><div class="line">public class sy10_7 &#123;</div><div class="line">	public static void main(String[] args) &#123;</div><div class="line">		// TODO Auto-generated method stub</div><div class="line">		File f = new File(&quot;E:\\Coder\\java\\eclipse\\test\\src\\sy_10\\Example10_7.java&quot;);</div><div class="line">		File f1 = new File(&quot;E:\\Coder\\java\\eclipse\\test\\src\\sy_10&quot;,&quot;Example10_7.txt&quot;);</div><div class="line">		String s = null;</div><div class="line">		int i = 1;</div><div class="line">		String content[] = new String[50];</div><div class="line">        try&#123;</div><div class="line">        	FileReader inOne = new FileReader(f);</div><div class="line">        	BufferedReader inTwo = new BufferedReader(inOne);	</div><div class="line">        	while((s = inTwo.readLine())!= null)&#123;</div><div class="line">        		s = i + &quot;.  &quot; + s;</div><div class="line">        		content[i-1] = s;</div><div class="line">        		i++;</div><div class="line">        		System.out.println(s);        		</div><div class="line">        	&#125;</div><div class="line">        	inTwo.close();</div><div class="line">        	inOne.close();</div><div class="line">        	FileWriter outOne = new FileWriter(f1);</div><div class="line">        	BufferedWriter outTwo = new BufferedWriter(outOne);</div><div class="line">            for(String str:content)&#123;</div><div class="line">            	outTwo.write(str);</div><div class="line">            	outTwo.newLine();</div><div class="line">            &#125;           </div><div class="line">            outTwo.close();  </div><div class="line">            outOne.close();</div><div class="line">        &#125;</div><div class="line">        catch(IOException e)&#123;</div><div class="line">        	System.out.println(e);</div><div class="line">        &#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>这个错误以前没有遇到过，错误地方就在</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">outTwo.write(str);</div></pre></td></tr></table></figure>
-<p>是写入时有问题，刚开始以为是参数str类型不对，然而并不是，str是String类型没问题，单独输出正常。</p>
-<p>网上找了一下，很多说是输入输出流关闭不正确，我想可能是字符流跟缓冲流的关闭顺序不对，把各种顺序都试了一遍，哈！！然而也不是..</p>
-<p>再把写出的操作注释掉，程序正常显示。好吧，把outTwo.write(str);断点然后debug找找原因，在写入时我发现数组content有点异常，初始化时分配了50个数组元素，即表示写入文件时要写入50行，而实际需要写入的只有32行。</p>
-<p>把数组元素改为32个时就可以正常写入了….我想这大概是内存溢出导致的异常。具体原因我也不知道。但程序这样写肯定是不行的。因为文件不能总是只有32行吧。</p>
-<p>我觉得这应该是数组到了32个元素之后就没有值了，即为null值。所以往文本中写入null值就会出错，这样Unknown Source就可以解释了。所以改了一下写入文本的for循环：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">for(String str:content)&#123;</div><div class="line">            	if(str == null)&#123;</div><div class="line">            		break;</div><div class="line">            	&#125;</div><div class="line">            	outTwo.write(str);</div><div class="line">            	outTwo.newLine();</div><div class="line">            &#125;</div></pre></td></tr></table></figure>
-<p>这样之后，把content数组设置为50个元素也不会出错了！！</p>
-<p>debug再次救了我</p>
-
+        
+          <a class="article-more-a" href="/2016/11/05/JAVA-java-io-Writer-write-Unknown-Source/#more">more >></a>
+        
       
 
       
@@ -387,36 +445,10 @@
 <p>用软件<em>Win32DiskImager</em>把下载好的<em>2016-05-10-raspbian-jessie.img</em>镜像烧录进SD卡，几分钟就完事了</p>
 <p>把内存卡插进树莓派，接上电源，用网线连上路由器。打开软件<em>advanced_ip_scanner</em>，检索树莓派的IP地址</p>
 <p>再用<em>putty</em>输入IP，端口22连接。默认用户名：pi 密码：raspberry</p>
-<p><img src="http://i1.piimg.com/4851/c773e7d0ad053886.png" alt="Aaron Swartz"></p>
-<p>登陆进之后，输入命令：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo raspi-config</div></pre></td></tr></table></figure>
-<p>进入配置界面</p>
-<p><img src="http://i1.piimg.com/4851/8de3b85be8f69a85.png" alt="Aaron Swartz"></p>
-<p>这里我选第一个扩展SD空间，因为树莓派安装完成后只用了部分SD卡的空间，所以不浪费资源，就扩展SD空间咯。另外我还改了登陆密码，其它就先不管它。</p>
-<p>接下来进行基础配置。添加国内的软件源，因为树莓派默认的服务器比较慢</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo vi /etc/apt/sources.list</div></pre></td></tr></table></figure>
-<p>把里面的内容删了，复制粘贴下面的内容</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">deb http://mirrors.ustc.edu.cn/raspbian/raspbian/ wheezy main non-free contrib</div><div class="line">deb-src http://mirrors.ustc.edu.cn/raspbian/raspbian/ wheezy main non-free contrib</div></pre></td></tr></table></figure>
-<p>保存退出，运行</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get update</div></pre></td></tr></table></figure>
-<p>配置一个静态地址，现在的ip地址是自动分配的，每次登陆都不相同，找ip地址也会费一些功夫，所以设置一个固定的地址方便以后登陆。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo vi /etc/network/interfaces</div></pre></td></tr></table></figure>
-<p>找到iface eth0 inet manual，改为</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">iface eth0 inet static</div><div class="line">address 192.168.1.102</div><div class="line">netmask 255.255.255.0</div></pre></td></tr></table></figure>
-<p>保存退出，重启网络</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo /etc/init.d/networking restart</div></pre></td></tr></table></figure>
-<p>为了能操作树莓派的界面，我用VNC来远程登陆，首先添加安装vnc server</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install tightvncserver</div></pre></td></tr></table></figure>
-<p>运行tightvncserver</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">tightvncserver</div></pre></td></tr></table></figure>
-<p>这时会要求输入几次密码，网上说这是控制密码，然后选择性输入查看密码，查看密码只能用来查看桌面，而控制密码才能对桌面进行操作。</p>
-<p>然后下载VNC软件安装后，输入ip地址：端口号（1,2,3都可以），端口号不同区分不同的用户</p>
-<p>连接后要求输入树莓派密码，输入后就能登陆树莓派操作界面了，尝试上网，能行。发现树莓派这个Liunx系统默认安装python2和3啊，以后编程还是以python为主了。</p>
-<p><img src="http://i1.piimg.com/4851/2cbf50924849e3af.png" alt="Aaron Swartz"></p>
-<p>最后就是如何关闭树莓派了，树莓派插上电源就自动开机，关闭它当然不是直接拔开，这算非正常断电，很容易损坏树莓派，正确方法是</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo shutdown -h now(或其它一切关机的命令)</div></pre></td></tr></table></figure>
-<p>然后知道黄色的指示灯不闪了，只剩红色的电源指示灯，这时就表明树莓派已经关机了，然后就可以拔电源了</p>
-
+<p><img src="http://i1.piimg.com/4851/c773e7d0ad053886.png" alt="Aaron Swartz"><br>
+        
+          <a class="article-more-a" href="/2016/10/12/树莓派初体验/#more">more >></a>
+        
       
 
       
@@ -457,109 +489,9 @@
 
 
   
-    <article id="post-Linux添加磁盘" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/10/08/Linux添加磁盘/">Linux添加磁盘</a>
-    </h1>
-  
-
-        
-        <a href="/2016/10/08/Linux添加磁盘/" class="archive-article-date">
-  	<time datetime="2016-10-08T06:13:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-10-08</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>今天学习了Linux关于磁盘的知识，以添加磁盘为例总结一下：</p>
-<ul>
-<li><p><small>我用的是VirtualBox虚拟机，先关掉Linux，然后在VBox的设置-&gt;存储-&gt;控制器，右键添加虚拟硬盘-&gt;选创建一个新的虚拟盘-&gt;选VDI-&gt;动态分配-&gt;然后就分配自己想要的磁盘大小，不过要在分配的那个盘所接受的范围内就行。</small></p>
-</li>
-<li><p><small>创建好后，运行Linux。</small></p>
-</li>
-<li><p><small>为新添加的磁盘分区。用管理员权限输入命令</small></p>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">fdisk -l</div></pre></td></tr></table></figure>
-<p>查看目前磁盘信息，看到</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Disk /dev/sdb: 8589 MB, 8589934592 bytes</div></pre></td></tr></table></figure>
-<p>这一行信息中的/dev/sdb就是新添加的磁盘了（不知道是不是都是叫sdb的…检查一下大小与自己划分的一样就是了，这里我用了默认的8G）</p>
-<ul>
-<li><small>确认好新增的磁盘后，再输入：</small></li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">fdisk /dev/sdb</div></pre></td></tr></table></figure>
-<p>进入分区模式，这里有一堆命令可操作，用常见的’p’查看当前磁盘的分区情况、’n’建立一个新分区和’d’删除一个分区，这几个命令即可。输入p，可以看见磁盘sdb并没有被分过区</p>
-<p>再输入n，开始分区，可以选择’e’扩展分区，’p’主分区，之前看鸟哥的教程时看得糊里糊涂，实操之后就知道是怎么回事了，总共可以分4个分区，可以是四个主分区，但是如果想要分不止四个分区的话，就要用扩展分区了，可以三个主分区+一个扩展分区，然后再从扩展分区里划分逻辑分区，前三个主分区的标识是sdb1，sdb2，sdb3，扩展分区是sdb4，逻辑分区是由sdb5开始一直推算下去的。这里无论前面四个分区怎么设置，只划分一个也好，逻辑分区都是从sdb5开始的。还有一点必须要注意的是，划分了扩展分区后，剩下的只能从扩展分区中划分逻辑分区了，不管你之前的空间有没有分配完，所以一般主分区划分完后，剩下的所有空间一股脑的全塞给扩展分区就对了，不要省着，省着就是浪费了。</p>
-<p>不小心分错了也不要紧张，因为还没有保存，可以用ctrl+c快速退出，再重新分区，所以可以好好研究研究一下吧，不过怎么说分区都是个高危工作，如果磁盘里有重要资料的话还是小心一点为妙。</p>
-<ul>
-<li><small>格式化磁盘。分好区后，输入命令：</small></li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mke2fs -t ext4 -L TEST /dev/sdb5</div></pre></td></tr></table></figure>
-<p>我系统是CentOS6.5，所以文件系统用的是ext4，设置了标签TEST</p>
-<ul>
-<li><small>挂载磁盘。磁盘要挂载在一个目录中，才能使用这个磁盘，但是如果一个目录原先有文件存在的话，挂载磁盘后所有数据将会被覆盖，消失了。卸载磁盘后才可以看到。就是这么回事，所以就要找个空目录来挂载咯。 我在根目录下新建一个目录newdir，输入命令：</small></li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mount /dev/sdb5 /newdir/</div></pre></td></tr></table></figure>
-<p>再看看磁盘信息</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">df -h</div></pre></td></tr></table></figure>
-<p>显示信息，挂载成功</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">[root@localhost user1]# df -h</div><div class="line">Filesystem                    Size  Used Avail Use% Mounted on</div><div class="line">/dev/mapper/VolGroup-lv_root  7.5G  738M  6.4G  11% /</div><div class="line">tmpfs                         250M     0  250M   0% /dev/shm</div><div class="line">/dev/sda1                     485M   31M  429M   7% /boot</div><div class="line">/dev/sdb5                     989M   18M  921M   2% /newdir</div></pre></td></tr></table></figure>
-<ul>
-<li><small>设置开机挂载。在文件/etc/fstab最后一行，添加我新磁盘sdb5的信息</small></li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">LABEL=TEST        /newdir         ext4    defaults        0 0</div></pre></td></tr></table></figure>
-<p>保存退出，设置完成</p>
-<p>不懂的地方还是有很多，不过思路总算明朗了一点，最后想说的是LABEL经常打错成LABLE啊啊啊，导致好几次运行出错，英语也要好好学啊，切记切记…</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/10/08/Linux添加磁盘/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
     </nav>
   
 
@@ -650,10 +582,6 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
               </li>
              
@@ -666,19 +594,23 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Oracle</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">PHP</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">树莓派</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Oracle</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">学习心得</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">PHP</a>
               </li>
             
             <div class="clearfix"></div>
@@ -757,7 +689,7 @@
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">平庸黑夜中气质不凡的路灯</div>
   	  	
     	</section>
     

@@ -150,6 +150,81 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Linux添加磁盘" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/08/Linux添加磁盘/">Linux添加磁盘</a>
+    </h1>
+  
+
+        
+        <a href="/2016/10/08/Linux添加磁盘/" class="archive-article-date">
+  	<time datetime="2016-10-08T06:13:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-10-08</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>今天学习了Linux关于磁盘的知识，以添加磁盘为例总结一下：</p>
+<ul>
+<li><font size='2'>我用的是VirtualBox虚拟机，先关掉Linux，然后在VBox的设置-&gt;存储-&gt;控制器，右键添加虚拟硬盘-&gt;选创建一个新的虚拟盘-&gt;选VDI-&gt;动态分配-&gt;然后就分配自己想要的磁盘大小，不过要在分配的那个盘所接受的范围内就行。</font>
+</li>
+<li><font size='2'>创建好后，运行Linux。</font>
+</li>
+<li><font size='2'>为新添加的磁盘分区。用管理员权限输入命令</font>
+
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">fdisk -l</div></pre></td></tr></table></figure>
+<p>查看目前磁盘信息，看到<br>
+        
+          <a class="article-more-a" href="/2016/10/08/Linux添加磁盘/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2016/10/08/Linux添加磁盘/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-Linux的目录" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -172,39 +247,16 @@
       
         <p>学习Linux中，很多操作和设置都要涉及各个目录，所以认识明白Linux各个目录的作用非常重要，而且我为了省内存没有安装图形界面(:з」∠)于是就在网上找来了关于linux目录的资料来学习学习啦。</p>
 <ul>
-<li><p><small>首先“/”代表了linux的根目录，就相当于树根一样。在linux系统中文 根文件系统，linux所有的一切全部在这里面存放着。</small></p>
+<li><font size='2'>首先“/”代表了linux的根目录，就相当于树根一样。在linux系统中文 根文件系统，linux所有的一切全部在这里面存放着。</font>
 </li>
-<li><p><small>/bin：（binary）用来存放二进制可执行的命令，包含了普通用户可能用到的命令，这些命令都是二进制文件。/usr/bin在此目录下也可存放二进制命令</small></p>
+<li><font size='2'>/bin：（binary）用来存放二进制可执行的命令，包含了普通用户可能用到的命令，这些命令都是二进制文件。/usr/bin在此目录下也可存放二进制命令</font>
 </li>
-<li><p><small>/home 这个目录就不用说了，就是存放用户的目录。系统里新建一个用户就会在/home目录下为用户创建一个目录。</small></p>
+<li><font size='2'>/home 这个目录就不用说了，就是存放用户的目录。系统里新建一个用户就会在/home目录下为用户创建一个目录。</font>
 </li>
-<li><p><small>/sbin：目录类似/bin也是用于存储二进制文件，非普通用户所使用的命令，大多为系统管理员使用的基本的系统程序。</small></p>
-</li>
-<li><p><small>/etc：目录存放着各种系统配置文件，一些应用程序服务配置文件，用户和组信息文件（/etc/passwd 和/etc/group）linux也正是由这些文件才得以正常地运行。</small></p>
-</li>
-<li><p><small>/root: 是超级用户的目录。</small></p>
-</li>
-<li><p><small>/lib：目录是根文件系统上的程序所需的共享库，存放了根文件系统程序运行所需的共享文 件。这些文件包含了可被许多程序共享的代码，以避免每个程序都包含有相同的子程序的副 本，故可以使得可执行文件变得更小，节省空间。</small></p>
-</li>
-<li><p><small>在/lib/modules目录包含系统核心可加载各种模块，尤其是那些在恢复损坏的系统时重新引导系统所需的模块(例如网络和文件系统驱动)。</small></p>
-</li>
-<li><p><small>/dev目录存放了设备文件，即设备驱动程序，用户通过这些文件访问外部设备。比如，用 户可以通过访问/dev/mouse来访问鼠标的输入，就像访问其他文件一样。</small></p>
-</li>
-<li><p><small>/tmp目录存放程序的运行是的缓存信息和数据，但在引导启动后，运行程序最好使用/var/tmp来代替/tmp，因为/var/tmp可能拥有更大的磁盘空间，分区时一般会把/var单独挂到一个磁盘上。</small></p>
-</li>
-<li><p><small>/boot 目录存放的引导加载器使用的文件，核心映像也经常放在这里，而不是放在根目录中。但是如果有许多核心映像，这个目录就可能变得很大，这时使用单独的 文件系统会更好一些。还有一点要注意的是，要确保核心映像必须在IDE硬盘的前1024柱面内。</small></p>
-</li>
-<li><p><small>/mnt 目录是系统管理员临时安装挂载（mount）文件系统的安装点。系统并不自动支持安装到/mnt。/mnt 下面可以分为许多子目录，例如/mnt/dosa 可能是使用msdos文件系统的软驱，而/mnt/exta 可能是使用ext2文件系统的软驱，/mnt/cdrom 光驱等等。</small></p>
-</li>
-<li><p><small>/var 包含系统一般运行时要改变的数据。通常这些数据所在的目录的大小是要经常变化 或扩充的。原来/var目录中有些内容是在/usr中的，但为了保持/usr目录的相对稳定，就把那 些需要经常改变的目录放到/var中了，各种服务的日志信息。</small></p>
-</li>
-<li><p><small>/usr 是个很重要的目录，通常这一文件系统很大，因为所有程序安装在这里。/usr 里的 所有文件一般来自linux发行版(distribution)；本地安装的程序和其他东西在/usr/local 下，因为这样可以在升级新版系统或新发行版时无须重新安装全部程序。/usr 目录下的许多内容是 可选的，但这些功能会使用户使用系统更加有效。/usr可容纳许多大型的软件包和它们的配置 文件。</small></p>
-</li>
-<li><p><small>/proc文件系统<br>/proc 文件系统是一个伪的文件系统，就是说它是一个实际上不存在的目录，因而这是一 个非 常特殊的目录。它并不存在于某个磁盘上，而是由核心在内存中产生。这个目录用于提供关于系 统的信息。</small></p>
-</li>
-</ul>
-<p>这趟水还真深</p>
-
+<li><p><font size='2'>/sbin：目录类似/bin也是用于存储二进制文件，非普通用户所使用的命令，大多为系统管理员使用的基本的系统程序。</font></p>
+        
+          <a class="article-more-a" href="/2016/10/06/Linux的目录/#more">more >></a>
+        
       
 
       
@@ -268,13 +320,10 @@
         <p>换了Litten的yilias主题，简洁、舒服，深得我心。然后在多说创建了站点为博客设置评论的功能。多说能够使用户方便地在后台管理留言，嗯，看起来还是很好用的（如果留言人数多的话）</p>
 <p>复制多说提供的代码，打开themes/yilias/layout/_partial/下的文件article.ejs，把最后一段:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;% if (!index &amp;&amp; post.comments &amp;&amp; config.duoshuo_shortname)&#123; %&gt;</div><div class="line">  &lt;section id=&quot;comments&quot;&gt;</div><div class="line">  &lt;/section&gt;</div><div class="line">&lt;% &#125; %&gt;</div></pre></td></tr></table></figure>
-<p>替换成</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">&lt;% if (!index &amp;&amp; post.comments &amp;&amp; config.duoshuo_shortname)&#123; %&gt;</div><div class="line">  &lt;section id=&quot;comments&quot;&gt;</div><div class="line">    &lt;!-- 多说评论框 start --&gt;</div><div class="line">    &lt;div class=&quot;ds-thread&quot; data-thread-key=&quot;&lt;%= post.layout %&gt;-&lt;%= post.slug %&gt;&quot; data-title=&quot;&lt;%= post.title %&gt;&quot; data-url=&quot;&lt;%= page.permalink %&gt;&quot;&gt;&lt;/div&gt;</div><div class="line">    &lt;!-- 多说评论框 end --&gt;</div><div class="line">    &lt;!-- 多说公共JS代码 start (一个网页只需插入一次) --&gt;</div><div class="line">    &lt;script type=&quot;text/javascript&quot;&gt;</div><div class="line">    var duoshuoQuery = &#123;short_name:&quot;famousczm&quot;&#125;;</div><div class="line">      (function() &#123;</div><div class="line">        var ds = document.createElement(&apos;script&apos;);</div><div class="line">        ds.type = &apos;text/javascript&apos;;ds.async = true;</div><div class="line">        ds.src = (document.location.protocol == &apos;https:&apos; ? &apos;https:&apos; : &apos;http:&apos;) + &apos;//static.duoshuo.com/embed.js&apos;;</div><div class="line">        ds.charset = &apos;UTF-8&apos;;</div><div class="line">        (document.getElementsByTagName(&apos;head&apos;)[0] </div><div class="line">         || document.getElementsByTagName(&apos;body&apos;)[0]).appendChild(ds);</div><div class="line">      &#125;)();</div><div class="line">      &lt;/script&gt;</div><div class="line">    &lt;!-- 多说公共JS代码 end --&gt;</div><div class="line">  &lt;/section&gt;</div><div class="line">&lt;% &#125; %&gt;</div></pre></td></tr></table></figure>
-<p><strong>注意：short_name: 后面要填自己站点的short_name，即在创建站点时的站点名称</strong></p>
-<p>保存后，打开站点配置文件_config.yml，在最后一行写上：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">duoshuo_shortname: famousczm（自己的short_name）</div></pre></td></tr></table></figure>
-<p>完成这些后，我发现博客虽然已经有了评论功能，但是不单单每篇文章下有评论，主页上用来预览的文章下也堆满评论，这很傻啊！找了很久原因，才发现是主题配置文件_config.yml忘记设置了，只要把duoshuo改成这样就好了</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">duoshuo: &quot;famousczm&quot;</div></pre></td></tr></table></figure>
+<p>替换成<br>
+        
+          <a class="article-more-a" href="/2016/10/06/Hexo的评论功能/#more">more >></a>
+        
       
 
       
@@ -452,73 +501,9 @@
 
 
   
-    <article id="post-第一篇博客" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/10/05/第一篇博客/">第一篇博客</a>
-    </h1>
-  
-
-        
-        <a href="/2016/10/05/第一篇博客/" class="archive-article-date">
-  	<time datetime="2016-10-05T05:46:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-10-05</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><em>Markdown</em> 是一种用来写作的轻量级「标记语言」，即跟<em>HTML</em>差不多，不过更为简洁和高效。使用的标签既简单又少，很容易就能记住了，而且<em>Markdown</em>相比格式更注重内容，所以写起来并不麻烦。文件后缀为md，因为在Github里要用到这个标记语言，所以就技多不压身地学习了咯</p>
-<p>这是我的第一篇博客，有点简陋</p>
-<p><img src="http://i1.piimg.com/4851/15b2d40d9546142f.jpg" alt="Aaron Swartz"></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">学习心得</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/10/05/第一篇博客/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
     </nav>
   
 
@@ -609,10 +594,6 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
               </li>
              
@@ -625,19 +606,23 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Oracle</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">PHP</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">树莓派</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Oracle</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">学习心得</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">PHP</a>
               </li>
             
             <div class="clearfix"></div>
@@ -716,7 +701,7 @@
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">平庸黑夜中气质不凡的路灯</div>
   	  	
     	</section>
     

@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="柱铭">
 <meta property="og:description" content="今天在做一个使用JAVA的输入输出流将一个文本文件的内容按行读出，每读出一行就顺序添加行号，并写入到另一个文件中的练习时，写入文件的过程中遇到未知错误如下：
 123Exception in thread &amp;quot;main&amp;quot; java.lang.NullPointerException	at java.io.Writer.write(Unknown Source)	at sy_10.s">
-<meta property="og:updated_time" content="2017-03-18T06:39:44.703Z">
+<meta property="og:updated_time" content="2017-03-18T13:31:49.234Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JAVA java.io.Writer.write(Unknown Source)">
 <meta name="twitter:description" content="今天在做一个使用JAVA的输入输出流将一个文本文件的内容按行读出，每读出一行就顺序添加行号，并写入到另一个文件中的练习时，写入文件的过程中遇到未知错误如下：
@@ -174,6 +174,7 @@
       
         <p>今天在做一个使用JAVA的输入输出流将一个文本文件的内容按行读出，每读出一行就顺序添加行号，并写入到另一个文件中的练习时，写入文件的过程中遇到未知错误如下：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Exception in thread &quot;main&quot; java.lang.NullPointerException</div><div class="line">	at java.io.Writer.write(Unknown Source)</div><div class="line">	at sy_10.sy10_7.main(sy10_7.java:26)</div></pre></td></tr></table></figure>
+<a id="more"></a>
 <p>我程序代码是：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line">package sy_10;</div><div class="line">import java.io.*;</div><div class="line">public class sy10_7 &#123;</div><div class="line">	public static void main(String[] args) &#123;</div><div class="line">		// TODO Auto-generated method stub</div><div class="line">		File f = new File(&quot;E:\\Coder\\java\\eclipse\\test\\src\\sy_10\\Example10_7.java&quot;);</div><div class="line">		File f1 = new File(&quot;E:\\Coder\\java\\eclipse\\test\\src\\sy_10&quot;,&quot;Example10_7.txt&quot;);</div><div class="line">		String s = null;</div><div class="line">		int i = 1;</div><div class="line">		String content[] = new String[50];</div><div class="line">        try&#123;</div><div class="line">        	FileReader inOne = new FileReader(f);</div><div class="line">        	BufferedReader inTwo = new BufferedReader(inOne);	</div><div class="line">        	while((s = inTwo.readLine())!= null)&#123;</div><div class="line">        		s = i + &quot;.  &quot; + s;</div><div class="line">        		content[i-1] = s;</div><div class="line">        		i++;</div><div class="line">        		System.out.println(s);        		</div><div class="line">        	&#125;</div><div class="line">        	inTwo.close();</div><div class="line">        	inOne.close();</div><div class="line">        	FileWriter outOne = new FileWriter(f1);</div><div class="line">        	BufferedWriter outTwo = new BufferedWriter(outOne);</div><div class="line">            for(String str:content)&#123;</div><div class="line">            	outTwo.write(str);</div><div class="line">            	outTwo.newLine();</div><div class="line">            &#125;           </div><div class="line">            outTwo.close();  </div><div class="line">            outOne.close();</div><div class="line">        &#125;</div><div class="line">        catch(IOException e)&#123;</div><div class="line">        	System.out.println(e);</div><div class="line">        &#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>这个错误以前没有遇到过，错误地方就在</p>
@@ -290,6 +291,15 @@
   
 <nav id="article-nav">
   
+    <a href="/2017/03/18/换电脑后的博客管理/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          换电脑后的博客管理
+        
+      </div>
+    </a>
+  
   
     <a href="/2016/10/26/Oracle复制另一用户下的表/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">Oracle复制另一用户下的表</div>
@@ -304,7 +314,25 @@
 
 
   
-    <div class="duoshuo"></div>
+  <div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="JAVA-java-io-Writer-write-Unknown-Source" data-title="JAVA java.io.Writer.write(Unknown Source)" data-url="http://famousczm.github.io/2016/11/05/JAVA-java-io-Writer-write-Unknown-Source/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"famousczm"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
   
 
 
@@ -396,10 +424,6 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
               </li>
              
@@ -412,19 +436,23 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Oracle</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">PHP</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">树莓派</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Oracle</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">学习心得</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">PHP</a>
               </li>
             
             <div class="clearfix"></div>
@@ -503,7 +531,7 @@
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">平庸黑夜中气质不凡的路灯</div>
   	  	
     	</section>
     

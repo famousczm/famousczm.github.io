@@ -26,7 +26,7 @@
 创建好后，运行Linux。
 
 为新添加的磁盘分区。用管理员权限输">
-<meta property="og:updated_time" content="2017-03-18T06:21:21.088Z">
+<meta property="og:updated_time" content="2017-03-18T13:32:53.070Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux添加磁盘">
 <meta name="twitter:description" content="今天学习了Linux关于磁盘的知识，以添加磁盘为例总结一下：
@@ -189,31 +189,37 @@
       
         <p>今天学习了Linux关于磁盘的知识，以添加磁盘为例总结一下：</p>
 <ul>
-<li><p><small>我用的是VirtualBox虚拟机，先关掉Linux，然后在VBox的设置-&gt;存储-&gt;控制器，右键添加虚拟硬盘-&gt;选创建一个新的虚拟盘-&gt;选VDI-&gt;动态分配-&gt;然后就分配自己想要的磁盘大小，不过要在分配的那个盘所接受的范围内就行。</small></p>
+<li><font size="2">我用的是VirtualBox虚拟机，先关掉Linux，然后在VBox的设置-&gt;存储-&gt;控制器，右键添加虚拟硬盘-&gt;选创建一个新的虚拟盘-&gt;选VDI-&gt;动态分配-&gt;然后就分配自己想要的磁盘大小，不过要在分配的那个盘所接受的范围内就行。</font>
 </li>
-<li><p><small>创建好后，运行Linux。</small></p>
+<li><font size="2">创建好后，运行Linux。</font>
 </li>
-<li><p><small>为新添加的磁盘分区。用管理员权限输入命令</small></p>
+<li><font size="2">为新添加的磁盘分区。用管理员权限输入命令</font>
+
 </li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">fdisk -l</div></pre></td></tr></table></figure>
-<p>查看目前磁盘信息，看到</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Disk /dev/sdb: 8589 MB, 8589934592 bytes</div></pre></td></tr></table></figure>
+<p>查看目前磁盘信息，看到<br><a id="more"></a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Disk /dev/sdb: 8589 MB, 8589934592 bytes</div></pre></td></tr></table></figure></p>
 <p>这一行信息中的/dev/sdb就是新添加的磁盘了（不知道是不是都是叫sdb的…检查一下大小与自己划分的一样就是了，这里我用了默认的8G）</p>
 <ul>
-<li><small>确认好新增的磁盘后，再输入：</small></li>
+<li><font size="2">确认好新增的磁盘后，再输入：</font>
+
+</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">fdisk /dev/sdb</div></pre></td></tr></table></figure>
 <p>进入分区模式，这里有一堆命令可操作，用常见的’p’查看当前磁盘的分区情况、’n’建立一个新分区和’d’删除一个分区，这几个命令即可。输入p，可以看见磁盘sdb并没有被分过区</p>
 <p>再输入n，开始分区，可以选择’e’扩展分区，’p’主分区，之前看鸟哥的教程时看得糊里糊涂，实操之后就知道是怎么回事了，总共可以分4个分区，可以是四个主分区，但是如果想要分不止四个分区的话，就要用扩展分区了，可以三个主分区+一个扩展分区，然后再从扩展分区里划分逻辑分区，前三个主分区的标识是sdb1，sdb2，sdb3，扩展分区是sdb4，逻辑分区是由sdb5开始一直推算下去的。这里无论前面四个分区怎么设置，只划分一个也好，逻辑分区都是从sdb5开始的。还有一点必须要注意的是，划分了扩展分区后，剩下的只能从扩展分区中划分逻辑分区了，不管你之前的空间有没有分配完，所以一般主分区划分完后，剩下的所有空间一股脑的全塞给扩展分区就对了，不要省着，省着就是浪费了。</p>
 <p>不小心分错了也不要紧张，因为还没有保存，可以用ctrl+c快速退出，再重新分区，所以可以好好研究研究一下吧，不过怎么说分区都是个高危工作，如果磁盘里有重要资料的话还是小心一点为妙。</p>
 <ul>
-<li><small>格式化磁盘。分好区后，输入命令：</small></li>
+<li><font size="2">格式化磁盘。分好区后，输入命令：</font>
+
+</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mke2fs -t ext4 -L TEST /dev/sdb5</div></pre></td></tr></table></figure>
 <p>我系统是CentOS6.5，所以文件系统用的是ext4，设置了标签TEST</p>
 <ul>
-<li><small>挂载磁盘。磁盘要挂载在一个目录中，才能使用这个磁盘，但是如果一个目录原先有文件存在的话，挂载磁盘后所有数据将会被覆盖，消失了。卸载磁盘后才可以看到。就是这么回事，所以就要找个空目录来挂载咯。 我在根目录下新建一个目录newdir，输入命令：</small></li>
+<li><font size="2">挂载磁盘。磁盘要挂载在一个目录中，才能使用这个磁盘，但是如果一个目录原先有文件存在的话，挂载磁盘后所有数据将会被覆盖，消失了。卸载磁盘后才可以看到。就是这么回事，所以就要找个空目录来挂载咯。 我在根目录下新建一个目录newdir，输入命令：</font>
+
+</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mount /dev/sdb5 /newdir/</div></pre></td></tr></table></figure>
 <p>再看看磁盘信息</p>
@@ -221,7 +227,9 @@
 <p>显示信息，挂载成功</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">[root@localhost user1]# df -h</div><div class="line">Filesystem                    Size  Used Avail Use% Mounted on</div><div class="line">/dev/mapper/VolGroup-lv_root  7.5G  738M  6.4G  11% /</div><div class="line">tmpfs                         250M     0  250M   0% /dev/shm</div><div class="line">/dev/sda1                     485M   31M  429M   7% /boot</div><div class="line">/dev/sdb5                     989M   18M  921M   2% /newdir</div></pre></td></tr></table></figure>
 <ul>
-<li><small>设置开机挂载。在文件/etc/fstab最后一行，添加我新磁盘sdb5的信息</small></li>
+<li><font size="2">设置开机挂载。在文件/etc/fstab最后一行，添加我新磁盘sdb5的信息</font>
+
+</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">LABEL=TEST        /newdir         ext4    defaults        0 0</div></pre></td></tr></table></figure>
 <p>保存退出，设置完成</p>
@@ -353,7 +361,25 @@
 
 
   
-    <div class="duoshuo"></div>
+  <div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="Linux添加磁盘" data-title="Linux添加磁盘" data-url="http://famousczm.github.io/2016/10/08/Linux添加磁盘/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"famousczm"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
   
 
 
@@ -445,10 +471,6 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
               </li>
              
@@ -461,19 +483,23 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Oracle</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">PHP</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">树莓派</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Oracle</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">学习心得</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">PHP</a>
               </li>
             
             <div class="clearfix"></div>
@@ -552,7 +578,7 @@
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">平庸黑夜中气质不凡的路灯</div>
   	  	
     	</section>
     
