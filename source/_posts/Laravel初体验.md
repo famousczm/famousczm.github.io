@@ -33,6 +33,24 @@ php artisan serve --port=8080
 ```
 就可以把端口号改为8080了
 
+因为我使用的是一键安装包，项目建在哪里就直接往哪里解压就是了，没有下载安装网上说的 **composer** （隐约感觉到后面会有一大波错误袭来）。果不其然，使用牛逼哄哄的Auth系统时（*Laravel* 内置的简单注册登录功能）：
+```
+php artisan make:auth
+```
+激活Auth（这要先关闭服务器，激活后再打开服务器），界面是出来了，如下：
+![](http://p1.bpimg.com/1949/d953c3c8d9b667de.png)
+
+但是，点击HOME时却弹出这个东西（深感不妙，该来的总会来）
+![](https://segmentfault.com/img/bVyK0W)
+
+说是什么 **Encryption.php** 里的 **openssl_encrypt()** 函数没定义，然后我当然就是去找 **Encryption.php** 这个文件了，可是不知道是我用一键安装包的原因还是我没仔细找的原因，找了半天都没不知道这个文件躲哪里了。后来另寻它路，把各种安装教程都仔细看一遍，**解决方法是：**
+
+在PHP的根目录里找到php.ini这个配置文件，打开，在大约893行的位置找到
+```
+;extension=php_openssl.dll
+```
+并把前面的分号去掉，保存，重启服务器就好了，（nice，问题解决了就兴奋得想大叫）
+![](http://p1.bpimg.com/1949/00e74b35c40b14d5.png)
 
 <hr>
 
