@@ -15,7 +15,10 @@
 <meta property="og:site_name" content="柱铭">
 <meta property="og:description" content="Laravel作为一个框架在PHP界久负盛名，以简洁优雅著称。目前以发布了Laravel 6，但是刚学习还是以较为流行的Laravel 5开始学吧">
 <meta property="og:image" content="http://p1.bpimg.com/1949/6c312410abc694d6.png">
-<meta property="og:updated_time" content="2017-03-20T12:13:01.147Z">
+<meta property="og:image" content="http://p1.bpimg.com/1949/d953c3c8d9b667de.png">
+<meta property="og:image" content="https://segmentfault.com/img/bVyK0W">
+<meta property="og:image" content="http://p1.bpimg.com/1949/00e74b35c40b14d5.png">
+<meta property="og:updated_time" content="2017-03-20T13:05:20.384Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Laravel初体验">
 <meta name="twitter:description" content="Laravel作为一个框架在PHP界久负盛名，以简洁优雅著称。目前以发布了Laravel 6，但是刚学习还是以较为流行的Laravel 5开始学吧">
@@ -181,6 +184,12 @@
 <p>就可以了，也能正常解析PHP代码，不用为配置Apache或Nginx错误而烦恼不已。</p>
 <p>继续扯回 <em>Laravel</em> … <strong>artisan</strong> 的serve命令还 <strong>host</strong> 和 <strong>port</strong> 这两个参数，看名字就知道这是配置主机地址和端口号的，如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">php artisan serve --port=8080</div></pre></td></tr></table></figure></p>
 <p>就可以把端口号改为8080了</p>
+<p>因为我使用的是一键安装包，项目建在哪里就直接往哪里解压就是了，没有下载安装网上说的 <strong>composer</strong> （隐约感觉到后面会有一大波错误袭来）。果不其然，使用牛逼哄哄的Auth系统时（<em>Laravel</em> 内置的简单注册登录功能）：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">php artisan make:auth</div></pre></td></tr></table></figure></p>
+<p>激活Auth（这要先关闭服务器，激活后再打开服务器），界面是出来了，如下：<br><img src="http://p1.bpimg.com/1949/d953c3c8d9b667de.png" alt=""></p>
+<p>但是，点击HOME时却弹出这个东西（深感不妙，该来的总会来）<br><img src="https://segmentfault.com/img/bVyK0W" alt=""></p>
+<p>说是什么 <strong>Encryption.php</strong> 里的 <strong>openssl_encrypt()</strong> 函数没定义，然后我当然就是去找 <strong>Encryption.php</strong> 这个文件了，可是不知道是我用一键安装包的原因还是我没仔细找的原因，找了半天都没不知道这个文件躲哪里了。后来另寻它路，把各种安装教程都仔细看一遍，<strong>解决方法是：</strong></p>
+<p>在PHP的根目录里找到php.ini这个配置文件，打开，在大约893行的位置找到<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">;extension=php_openssl.dll</div></pre></td></tr></table></figure></p>
+<p>并把前面的分号去掉，保存，重启服务器就好了，（nice，问题解决了就兴奋得想大叫）<br><img src="http://p1.bpimg.com/1949/00e74b35c40b14d5.png" alt=""></p>
 <hr>
 
 <p><em>Laravel</em> 先探索到这里，感觉还有很多东西要学的 &gt;__&lt;</p>
