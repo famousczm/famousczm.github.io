@@ -6,17 +6,27 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://famousczm.github.io">
-  <title>Archives: 2016/11 | 柱铭</title>
+  <title>Linux之sl命令 | 柱铭</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="嘿！朋友">
-<meta property="og:type" content="website">
-<meta property="og:title" content="柱铭">
-<meta property="og:url" content="http://famousczm.github.io/archives/2016/11/index.html">
+  <meta name="description" content="Linux中的 ls 命令我们经常使用，这甚至是我使用频率最高的命令。用来查询目录下的子目录或文件，还有查看目录和文件的属性和权限的功能。然而有时有人手快输错了变成 sl （至少我重来没有输错过……），就会出现一个冷冰冰的错误提示，提示这个命令不存在，让人大受打击
+因此，sl 就这样应运而生，它的作用是纠正用户的错误习惯，并且还能给用户在黑漆漆的窗口和冷冰冰的代码命令中得到一丝温暖，让人能够会心一">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux之sl命令">
+<meta property="og:url" content="http://famousczm.github.io/2017/03/21/Linux之sl命令/index.html">
 <meta property="og:site_name" content="柱铭">
-<meta property="og:description" content="嘿！朋友">
+<meta property="og:description" content="Linux中的 ls 命令我们经常使用，这甚至是我使用频率最高的命令。用来查询目录下的子目录或文件，还有查看目录和文件的属性和权限的功能。然而有时有人手快输错了变成 sl （至少我重来没有输错过……），就会出现一个冷冰冰的错误提示，提示这个命令不存在，让人大受打击
+因此，sl 就这样应运而生，它的作用是纠正用户的错误习惯，并且还能给用户在黑漆漆的窗口和冷冰冰的代码命令中得到一丝温暖，让人能够会心一">
+<meta property="og:image" content="http://p1.bpimg.com/1949/c10b74b57143474f.png">
+<meta property="og:image" content="http://p1.bpimg.com/1949/8857976da4f7c7ca.png">
+<meta property="og:image" content="http://p1.bpimg.com/1949/74958324219bf8a8.png">
+<meta property="og:image" content="http://p1.bpimg.com/1949/c0029c9f6b6545a8.png">
+<meta property="og:image" content="http://p1.bpimg.com/1949/b140e857422e09e3.png">
+<meta property="og:updated_time" content="2017-03-21T05:09:10.279Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="柱铭">
-<meta name="twitter:description" content="嘿！朋友">
+<meta name="twitter:title" content="Linux之sl命令">
+<meta name="twitter:description" content="Linux中的 ls 命令我们经常使用，这甚至是我使用频率最高的命令。用来查询目录下的子目录或文件，还有查看目录和文件的属性和权限的功能。然而有时有人手快输错了变成 sl （至少我重来没有输错过……），就会出现一个冷冰冰的错误提示，提示这个命令不存在，让人大受打击
+因此，sl 就这样应运而生，它的作用是纠正用户的错误习惯，并且还能给用户在黑漆漆的窗口和冷冰冰的代码命令中得到一丝温暖，让人能够会心一">
+<meta name="twitter:image" content="http://p1.bpimg.com/1949/c10b74b57143474f.png">
   
     <link rel="alternative" href="/atom.xml" title="柱铭" type="application/atom+xml">
   
@@ -148,60 +158,201 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Linux之sl命令" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/11/05/JAVA-java-io-Writer-write-Unknown-Source/" class="archive-article-date">
-  	<time datetime="2016-11-05T06:35:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-11-05</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/11/05/JAVA-java-io-Writer-write-Unknown-Source/">JAVA java.io.Writer.write(Unknown Source)</a>
+    <h1 class="article-title" itemprop="name">
+      Linux之sl命令
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2017/03/21/Linux之sl命令/" class="archive-article-date">
+  	<time datetime="2017-03-21T02:10:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-21</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Linux中的 <code>ls</code> 命令我们经常使用，这甚至是我使用频率最高的命令。用来查询目录下的子目录或文件，还有查看目录和文件的属性和权限的功能。然而有时有人手快输错了变成 <code>sl</code> （至少我重来没有输错过……），就会出现一个冷冰冰的错误提示，提示这个命令不存在，让人大受打击</p>
+<p>因此，<code>sl</code> 就这样应运而生，它的作用是纠正用户的错误习惯，并且还能给用户在黑漆漆的窗口和冷冰冰的代码命令中得到一丝温暖，让人能够会心一笑。<br><a id="more"></a><br>不过这需要安装，安装命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo yum install sl</div></pre></td></tr></table></figure></p>
+<p>Ubuntu 用户请用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install sl</div></pre></td></tr></table></figure></p>
+<p>然后就是愉快地写错命令了（误ORZ），下面来详细看下<code>sl</code> 的各种用法并与 <code>ls</code> 的对比：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ls</div></pre></td></tr></table></figure></p>
+<p>就是显示目录下的文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sl</div></pre></td></tr></table></figure></p>
+<p>巨型D51火车从右到左冒着烟横穿而过，我察觉到输错命令了哈哈<br><img src="http://p1.bpimg.com/1949/c10b74b57143474f.png" alt=""></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ls -a</div></pre></td></tr></table></figure>
+<p>显示目录下所有文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sl -a</div></pre></td></tr></table></figure>
+<p>一场事故似乎发生了，巨型火车上有人发出了help的求救，你会为他/她感到可怜的，因为命令输错了啊<br><img src="http://p1.bpimg.com/1949/8857976da4f7c7ca.png" alt=""></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ls -F</div></pre></td></tr></table></figure>
+<p>列出文件下的子目录</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sl -F</div></pre></td></tr></table></figure>
+<p>火车由右下角直奔左上角<br><img src="http://p1.bpimg.com/1949/74958324219bf8a8.png" alt=""></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ls -l</div></pre></td></tr></table></figure>
+<p>除了文件名之外，还将文件的权限、所有者、文件大小等信息详细列出来。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sl -l</div></pre></td></tr></table></figure>
+<p>一辆小型火车呼啸而过<br><img src="http://p1.bpimg.com/1949/c0029c9f6b6545a8.png" alt=""></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ls -c</div></pre></td></tr></table></figure>
+<p>排序文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sl -c</div></pre></td></tr></table></figure>
+<p>C51火车取代了原先的D51火车呼啸而过<br><img src="http://p1.bpimg.com/1949/b140e857422e09e3.png" alt=""></p>
+<p>以上就是sl的全部命令，真是好玩啊，这里再分享一个捉弄人的办法，把系统中的<code>ls</code>命令替换成<code>sl</code>命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">alias ls=&apos;sl&apos;</div></pre></td></tr></table></figure></p>
+<p>简直是恶作剧必备啊哈哈哈<br>改回来用：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">alias ls=&apos;ls&apos;</div></pre></td></tr></table></figure></p>
+<p>即可</p>
+<p>还有我发现一个<code>sl</code>很有趣的地方，就是火车经过的动画不能用<code>ctrl+c</code>来中断，这下更好玩了</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">JAVA</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://famousczm.github.io/2017/03/21/Linux之sl命令/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2017/03/21/Laravel之Auth数据库连接错误/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Laravel之Auth数据库连接错误
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/2017/03/20/Laravel初体验/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Laravel初体验</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+
+  
+  <div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="Linux之sl命令" data-title="Linux之sl命令" data-url="http://famousczm.github.io/2017/03/21/Linux之sl命令/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"famousczm"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
   
 
-    
+
 
 
           </div>
@@ -224,8 +375,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
