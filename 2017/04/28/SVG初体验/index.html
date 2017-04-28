@@ -6,17 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://famousczm.github.io">
-  <title>Archives: 2016/11 | 柱铭</title>
+  <title>SVG初体验 | 柱铭</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="嘿！朋友">
-<meta property="og:type" content="website">
-<meta property="og:title" content="柱铭">
-<meta property="og:url" content="http://famousczm.github.io/archives/2016/11/index.html">
+  <meta name="description" content="在看一些漂亮的网页时，看到里面有一些漂亮的图形，然而这又不是图片来的，难道是用代码画的？不，是写的？对，把浏览器当成是画布来画画的方法有：Flash， Canvas， SVG 。今天我就探索一下 SVG 的魅力所在，下面图片中的简单图形是用 SVG 画的：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SVG初体验">
+<meta property="og:url" content="http://famousczm.github.io/2017/04/28/SVG初体验/index.html">
 <meta property="og:site_name" content="柱铭">
-<meta property="og:description" content="嘿！朋友">
+<meta property="og:description" content="在看一些漂亮的网页时，看到里面有一些漂亮的图形，然而这又不是图片来的，难道是用代码画的？不，是写的？对，把浏览器当成是画布来画画的方法有：Flash， Canvas， SVG 。今天我就探索一下 SVG 的魅力所在，下面图片中的简单图形是用 SVG 画的：">
+<meta property="og:image" content="http://i4.buimg.com/1949/afb0adc27d877d61.png">
+<meta property="og:updated_time" content="2017-04-28T05:43:08.390Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="柱铭">
-<meta name="twitter:description" content="嘿！朋友">
+<meta name="twitter:title" content="SVG初体验">
+<meta name="twitter:description" content="在看一些漂亮的网页时，看到里面有一些漂亮的图形，然而这又不是图片来的，难道是用代码画的？不，是写的？对，把浏览器当成是画布来画画的方法有：Flash， Canvas， SVG 。今天我就探索一下 SVG 的魅力所在，下面图片中的简单图形是用 SVG 画的：">
+<meta name="twitter:image" content="http://i4.buimg.com/1949/afb0adc27d877d61.png">
   
     <link rel="alternative" href="/atom.xml" title="柱铭" type="application/atom+xml">
   
@@ -148,60 +151,182 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-SVG初体验" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/11/05/JAVA-java-io-Writer-write-Unknown-Source/" class="archive-article-date">
-  	<time datetime="2016-11-05T06:35:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-11-05</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/11/05/JAVA-java-io-Writer-write-Unknown-Source/">JAVA java.io.Writer.write(Unknown Source)</a>
+    <h1 class="article-title" itemprop="name">
+      SVG初体验
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2017/04/28/SVG初体验/" class="archive-article-date">
+  	<time datetime="2017-04-28T03:44:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-28</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在看一些漂亮的网页时，看到里面有一些漂亮的图形，然而这又不是图片来的，难道是用代码画的？不，是写的？对，把浏览器当成是画布来画画的方法有：<strong>Flash</strong>， <strong>Canvas</strong>， <strong>SVG</strong> 。今天我就探索一下 <strong>SVG</strong> 的魅力所在，下面图片中的简单图形是用 <strong>SVG</strong> 画的：</p>
+<p><img src="http://i4.buimg.com/1949/afb0adc27d877d61.png" alt=""></p>
+<a id="more"></a>
+<p>初学<code>div</code>布局的时候也尝试过用<code>div</code>来实现这个图形，但那可真是十分麻烦，不及 <strong>SVG</strong> 方便。</p>
+<p><strong>SVG</strong> 有两种表现形式，一种是单独的文件，后缀是<code>.svg</code>，代码按照<code>xml</code>的格式来写，文件可以嵌套到<code>html</code>文件中；另一种是在<code>html</code>中直接使用<code>&lt;svg&gt;</code>标签来写，不过要求<code>html</code>的版本是<code>html5</code>。</p>
+<p><strong>SVG</strong> 还可以通过<code>JS</code>动态创建并注入到 <strong>HTML DOM</strong> 中，这样做的优点是，可以根据各个浏览器对 <strong>SVG</strong> 的兼容性来选择性显示 <strong>SVG</strong> 。</p>
+<p>文件格式的 SVG 也是用<code>&lt;svg&gt;</code>标签创建画布，标签中必须包含<code>version</code>和<code>baseProfile</code>属性，用来确定 SVG 的版本。当然我认为<code>width</code>和<code>height</code>属性也是必要的，怎么也要确定一下画布的大小吧。还有<code>xmln</code>属性（xml namespace）也是必须的。</p>
+<p>这里说一下<code>xmln</code>，xml命名空间。之前学 <strong>Android</strong> 也有这个属性出现，使用 xml命名空间的原因到底是什么，下面引用维基百科的解释：</p>
+<blockquote>
+<p>一个XML文档可能包括来自多个XML词汇表的元素或属性，如果每一个词汇表指派一个命名空间，那么相同名字的元素或属性之间的名称冲突就可以解决。举一个简单的例子来说，在一个订单的XML文档中需要引用到客户和所购买的产品，customer元素和product元素可能都有一个叫做id的子元素。这时候要引用id元素会造成名称冲突，但是如果将两个id元素放到不同的命名空间中就会解决这个问题。</p>
+</blockquote>
+<p>可见是用来解决元素不唯一的问题</p>
+<hr>
+
+<p>实现题图的图形居中显示的过程中，我发现了一种新的居中方法，CSS代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">margin:auto;</div><div class="line">position:absolute;</div><div class="line">top:0;</div><div class="line">bottom:0;</div><div class="line">left:0;</div><div class="line">right:0;</div></pre></td></tr></table></figure></p>
+<p>使用绝对定位的方式加上<code>margin:auto</code>就可以了，贼方便。</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">JAVA</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">SVG</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://famousczm.github.io/2017/04/28/SVG初体验/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2017/04/21/Ubuntu安装软件错误提示/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Ubuntu安装软件错误提示</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+
+  
+  <div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="SVG初体验" data-title="SVG初体验" data-url="http://famousczm.github.io/2017/04/28/SVG初体验/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"famousczm"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
   
 
-    
+
 
 
           </div>
@@ -224,8 +349,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

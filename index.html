@@ -150,6 +150,71 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-SVG初体验" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/04/28/SVG初体验/">SVG初体验</a>
+    </h1>
+  
+
+        
+        <a href="/2017/04/28/SVG初体验/" class="archive-article-date">
+  	<time datetime="2017-04-28T03:44:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-28</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在看一些漂亮的网页时，看到里面有一些漂亮的图形，然而这又不是图片来的，难道是用代码画的？不，是写的？对，把浏览器当成是画布来画画的方法有：<strong>Flash</strong>， <strong>Canvas</strong>， <strong>SVG</strong> 。今天我就探索一下 <strong>SVG</strong> 的魅力所在，下面图片中的简单图形是用 <strong>SVG</strong> 画的：</p>
+<p><img src="http://i4.buimg.com/1949/afb0adc27d877d61.png" alt=""></p>
+        
+          <a class="article-more-a" href="/2017/04/28/SVG初体验/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">SVG</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/04/28/SVG初体验/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-Ubuntu安装软件错误提示" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -415,76 +480,6 @@
 
 
   
-    <article id="post-cannot-read-property-getContext-of-null" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/04/01/cannot-read-property-getContext-of-null/">cannot read property getContext of null</a>
-    </h1>
-  
-
-        
-        <a href="/2017/04/01/cannot-read-property-getContext-of-null/" class="archive-article-date">
-  	<time datetime="2017-04-01T08:40:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>用 <em>JS</em> 在 <strong>cavans</strong> 上画图的时候，加载页面没有任何效果，调试显示如下错误：</p>
-<p><img src="http://i4.buimg.com/1949/4604267099d7513d.png" alt=""></p>
-<p><img src="http://i4.buimg.com/1949/800ea281834b3356.png" alt=""></p>
-<p>提示 <strong>getContext</strong> 读不到数据，按理 <strong>c</strong> 应该存放 <strong>canvas</strong> 的对象，用：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">console.log(c)</div></pre></td></tr></table></figure>
-<p>调试返回结果为 <strong>null</strong> ！这下问题就清晰了，原因是在 <em>HTML</em> 文件中引入 <em>JS</em> 的位置有问题，我这<code>&lt;script&gt;</code>语句放在<code>&lt;head&gt;</code>中，执行JS语句时 canvans 还没有定义，所以读取为 null 。只要将<code>&lt;script&gt;</code>语句放在 <strong>canvas</strong> 后即可！</p>
-<p>还有一种解决方法是在 JS 文件中把 JS 语句放进这个语句中：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">window.onload = function()&#123;</div><div class="line">    /*JS CODE*/</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p><code>window.onload</code>能等待所有的 html 文件执行完毕再加载函数里的 JS 代码</p>
-<hr>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/04/01/cannot-read-property-getContext-of-null/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -578,7 +573,7 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -586,7 +581,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java</a>
+                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -610,19 +605,23 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">树莓派</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">PHP</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">HTML+CSS</a>
+                <a href="javascript:void(0)" class="js-tag color4">SVG</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">树莓派</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">学习心得</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">HTML+CSS</a>
               </li>
             
             <div class="clearfix"></div>
