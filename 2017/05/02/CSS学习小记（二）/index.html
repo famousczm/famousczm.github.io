@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="柱铭">
 <meta property="og:description" content=":root伪类:root 伪类用于匹配文档树的根元素，在 HTML 文档中，:root 表示为&amp;lt;html&amp;gt;元素，声明全局 CSS 变量的时候很有用，用法如下：1234:root&amp;#123;  background-color: cornflowerblue;  padding: 3em;&amp;#125;
 相当于在声明 html 标签的 CSS 变量，不过伪类选择器具有类的特性，优先级比标签">
-<meta property="og:updated_time" content="2017-05-02T14:54:47.829Z">
+<meta property="og:updated_time" content="2017-05-04T16:03:53.813Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS学习小记（二）">
 <meta name="twitter:description" content=":root伪类:root 伪类用于匹配文档树的根元素，在 HTML 文档中，:root 表示为&amp;lt;html&amp;gt;元素，声明全局 CSS 变量的时候很有用，用法如下：1234:root&amp;#123;  background-color: cornflowerblue;  padding: 3em;&amp;#125;
@@ -177,7 +177,7 @@
 <h3 id="CSS变量"><a href="#CSS变量" class="headerlink" title="CSS变量"></a>CSS变量</h3><p>在很多编程语言中，都会有变量这种基本的概念，可以方便地传值赋值，使代码变得清晰易懂，还可以提高程序的性能。但是我在学习 CSS 的过程中一直没有发现有变量的存在，CSS 一直用于描述文档的样式，好像变量的用处也不大。但久而久之，例如开发一些大型网站，很多样式都有重复的值，例如颜色，光写这6个字符组成的十六进制数就很容易让人出错。所以也就越发觉得变量的必要。随着 Sass 等 CSS 预编译工具的流行，变量也逐渐被官方所认可并且规定出来了。</p>
 <p>声明一个变量的方法，我们可以在<code>:root</code>里面当做全局变量声明：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">:root&#123;</div><div class="line">   --light: #ddd;</div><div class="line">   --dark: #333;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>在变量名前加上<code>--</code>就可以啦。当在需要使用变量时，用<code>var(变量名)</code>来是使用，十分方便：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">body&#123;</div><div class="line">   color: var(--light);</div><div class="line">   background-color: var(--dark);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>由于这还是个在实验中的功能，所以未来 CSS 变量的语法可能还会改变，让我们继续期待它的成长</p>
+<p>由于这还是个在实验中的功能，所以未来 CSS 变量的语法可能还会改变，让我们继续期待它的成长<br><a id="more"></a></p>
 <h3 id="opacity属性"><a href="#opacity属性" class="headerlink" title="opacity属性"></a>opacity属性</h3><p>使一个元素变透明，除了使用<code>rgba()</code>中的设置外，还可以使用<code>opacity</code>属性，更加方便快捷，<code>opacity</code>属性用于指定一个元素的透明度，常与<code>animation</code> 属性使用（个人觉得），取值0到1。0为完全透明，1就是完全不透明啦，用法示范：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">   opacity: 0.5;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>不过<code>opacity</code>属性有一个特点，当一个元素使用<code>opacity</code>属性透明时，其子元素也紧随该元素一起透明，即使该元素的子元素设置了不同的<code>opacity</code>值。也就是说一旦元素设置了<code>opacity</code>，那么子元素的<code>opacity</code>就失效了。</p>
 <p>对于想实现父元素透明度和子元素透明度不一样的效果，我的做法是父元素使用<code>rgba()</code>来设置透明度，而子元素使用<code>opacity</code>来设置透明度。顺序反过来的话达不到想象中的效果，我也不清楚是怎么回事。</p>
@@ -291,6 +291,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2017/05/04/NET使用MySQL/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          .NET使用MySQL
+        
+      </div>
+    </a>
   
   
     <a href="/2017/04/29/CSS学习小记（一）/" id="article-nav-older" class="article-nav-link-wrap">
@@ -424,11 +433,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Foundation</a>
+                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
+                <a href="javascript:void(0)" class="js-tag color1">Foundation</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -444,7 +453,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+                <a href="javascript:void(0)" class="js-tag color5">.NET</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -456,11 +465,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SVG</a>
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">树莓派</a>
+                <a href="javascript:void(0)" class="js-tag color4">SVG</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -469,6 +478,10 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">HTML+CSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">树莓派</a>
               </li>
             
             <div class="clearfix"></div>

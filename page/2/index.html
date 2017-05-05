@@ -150,6 +150,73 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-JSMin压缩JS文件" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/04/07/JSMin压缩JS文件/">JSMin压缩JS文件</a>
+    </h1>
+  
+
+        
+        <a href="/2017/04/07/JSMin压缩JS文件/" class="archive-article-date">
+  	<time datetime="2017-04-07T03:30:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-07</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在用 JQuery 或一些其它框架时，总是见到有<strong> min </strong>标记的文件，然后打开里面看代码，结果是一团黑色扭动着蠕虫般的字符密密麻麻地紧挨在一起，瞬间打消我研读的念头。刚开始以为这是防止别人学习抄袭里面的内容，一种版权的控制。到现在我才知道这其实是为了加快脚步的加载速度而把脚本中不必要的空格和注释删除从而达到压缩脚本的效果，也就是精简版本的脚本文件。一般都会把有注释并格式整齐内容清晰的原文件备份，方便以后修改。</p>
+<p>当然，制作精简版脚本这种无聊乏味至极的工作肯定不是手工弄的，有几种比较好的工具可以帮助我们，我平时用的是 <strong>JSMin</strong> ，还有备受好评的 <strong>Closure Compiler</strong> 。这里我就用 <strong>JSMin</strong> 来说明如何压缩 <strong>JS</strong> 。</p>
+<p>首先先把这工具给下载下来，进官网拉到最下有下载，<a herf="http://www.crockford.com/javascript/jsmin.html">点这里</a></p>
+<p>下载完成解压后是一个 <strong>.exe</strong> 文件。随便放在一个自己喜欢的地方。然后打开控制台，命令格式是：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">JSmin.exe的绝对路径 &lt;要压缩的 JS 文件绝对路径&gt;压缩完后的文件名和保存路径</div></pre></td></tr></table></figure></p>
+<p>举个例子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">D:\JS\jsmin.exe &lt;D:\JS\test\demo.js&gt;D:\JS\demo.min.js</div></pre></td></tr></table></figure></p>
+<p>就是这样子，打开压缩完的文件，就能看到熟悉的密密麻麻的字符啦</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/04/07/JSMin压缩JS文件/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-JS学习小记（二）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -458,71 +525,6 @@
 
 
   
-    <article id="post-Laravel之Auth数据库连接错误" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/21/Laravel之Auth数据库连接错误/">Laravel之Auth数据库连接错误</a>
-    </h1>
-  
-
-        
-        <a href="/2017/03/21/Laravel之Auth数据库连接错误/" class="archive-article-date">
-  	<time datetime="2017-03-21T03:03:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-21</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>学习 <em>Laravel</em> 不足一天，我就迎来了第二个坑，在 <strong>Auth</strong> 的登录页面随便输入Email地址和密码后，点击登录，弹出如下错误：<br><img src="http://p1.bpimg.com/1949/35c6f9efe32ac13c.png" alt=""></p>
-<p>看了一下，勉强知道是数据库连接不上的问题，不过这里出错也是正常的嘛，我又没有配置数据库，还以为 <strong>PHP</strong> 会内置数据库的我实在是太天真了。那么就赶紧去配置数据库吧。<br>
-        
-          <a class="article-more-a" href="/2017/03/21/Laravel之Auth数据库连接错误/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Laravel</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/03/21/Laravel之Auth数据库连接错误/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
@@ -624,11 +626,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Foundation</a>
+                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
+                <a href="javascript:void(0)" class="js-tag color1">Foundation</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -644,7 +646,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+                <a href="javascript:void(0)" class="js-tag color5">.NET</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -656,11 +658,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SVG</a>
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">树莓派</a>
+                <a href="javascript:void(0)" class="js-tag color4">SVG</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -669,6 +671,10 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">HTML+CSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">树莓派</a>
               </li>
             
             <div class="clearfix"></div>
