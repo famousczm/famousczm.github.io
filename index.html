@@ -150,6 +150,73 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-从修改hosts文件科学上网中理解DNS（上）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/05/07/从修改hosts文件科学上网中理解DNS（上）/">从修改hosts文件科学上网中理解DNS（上）</a>
+    </h1>
+  
+
+        
+        <a href="/2017/05/07/从修改hosts文件科学上网中理解DNS（上）/" class="archive-article-date">
+  	<time datetime="2017-05-07T09:43:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-07</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>科学上网的方法有多种，我之前用的免费软件 <strong>Lantern</strong> 已经开始限流量了。经朋友指点，只要修改电脑中的 <strong>hosts</strong> 文件就可以访问 Google 了，为什么会这么神奇呢？先看看里面的是什么东西，Window 上的 hosts 文件在<code>C:\Windows\System32\drivers\etc\hosts</code>这个地方。用文本编辑器打开：</p>
+<p><img src="http://i1.piimg.com/1949/f8a3f523691bfab8.png" alt=""></p>
+<p>可以看出里面都是一条条 IP 地址 + 域名的记录，用来进行 IP 地址的映射，当我们在浏览器上输入一个域名的时候，如百度：<code>www.baidu.com</code>，浏览器会先在 这个 hosts 文件中根据域名找到对应的 IP 地址，然后访问目标主机。这个过程是不是很熟悉？对！这就是 <strong>DNS</strong> (域名解析系统)的工作方式了。</p>
+<p>可以发现更熟悉的代表本地计算机的回环 IP 地址的映射<code>127.0.0.1    localhost</code>都是在 hosts 文件中定义的。<br>
+        
+          <a class="article-more-a" href="/2017/05/07/从修改hosts文件科学上网中理解DNS（上）/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">计算机</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/05/07/从修改hosts文件科学上网中理解DNS（上）/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-NET使用MySQL" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -419,72 +486,6 @@
 
 
   
-    <article id="post-Ubuntu安装软件错误提示" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/04/21/Ubuntu安装软件错误提示/">Ubuntu安装软件错误提示</a>
-    </h1>
-  
-
-        
-        <a href="/2017/04/21/Ubuntu安装软件错误提示/" class="archive-article-date">
-  	<time datetime="2017-04-21T14:37:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-21</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="http://i2.muimg.com/1949/808576e847d69126.png" alt=""></p>
-<p>如图，Ubuntu 上用 apt-get 下载安装 zsh 的时候遇到莫名的错误提示，看错误提示的意识大概就是<code>/var/lib/dpkg/lock</code>这个目录出的问题。网上的说法是，可能有另一个程序正在运行，导致资源被锁不可用。而导致资源被锁的原因可能是上一次运行安装更新时没有正常完成。而我记得上次并没有什么没有正常完成的安装更新，先删除这个目录试试。</p>
-<p>解决方法，运行下面命令：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo rm /var/cache/apt/archives/lock</div><div class="line">sudo rm /var/lib/dpkg/lock</div></pre></td></tr></table></figure>
-<p>又能正常安装更新了</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/04/21/Ubuntu安装软件错误提示/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -594,11 +595,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">JAVA</a>
+                <a href="javascript:void(0)" class="js-tag color3">JS</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">JS</a>
+                <a href="javascript:void(0)" class="js-tag color5">JAVA</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -606,7 +607,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">.NET</a>
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -618,11 +619,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+                <a href="javascript:void(0)" class="js-tag color5">.NET</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SVG</a>
+                <a href="javascript:void(0)" class="js-tag color4">计算机</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -630,11 +631,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">HTML+CSS</a>
+                <a href="javascript:void(0)" class="js-tag color4">SVG</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">树莓派</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">HTML+CSS</a>
               </li>
             
             <div class="clearfix"></div>

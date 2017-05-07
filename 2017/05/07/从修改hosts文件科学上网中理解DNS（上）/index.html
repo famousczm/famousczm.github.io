@@ -6,36 +6,26 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://famousczm.github.io">
-  <title>cannot read property getContext of null | 柱铭</title>
+  <title>从修改hosts文件科学上网中理解DNS（上） | 柱铭</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="用 JS 在 cavans 上画图的时候，加载页面没有任何效果，调试显示如下错误：
+  <meta name="description" content="科学上网的方法有多种，我之前用的免费软件 Lantern 已经开始限流量了。经朋友指点，只要修改电脑中的 hosts 文件就可以访问 Google 了，为什么会这么神奇呢？先看看里面的是什么东西，Window 上的 hosts 文件在C:\Windows\System32\drivers\etc\hosts这个地方。用文本编辑器打开：
 
-
-提示 getContext 读不到数据，按理 c 应该存放 canvas 的对象，用：
-1console.log(c)
-调试返回结果为 null ！这下问题就清晰了，原因是在 HTML 文件中引入 JS 的位置有问题，我这&amp;lt;script&amp;gt;语句放在&amp;lt;head&amp;gt;中，执行JS语句时 canva">
+可以看出里面都是一条条 IP 地址 + 域名的记录，用来进行">
 <meta property="og:type" content="article">
-<meta property="og:title" content="cannot read property getContext of null">
-<meta property="og:url" content="http://famousczm.github.io/2017/04/01/cannot-read-property-getContext-of-null/index.html">
+<meta property="og:title" content="从修改hosts文件科学上网中理解DNS（上）">
+<meta property="og:url" content="http://famousczm.github.io/2017/05/07/从修改hosts文件科学上网中理解DNS（上）/index.html">
 <meta property="og:site_name" content="柱铭">
-<meta property="og:description" content="用 JS 在 cavans 上画图的时候，加载页面没有任何效果，调试显示如下错误：
+<meta property="og:description" content="科学上网的方法有多种，我之前用的免费软件 Lantern 已经开始限流量了。经朋友指点，只要修改电脑中的 hosts 文件就可以访问 Google 了，为什么会这么神奇呢？先看看里面的是什么东西，Window 上的 hosts 文件在C:\Windows\System32\drivers\etc\hosts这个地方。用文本编辑器打开：
 
-
-提示 getContext 读不到数据，按理 c 应该存放 canvas 的对象，用：
-1console.log(c)
-调试返回结果为 null ！这下问题就清晰了，原因是在 HTML 文件中引入 JS 的位置有问题，我这&amp;lt;script&amp;gt;语句放在&amp;lt;head&amp;gt;中，执行JS语句时 canva">
-<meta property="og:image" content="http://i4.buimg.com/1949/4604267099d7513d.png">
-<meta property="og:image" content="http://i4.buimg.com/1949/800ea281834b3356.png">
-<meta property="og:updated_time" content="2017-04-01T09:04:12.677Z">
+可以看出里面都是一条条 IP 地址 + 域名的记录，用来进行">
+<meta property="og:image" content="http://i1.piimg.com/1949/f8a3f523691bfab8.png">
+<meta property="og:updated_time" content="2017-05-07T16:09:27.811Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="cannot read property getContext of null">
-<meta name="twitter:description" content="用 JS 在 cavans 上画图的时候，加载页面没有任何效果，调试显示如下错误：
+<meta name="twitter:title" content="从修改hosts文件科学上网中理解DNS（上）">
+<meta name="twitter:description" content="科学上网的方法有多种，我之前用的免费软件 Lantern 已经开始限流量了。经朋友指点，只要修改电脑中的 hosts 文件就可以访问 Google 了，为什么会这么神奇呢？先看看里面的是什么东西，Window 上的 hosts 文件在C:\Windows\System32\drivers\etc\hosts这个地方。用文本编辑器打开：
 
-
-提示 getContext 读不到数据，按理 c 应该存放 canvas 的对象，用：
-1console.log(c)
-调试返回结果为 null ！这下问题就清晰了，原因是在 HTML 文件中引入 JS 的位置有问题，我这&amp;lt;script&amp;gt;语句放在&amp;lt;head&amp;gt;中，执行JS语句时 canva">
-<meta name="twitter:image" content="http://i4.buimg.com/1949/4604267099d7513d.png">
+可以看出里面都是一条条 IP 地址 + 域名的记录，用来进行">
+<meta name="twitter:image" content="http://i1.piimg.com/1949/f8a3f523691bfab8.png">
   
     <link rel="alternative" href="/atom.xml" title="柱铭" type="application/atom+xml">
   
@@ -167,35 +157,41 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-cannot-read-property-getContext-of-null" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-从修改hosts文件科学上网中理解DNS（上）" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      cannot read property getContext of null
+      从修改hosts文件科学上网中理解DNS（上）
     </h1>
   
 
         
-        <a href="/2017/04/01/cannot-read-property-getContext-of-null/" class="archive-article-date">
-  	<time datetime="2017-04-01T08:40:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-01</time>
+        <a href="/2017/05/07/从修改hosts文件科学上网中理解DNS（上）/" class="archive-article-date">
+  	<time datetime="2017-05-07T09:43:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-07</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>用 <em>JS</em> 在 <strong>cavans</strong> 上画图的时候，加载页面没有任何效果，调试显示如下错误：</p>
-<p><img src="http://i4.buimg.com/1949/4604267099d7513d.png" alt=""></p>
-<p><img src="http://i4.buimg.com/1949/800ea281834b3356.png" alt=""></p>
-<p>提示 <strong>getContext</strong> 读不到数据，按理 <strong>c</strong> 应该存放 <strong>canvas</strong> 的对象，用：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">console.log(c)</div></pre></td></tr></table></figure>
-<p>调试返回结果为 <strong>null</strong> ！这下问题就清晰了，原因是在 <em>HTML</em> 文件中引入 <em>JS</em> 的位置有问题，我这<code>&lt;script&gt;</code>语句放在<code>&lt;head&gt;</code>中，执行JS语句时 canvans 还没有定义，所以读取为 null 。只要将<code>&lt;script&gt;</code>语句放在 <strong>canvas</strong> 后即可！</p>
-<p>还有一种解决方法是在 JS 文件中把 JS 语句放进这个语句中：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">window.onload = function()&#123;</div><div class="line">    /*JS CODE*/</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p><code>window.onload</code>能等待所有的 html 文件执行完毕再加载函数里的 JS 代码</p>
-<hr>
+        <p>科学上网的方法有多种，我之前用的免费软件 <strong>Lantern</strong> 已经开始限流量了。经朋友指点，只要修改电脑中的 <strong>hosts</strong> 文件就可以访问 Google 了，为什么会这么神奇呢？先看看里面的是什么东西，Window 上的 hosts 文件在<code>C:\Windows\System32\drivers\etc\hosts</code>这个地方。用文本编辑器打开：</p>
+<p><img src="http://i1.piimg.com/1949/f8a3f523691bfab8.png" alt=""></p>
+<p>可以看出里面都是一条条 IP 地址 + 域名的记录，用来进行 IP 地址的映射，当我们在浏览器上输入一个域名的时候，如百度：<code>www.baidu.com</code>，浏览器会先在 这个 hosts 文件中根据域名找到对应的 IP 地址，然后访问目标主机。这个过程是不是很熟悉？对！这就是 <strong>DNS</strong> (域名解析系统)的工作方式了。</p>
+<p>可以发现更熟悉的代表本地计算机的回环 IP 地址的映射<code>127.0.0.1    localhost</code>都是在 hosts 文件中定义的。<br><a id="more"></a></p>
+<p>接下来就发现了这几条关键的映射了：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">61.91.161.217	gmail.com</div><div class="line">61.91.161.217	gmail.google.com</div><div class="line">61.91.161.217	googlemail.l.google.com</div><div class="line">61.91.161.217	inbox.google.com</div><div class="line">61.91.161.217	isolated.mail.google.com</div><div class="line">61.91.161.217	m.gmail.com</div><div class="line">61.91.161.217	m.googlemail.com</div><div class="line">61.91.161.217	mail.google.com</div><div class="line">61.91.161.217	www.gmail.com</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">61.91.161.217	www.google.com</div><div class="line">61.91.161.217	google.com</div><div class="line">61.91.161.217	gcr.io</div><div class="line">61.91.161.217	www.gcr.io</div><div class="line">61.91.161.217	com.google</div><div class="line">61.91.161.217	admin.google.com</div><div class="line">61.91.161.217	accounts.google.com</div><div class="line">61.91.161.217	accounts.google.cn</div></pre></td></tr></table></figure>
+<p>这几条可以看出一个 IP 地址可以同时对应多个域名，这也就是为什么平时在地址栏上输入<code>google.com</code>或<code>www.google.com</code>都可以访问 google 了。而<code>https://</code>是浏览器自动帮你加上去的。</p>
+<p>平时我们访问不了 google 的原因是，google 的域名 在本机转化为 IP 地址后经过中国大陆的防火长城，被防火长城检测到与黑名单内的关键词匹配（如：Google、Facebook、twitter等都在黑名单内），然后就会伪装成目标域名的解析服务器返回虚假的查询结果。关键的是通常的域名查询没有任何认证机制，而且域名的查询一般是基于无连接不可靠的 UDP 协议，所以浏览器只能接受最先到达的格式正确结果，并把之后的所有结果丢弃。所以这也就访问不了啦，这种情况就是所谓的 <strong>DNS 缓存污染</strong>，也称为 <strong>DNS 缓存投毒</strong>（这个真形象…）</p>
+<p>关于 DNS 缓存污染的定义我引用维基百科的解析：</p>
+<blockquote>
+<p>是指一些刻意制造或无意中制造出来的域名服务器封包，把域名指往不正确的IP地址。一般来说，在互联网上都有可信赖的域名服务器，但为减低网络上的流量压力，一般的域名服务器都会把从上游的域名服务器获得的解析记录暂存起来，待下次有其他机器要求解析域名时，可以立即提供服务。一旦有关域名的局域域名服务器的缓存受到污染，就会把域名内的电脑导引往错误的服务器或服务器的网址。</p>
+</blockquote>
+<p>而黑客使用的<code>DNS 缓存污染攻击</code>则是针对这些特性来进行的。试想一下，如果你的 DNS 缓存被污染了，并且输入一个你常用的域名会跳转到一个黑客指定的网站，而这个网站跟你平时访问的网站几乎一模一样（黑客仿造的），但是访问后会自动帮你下载木马插件。危害可想而知，甚至察觉不了。一般我们上网，都是使用互联网服务供应商提供的域名解析服务器，当用户经常访问一些网站的时候，服务器会将这些网站的域名缓存起来，方便用户下次访问。而黑客就可以专门攻击这些服务器就可以获得用户资料和控制用户的访问了。</p>
+<p>扯远了，再来看看为什么这个 hosts 文件访问 google 的 IP 地址就不被防火墙拦截了呢？我查了一下，我这个访问 google 的 IP 地址是香港的，也就是说使用的是香港的代理 IP （Proxy IP）或者说代理服务器（Proxy Server）。那什么是代理 IP 和 代理服务器呢，我们平时访问一个网站，直接把请求信息通过一个 http 包发送到目标服务器上，然后目标服务器返回相应的信息回来。现在我们被墙了，我们不能直接访问目标主机，这就需要有一个可以访问目标主机的机器来帮我们。这就是代理服务器的使命了，我们通过代理 IP 来访问代理服务器，代理服务器帮我们访问我们访问不了的网站，并把相应的信息返回给我们，所以代理服务器必须安置在没有被墙的地方，如香港和台湾或者外国。</p>
+<p>如此一来，hosts 的作用和其 IP 映射之类的问题已经明白了，下一篇继续深入分析 hosts 与 DNS 之间的复杂恋情（误！）</p>
 
       
 
@@ -230,7 +226,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">计算机</a>
         		</li>
       		
 		</ul>
@@ -286,7 +282,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://famousczm.github.io/2017/04/01/cannot-read-property-getContext-of-null/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://famousczm.github.io/2017/05/07/从修改hosts文件科学上网中理解DNS（上）/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -300,18 +296,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/04/03/JS学习小记（一）/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          JS学习小记（一）
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/03/23/转-CSS命名规则/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">(转)CSS命名规则</div>
+    <a href="/2017/05/04/NET使用MySQL/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">.NET使用MySQL</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -325,7 +312,7 @@
   
   <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="cannot-read-property-getContext-of-null" data-title="cannot read property getContext of null" data-url="http://famousczm.github.io/2017/04/01/cannot-read-property-getContext-of-null/"></div>
+	<div class="ds-thread" data-thread-key="从修改hosts文件科学上网中理解DNS（上）" data-title="从修改hosts文件科学上网中理解DNS（上）" data-url="http://famousczm.github.io/2017/05/07/从修改hosts文件科学上网中理解DNS（上）/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
