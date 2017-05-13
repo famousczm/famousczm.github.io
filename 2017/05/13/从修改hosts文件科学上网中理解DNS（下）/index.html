@@ -6,17 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://famousczm.github.io">
-  <title>柱铭</title>
+  <title>从修改hosts文件科学上网中理解DNS（下） | 柱铭</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="嘿！朋友">
-<meta property="og:type" content="website">
-<meta property="og:title" content="柱铭">
-<meta property="og:url" content="http://famousczm.github.io/page/5/index.html">
+  <meta name="description" content="上次简单说了下 hosts 文件的作用，然后又看了很多这方面的资料，再来总结一下：
+在很早之前，全球的网络主机还很少的时候，IP 地址的映射主要靠的就是各主机里的 hosts 文件来实现，那时候的 hosts 文件保存着互联网上所有主机地址的映射。而 hosts 文件的更新是由一个专门来维护 hosts 文件的站点来实现。也就是说那时根本就不需要也没有 DNS 服务器这东西，用自己主机上的 hos">
+<meta property="og:type" content="article">
+<meta property="og:title" content="从修改hosts文件科学上网中理解DNS（下）">
+<meta property="og:url" content="http://famousczm.github.io/2017/05/13/从修改hosts文件科学上网中理解DNS（下）/index.html">
 <meta property="og:site_name" content="柱铭">
-<meta property="og:description" content="嘿！朋友">
+<meta property="og:description" content="上次简单说了下 hosts 文件的作用，然后又看了很多这方面的资料，再来总结一下：
+在很早之前，全球的网络主机还很少的时候，IP 地址的映射主要靠的就是各主机里的 hosts 文件来实现，那时候的 hosts 文件保存着互联网上所有主机地址的映射。而 hosts 文件的更新是由一个专门来维护 hosts 文件的站点来实现。也就是说那时根本就不需要也没有 DNS 服务器这东西，用自己主机上的 hos">
+<meta property="og:image" content="http://i4.buimg.com/1949/c42b173a95d310fb.png">
+<meta property="og:image" content="http://i4.buimg.com/1949/27288e17c828fb82.png">
+<meta property="og:updated_time" content="2017-05-13T07:13:10.530Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="柱铭">
-<meta name="twitter:description" content="嘿！朋友">
+<meta name="twitter:title" content="从修改hosts文件科学上网中理解DNS（下）">
+<meta name="twitter:description" content="上次简单说了下 hosts 文件的作用，然后又看了很多这方面的资料，再来总结一下：
+在很早之前，全球的网络主机还很少的时候，IP 地址的映射主要靠的就是各主机里的 hosts 文件来实现，那时候的 hosts 文件保存着互联网上所有主机地址的映射。而 hosts 文件的更新是由一个专门来维护 hosts 文件的站点来实现。也就是说那时根本就不需要也没有 DNS 服务器这东西，用自己主机上的 hos">
+<meta name="twitter:image" content="http://i4.buimg.com/1949/c42b173a95d310fb.png">
   
     <link rel="alternative" href="/atom.xml" title="柱铭" type="application/atom+xml">
   
@@ -148,35 +155,71 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-JAVA-java-io-Writer-write-Unknown-Source" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-从修改hosts文件科学上网中理解DNS（下）" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/05/JAVA-java-io-Writer-write-Unknown-Source/">JAVA java.io.Writer.write(Unknown Source)</a>
+    <h1 class="article-title" itemprop="name">
+      从修改hosts文件科学上网中理解DNS（下）
     </h1>
   
 
         
-        <a href="/2016/11/05/JAVA-java-io-Writer-write-Unknown-Source/" class="archive-article-date">
-  	<time datetime="2016-11-05T06:35:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-11-05</time>
+        <a href="/2017/05/13/从修改hosts文件科学上网中理解DNS（下）/" class="archive-article-date">
+  	<time datetime="2017-05-13T05:26:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-13</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>今天在做一个使用JAVA的输入输出流将一个文本文件的内容按行读出，每读出一行就顺序添加行号，并写入到另一个文件中的练习时，写入文件的过程中遇到未知错误如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Exception in thread &quot;main&quot; java.lang.NullPointerException</div><div class="line">	at java.io.Writer.write(Unknown Source)</div><div class="line">	at sy_10.sy10_7.main(sy10_7.java:26)</div></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2016/11/05/JAVA-java-io-Writer-write-Unknown-Source/#more">more >></a>
-        
+        <p>上次简单说了下 hosts 文件的作用，然后又看了很多这方面的资料，再来总结一下：</p>
+<p>在很早之前，全球的网络主机还很少的时候，IP 地址的映射主要靠的就是各主机里的 hosts 文件来实现，那时候的 hosts 文件保存着互联网上所有主机地址的映射。而 hosts 文件的更新是由一个专门来维护 hosts 文件的站点来实现。也就是说那时根本就不需要也没有 DNS 服务器这东西，用自己主机上的 hosts 文件就可以找到对方的 IP 地址然后建立连接了。</p>
+<p>但是很明显随着互联网的规模增大，hosts 文件根本不可能存放这么多地址映射的记录，而且这个数量级光数查找就要好些时间了，效率很低。最可悲的还要算那个负责维护更新的站点，要同时为世界上所有主机更新规模巨大的 hosts 文件。<br><a id="more"></a></p>
+<p>所以 DNS 就这么来了，DNS 承包了 hosts 文件的工作，用来记录世界上各个主机的地址映射（如此一来，hosts 文件已经渐渐被荒废了），当一台主机需要访问另一台主机时，向 DNS 服务器发送一个请求，DNS 服务器就会返回目标主机的 IP 地址回来了。</p>
+<p>那么又想到，全世界主机的地址映射都存放在同一台服务器上，并且接受所有主机的请求，一台 DNS 服务器还是承担不了这个重任。但其实 DNS 服务器是层级而且是分布式的，也就是说每个各个主机分成许多个不同的区域，好像我们写地址一样，由大到小，从国家一直到市镇，每个区域有自己的 DNS 服务器群。</p>
+<p>所以我们平时访问的域名地址也是按照这种从小到大的顺序命名的，方便 DNS 服务器查找。如：<code>gmail.google.com</code>，最右的就是顶级域名<code>.com</code>了，这我们都很熟悉，目前世界上已有超过250个顶级域名了，例如中国的<code>.cn</code>第二个<code>.google</code>就是隶属于<code>.com</code>下的二级域名了，以此类推有三级域名四级域名等。一般都不会超四吧，反正我就没见过了，四级域名都有点少见。</p>
+<p>用一棵树来比喻可能更好理解，每个顶级域名都对应多个 DNS 服务器（里面包含一个 master 服务器和多个 slave 服务器，slave 服务器主要用来备份数据，加快解析地址的速度，保证系统的可用性等），每个区域的域名服务器除了保存它们所在地区的主机的地址映射外，还有其父域名服务器和子域名服务器的地址映射，以此关联起来。</p>
+<p>这里还说一个重要的，就是域名地址的类型分好几种<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">A类型     就是主机的 IPv4 地址了</div><div class="line">AAAA类型     这个代表新兴的 IPv6 地址</div><div class="line">NS类型    表示该域名所在区域的权威域名服务器</div><div class="line">MX        接受特定域名电子邮件的服务器域名</div><div class="line">CNAME     当前域名的一个别名</div></pre></td></tr></table></figure></p>
+<p>然后到这里可能又会产生一个问题就是顶级域名已经是最顶级的域名了，它们没有父级域名，那么顶级域名之间怎么通信呢？</p>
+<p>根域名服务器帮我们解决这个问题，它保存了所有顶级域名区域的权威域名服务器记录。所以这是一个十分重要的服务器，截止2014年10月，全球共有504台根域名服务器，嘛~大部分都是被美国控制的。</p>
+<p>一般电脑连接上网后，会自动获得一个默认的 DNS 服务器，称为本地域名服务器。查看本机的DNS 服务器的地址方法是：<strong>windows打开命令行，输入<code>ipconfig /all</code>即可</strong></p>
+<p><img src="http://i4.buimg.com/1949/c42b173a95d310fb.png" alt=""></p>
+<p>当然，也可以自己手动设置自己可信任的 DNS 服务器，因为之前说过的 DNS 污染导致的安全问题，所以手动设置的方法是：</p>
+<p><strong>以 Win10 位例，右击桌面右下角的网络图标 -&gt; 打开网络共享中心 -&gt; 更改适配器设置 -&gt; 选择你连接的网络的图标右键 -&gt; 属性 -&gt; 选中 Internet 协议版本4 按属性</strong></p>
+<p><img src="http://i4.buimg.com/1949/27288e17c828fb82.png" alt=""></p>
+<p>可看出，一般都是默认自动获取的，勾选 <strong>使用下面的 DNS 服务器地址</strong> 就可以手动设置了。</p>
+<p>之前在很多地方都看见一个为<code>8.8.8.8</code>的地址，这是啥地址？其实这就是所谓的 <strong>Google Public DNS</strong>，是由 Google 推出的公共免费域名解析服务，目的在于改进网络浏览速度，改善网络用户浏览体验。之前有段时间中国防火长城封锁了这个地址，后来虽然解封了，但毕竟服务器是在国外，怎么也比不上国内的 DNS 服务器来得快，所以也不常用，但可以信赖。除了<code>8.8.8.8</code>，<code>8.8.4.4</code>也是 Google 的。</p>
+<p>最后再简单说一下用户请求 DNS 服务器返回目标主机地址的流程。</p>
+<p>首先，用户 A 要访问用户 B ，用户 A 向其本地域名服务器发送请求，如果用户 B 与用户 A 在同一区域内，则本地域名服务器直接返回地址，贼快。如果用户 B 在遥远的其它地方，我一直以为本地域名服务器会访问它的父级域名服务器，再沿着树一直往上寻找。然而并不是这样的，本地域名服务器自己没有后，会直接请求根域名服务器，根域名服务器会返回一个顶级域名服务器的地址，然后本地域名服务器再去请求该顶级域名服务器，顶级域名服务器再返回一个其它的域名服务器地址回来，本地域名服务器一直这样根据这些地址来请求相应的域名服务器（真是域名服务器界的劳模），直到找到目标主机的地址再返回给用户主机，用户主机用这个地址直接与目标主机建立连接，域名解析完成。</p>
+<p>好吧，写完了，真的是每写一篇博文都要花费一个两三小时的时间啊。一直忙于考试，终于能抽出时间来写了。</p>
+<p>参考资料：<br><a href="https://zh.wikipedia.org/wiki/Wikipedia:%E9%A6%96%E9%A1%B5" target="_blank">维基百科</a><br><a href="http://selfboot.cn/2015/11/05/dns_theory/" target="_blank">从理论到实践，全方位认识DNS（理论篇）</a></p>
+
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -187,7 +230,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">JAVA</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">计算机</a>
         		</li>
       		
 		</ul>
@@ -196,18 +239,74 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/11/05/JAVA-java-io-Writer-write-Unknown-Source/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://famousczm.github.io/2017/05/13/从修改hosts文件科学上网中理解DNS（下）/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
 
-
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2017/05/10/CSS学习小记（三）/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">CSS学习小记（三）</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
 
 
 
@@ -215,292 +314,28 @@
 
 
   
-    <article id="post-Oracle复制另一用户下的表" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/10/26/Oracle复制另一用户下的表/">Oracle复制另一用户下的表</a>
-    </h1>
-  
-
-        
-        <a href="/2016/10/26/Oracle复制另一用户下的表/" class="archive-article-date">
-  	<time datetime="2016-10-26T06:31:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-10-26</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Oracle下要将用户A里的表T复制给用户B，首先要登陆用户A，用如下语句把查询表T的权限赋给用户B：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">GRANT SELECT ON T TO A;</div></pre></td></tr></table></figure>
-<p>然后登陆用户B，复制表T并命名为S：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">CREATE TABLE S AS SELECT * FROM A.T;</div></pre></td></tr></table></figure>
-<p>这样就可以了（表名前一定要加上模式名）</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Oracle</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/10/26/Oracle复制另一用户下的表/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
+  <div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="从修改hosts文件科学上网中理解DNS（下）" data-title="从修改hosts文件科学上网中理解DNS（下）" data-url="http://famousczm.github.io/2017/05/13/从修改hosts文件科学上网中理解DNS（下）/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"famousczm"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
 
   
-    <article id="post-PHP字符编码" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/10/18/PHP字符编码/">PHP字符编码</a>
-    </h1>
-  
-
-        
-        <a href="/2016/10/18/PHP字符编码/" class="archive-article-date">
-  	<time datetime="2016-10-18T06:31:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-10-18</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>昨天用PHP做项目的时候遇到了浏览器字符编码的问题，用Chrome和FF来做测试。本想着改浏览器网页显示的字符编码就可以了，结果一刷新或重新打开就又乱码了。解决方法是设置要浏览器的默认字符编码</p>
-<p><em>Chrome</em>很简单，打开设置-&gt;显示高级设置-&gt;网络内容-&gt;自定义字体-&gt;编码，设置为UTF-8即可</p>
-<p><em>FireFox</em>的49.01版设置不了UTF-8编码，只有各种语言的选择。只能用alt弹出隐藏的菜单栏，在查看那里设置文字编码，不过这不是默认的，刷新就又重置了。</p>
-<p>所以以上都不是办法，别人访问你的网站可不能要让别人要先设置默认的字符编码才能看到中文啊。真正的方法是在PHP中设置<em>meta</em>标签</p>
-<p>在html的head标签里加上：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot; /&gt;</div></pre></td></tr></table></figure>
-<p>即可。我写PHP是用Zend Studio，新建PHP文件的时候没有xml的模板，在Windows-&gt;Preferences-&gt;PHP-&gt;Editor-&gt;Templates中新建一个也不行。解决方法是替换原来的html4.01的模板，Windows-&gt;Preferences-&gt;PHP-&gt;Code Style-&gt;Code Templates-&gt;Code,选中html4.01frameset然后编辑把xml的模板替换原来的模板。到这里还没有完成，因为Zend Studio还没有将charset设置的值转化。</p>
-<p>继续设置Generate-&gt;WorkSpace,把Text file encoding勾选other选中UTF-8就可以了</p>
-<p>今天大雨。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">PHP</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/10/18/PHP字符编码/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
 
 
-
-
-
-
-
-
-  
-    <article id="post-树莓派初体验" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/10/12/树莓派初体验/">树莓派初体验</a>
-    </h1>
-  
-
-        
-        <a href="/2016/10/12/树莓派初体验/" class="archive-article-date">
-  	<time datetime="2016-10-12T06:13:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-10-12</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>上课的时候突然想买个树莓派来玩玩，就马上入手了Raspberry Pi3 B+，等了三天，今天终于来了。这玩意看似便宜，其实为了能真正使用它，还要配备其它器件啊。我顺带买了32G的内存卡（树莓派要外带硬盘），电源适配器（Pi3要求有5V，2.5A的电源，懒得找，就买了）还有个官方外壳（保护作用，没错，树莓派来的时候是裸着的）。本来还需要个显示器的，因为树莓派的视频接口是HDMI，很遗憾我宿舍没有电视机，台式显示屏倒是有一个，可是我忘了买转VGA的转换器，而且人家也要用。所以就按照网上说的用笔记本远程连接咯。于是我又买了路由器，两条网线。一切准备就绪！</p>
-<p><img src="http://i1.piimg.com/4851/cad680e0b2b57bf1.jpg" alt="Aaron Swartz"><br><img src="http://i1.piimg.com/4851/6f62da8832b7f139.jpg" alt="Aaron Swartz"></p>
-<p>首先，格式化并烧录SD卡，格式化的时候系统提示磁盘写保护，不能写入数据也不能格式化。把读卡器的LOCK来回拨了几次，修改注册表也不行。其实是读卡器的问题，换一个就好了</p>
-<p>用软件<em>Win32DiskImager</em>把下载好的<em>2016-05-10-raspbian-jessie.img</em>镜像烧录进SD卡，几分钟就完事了</p>
-<p>把内存卡插进树莓派，接上电源，用网线连上路由器。打开软件<em>advanced_ip_scanner</em>，检索树莓派的IP地址</p>
-<p>再用<em>putty</em>输入IP，端口22连接。默认用户名：pi 密码：raspberry</p>
-<p><img src="http://i1.piimg.com/4851/c773e7d0ad053886.png" alt="Aaron Swartz"><br>
-        
-          <a class="article-more-a" href="/2016/10/12/树莓派初体验/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">树莓派</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/10/12/树莓派初体验/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-Linux添加磁盘" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/10/08/Linux添加磁盘/">Linux添加磁盘</a>
-    </h1>
-  
-
-        
-        <a href="/2016/10/08/Linux添加磁盘/" class="archive-article-date">
-  	<time datetime="2016-10-08T06:13:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-10-08</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>今天学习了Linux关于磁盘的知识，以添加磁盘为例总结一下：</p>
-<ul>
-<li><font size='2'>我用的是VirtualBox虚拟机，先关掉Linux，然后在VBox的设置-&gt;存储-&gt;控制器，右键添加虚拟硬盘-&gt;选创建一个新的虚拟盘-&gt;选VDI-&gt;动态分配-&gt;然后就分配自己想要的磁盘大小，不过要在分配的那个盘所接受的范围内就行。</font>
-</li>
-<li><font size='2'>创建好后，运行Linux。</font>
-</li>
-<li><font size='2'>为新添加的磁盘分区。用管理员权限输入命令</font>
-
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">fdisk -l</div></pre></td></tr></table></figure>
-<p>查看目前磁盘信息，看到<br>
-        
-          <a class="article-more-a" href="/2016/10/08/Linux添加磁盘/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/10/08/Linux添加磁盘/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-  
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/4/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/6/">Next &raquo;</a>
-    </nav>
-  
 
 
           </div>
@@ -522,8 +357,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

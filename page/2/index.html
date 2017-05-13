@@ -150,6 +150,139 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-CSS学习小记（一）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/04/29/CSS学习小记（一）/">CSS学习小记（一）</a>
+    </h1>
+  
+
+        
+        <a href="/2017/04/29/CSS学习小记（一）/" class="archive-article-date">
+  	<time datetime="2017-04-29T14:39:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-29</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="user-select属性"><a href="#user-select属性" class="headerlink" title="user-select属性"></a>user-select属性</h3><p>在浏览一些网站的文章时，读到一些有趣的文字，想把它复制收藏到自己的收藏集中，发现文字不可以选择，也就不可以复制。这种方法可以保护文章版权的效果，虽然花点时间手打也行，不过也是一定程度上保护了文章的传播。</p>
+<p>这种效果是怎样实现的呢，用<code>user-select</code>属性就可以实现，在样式中使<code>user-select:none</code>即可使用户不能选择元素中的任何内容，包括文本节点。非常方便，<code>user-select</code>是用来控制内容的可选择性的属性。由于该属性是 CSS3 新增属性，部分浏览器可能不兼容，使用时最好加上各浏览器内核前缀。</p>
+<p>嘛~在使用的时候发现了一招瞬间破解这种禁止复制的方法 orz 。对着要复制的文字右键选择 “<strong>检查</strong>” （我以Chrome为例），弹出开发者控制台，在代码栏中找到 CSS 样式设置，把<code>user-select:none</code>改为<code>user-select:auto</code>，即可启用复制功能。</p>
+<p>哈哈，这什么鬼，同样的方法可应用于查看浏览器保存的密码上！一般我们输入账号密码登录某一网站的时候浏览器会提示你是否要保存密码，或者网站上有复选框可以勾选记住密码，这都是利用浏览器的 <strong>cookie</strong> 来把密码暂存于浏览器中，以便下次登录可以方便点。而那些密码一般都是以黑色圆点方式来显示，但是不要天真地以为这样就看不见密码的内容了。用刚才所说的方法，只要把密码框的<code>type=&quot;password&quot;</code>改为<code>type=&quot;text&quot;</code> 即可将那可悲的密码暴露于艳阳下，一览无遗。</p>
+<p>这个故事告诉我们，把密码保存于浏览器中虽然方便，但是也是不安全的。大家请多加注意<br>
+        
+          <a class="article-more-a" href="/2017/04/29/CSS学习小记（一）/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/04/29/CSS学习小记（一）/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
+    <article id="post-SVG初体验" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/04/28/SVG初体验/">SVG初体验</a>
+    </h1>
+  
+
+        
+        <a href="/2017/04/28/SVG初体验/" class="archive-article-date">
+  	<time datetime="2017-04-28T03:44:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-28</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在看一些漂亮的网页时，看到里面有一些漂亮的图形，然而这又不是图片来的，难道是用代码画的？不，是写的？对，把浏览器当成是画布来画画的方法有：<strong>Flash</strong>， <strong>Canvas</strong>， <strong>SVG</strong> 。今天我就探索一下 <strong>SVG</strong> 的魅力所在，下面图片中的简单图形是用 <strong>SVG</strong> 画的：</p>
+<p><img src="http://i4.buimg.com/1949/afb0adc27d877d61.png" alt=""></p>
+        
+          <a class="article-more-a" href="/2017/04/28/SVG初体验/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">SVG</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/04/28/SVG初体验/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-Ubuntu安装软件错误提示" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -351,140 +484,6 @@
 
 
   
-    <article id="post-JS学习小记（一）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/04/03/JS学习小记（一）/">JS学习小记（一）</a>
-    </h1>
-  
-
-        
-        <a href="/2017/04/03/JS学习小记（一）/" class="archive-article-date">
-  	<time datetime="2017-04-03T02:53:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-03</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>在学习的过程中总会有一些让我感到惊奇或者以前想不到的东西出现，有时这是另一个庞大复杂的知识体系，有时这只是一个不甚起眼却意义非凡的小知识点。在学习 <em>JS</em> 的过程中，在不断惊叹它的魅力之余，还偶尔学到一些自己觉得很值得记录下来的知识点。<br>
-        
-          <a class="article-more-a" href="/2017/04/03/JS学习小记（一）/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/04/03/JS学习小记（一）/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-cannot-read-property-getContext-of-null" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/04/01/cannot-read-property-getContext-of-null/">cannot read property getContext of null</a>
-    </h1>
-  
-
-        
-        <a href="/2017/04/01/cannot-read-property-getContext-of-null/" class="archive-article-date">
-  	<time datetime="2017-04-01T08:40:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>用 <em>JS</em> 在 <strong>cavans</strong> 上画图的时候，加载页面没有任何效果，调试显示如下错误：</p>
-<p><img src="http://i4.buimg.com/1949/4604267099d7513d.png" alt=""></p>
-<p><img src="http://i4.buimg.com/1949/800ea281834b3356.png" alt=""></p>
-<p>提示 <strong>getContext</strong> 读不到数据，按理 <strong>c</strong> 应该存放 <strong>canvas</strong> 的对象，用：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">console.log(c)</div></pre></td></tr></table></figure>
-<p>调试返回结果为 <strong>null</strong> ！这下问题就清晰了，原因是在 <em>HTML</em> 文件中引入 <em>JS</em> 的位置有问题，我这<code>&lt;script&gt;</code>语句放在<code>&lt;head&gt;</code>中，执行JS语句时 canvans 还没有定义，所以读取为 null 。只要将<code>&lt;script&gt;</code>语句放在 <strong>canvas</strong> 后即可！</p>
-<p>还有一种解决方法是在 JS 文件中把 JS 语句放进这个语句中：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">window.onload = function()&#123;</div><div class="line">    /*JS CODE*/</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p><code>window.onload</code>能等待所有的 html 文件执行完毕再加载函数里的 JS 代码</p>
-<hr>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/04/01/cannot-read-property-getContext-of-null/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
@@ -622,19 +621,19 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">计算机</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">学习心得</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">SVG</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">计算机</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">树莓派</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">学习心得</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -715,6 +714,10 @@
           
             <li class="search-li">
               <a href="http://dingdingblog.com/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>丁丁</a>
+            </li>
+          
+            <li class="search-li">
+              <a href="http://selfboot.cn/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>Just For Fun</a>
             </li>
           
         </ul>

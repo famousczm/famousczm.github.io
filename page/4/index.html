@@ -150,6 +150,156 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Laravel初体验" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/03/20/Laravel初体验/">Laravel初体验</a>
+    </h1>
+  
+
+        
+        <a href="/2017/03/20/Laravel初体验/" class="archive-article-date">
+  	<time datetime="2017-03-20T09:20:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-20</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="http://p1.bpimg.com/1949/6c312410abc694d6.png" alt=""><br><em>Laravel</em>作为一个框架在PHP界久负盛名，以简洁优雅著称。目前以发布了<em>Laravel</em> 6，但是刚学习还是以较为流行的<em>Laravel</em> 5开始学吧<br>
+        
+          <a class="article-more-a" href="/2017/03/20/Laravel初体验/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Laravel</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/03/20/Laravel初体验/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
+    <article id="post-阿里云学生机硬盘读写速度测试" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/03/20/阿里云学生机硬盘读写速度测试/">阿里云学生机硬盘读写速度测试</a>
+    </h1>
+  
+
+        
+        <a href="/2017/03/20/阿里云学生机硬盘读写速度测试/" class="archive-article-date">
+  	<time datetime="2017-03-20T06:41:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-20</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>看了<strong>Linux中国</strong>的一篇文章测试服务器的硬盘读写速度，也想试试看阿里云学生机的硬盘读写速度能到什么水平，毕竟是最低配置…</p>
+<p>先测试写入速度：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">time dd if=/dev/zero of=/var/test bs=2k count=1000000</div></pre></td></tr></table></figure></p>
+<p><strong>命令解释：</strong></p>
+<ul>
+<li><p>time 用于计时</p>
+</li>
+<li><p>dd 用于复制，从if读出，写到of</p>
+</li>
+<li><p>if=/dev/zero不产生IO，因此可以用来测试纯写速度；所以后面测试纯读速度，就是           of=/dev/null不产生IO</p>
+</li>
+<li><p>bs是每次读或者写得大小，即一个块的大小，count是读写块的数量，相乘就是读写数据量大小，我这里测试2G数据的写入速度</p>
+</li>
+</ul>
+<p>连续测试三次的结果如下：<br><img src="http://p1.bpimg.com/1949/2b294ab713f7bfa8.png" alt=""><br>取平均值就是46.1MB/s了，比<strong>Linux中国</strong>测试的23.2MB/s几乎快了一倍，所以还是蛮快的，作为WEB服务器已经足够用了</p>
+<p>所以同理读速度的测试是<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">time dd if=/var/test of=/dev/null bs=2k</div></pre></td></tr></table></figure></p>
+<p>测试结果为：<br><img src="http://p1.bpimg.com/1949/069994b558b6bbbc.png" alt=""></p>
+<p>平均值为20.6MB/s，可看出，读速度远不如写速度快啊</p>
+<p>不过这种低配服务器也只是HDD，不可能是SSD，能用就好</p>
+<hr>
+
+<p>今天天气不错啊，适合出去走走，刚买了域名<strong>www.homehouse.tech</strong>，关于home的域名大部分都被注册了…</p>
+<blockquote>
+<p>寂寞之时，既想热闹；喧嚣之场，亦思闲静。人情大抵皆然。如猴子在树下，则思量树头果；及在树头，则又思量树下饭。往往复复，略无停刻，良亦苦矣。</p>
+<p>节选自《袁宏道集笺校》，卷二十<br>–《兰泽、云泽两叔》</p>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/03/20/阿里云学生机硬盘读写速度测试/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-Foundation初体验" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -352,137 +502,6 @@
 
 
   
-    <article id="post-JAVA-java-io-Writer-write-Unknown-Source" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/05/JAVA-java-io-Writer-write-Unknown-Source/">JAVA java.io.Writer.write(Unknown Source)</a>
-    </h1>
-  
-
-        
-        <a href="/2016/11/05/JAVA-java-io-Writer-write-Unknown-Source/" class="archive-article-date">
-  	<time datetime="2016-11-05T06:35:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-11-05</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>今天在做一个使用JAVA的输入输出流将一个文本文件的内容按行读出，每读出一行就顺序添加行号，并写入到另一个文件中的练习时，写入文件的过程中遇到未知错误如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Exception in thread &quot;main&quot; java.lang.NullPointerException</div><div class="line">	at java.io.Writer.write(Unknown Source)</div><div class="line">	at sy_10.sy10_7.main(sy10_7.java:26)</div></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2016/11/05/JAVA-java-io-Writer-write-Unknown-Source/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">JAVA</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/11/05/JAVA-java-io-Writer-write-Unknown-Source/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-Oracle复制另一用户下的表" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/10/26/Oracle复制另一用户下的表/">Oracle复制另一用户下的表</a>
-    </h1>
-  
-
-        
-        <a href="/2016/10/26/Oracle复制另一用户下的表/" class="archive-article-date">
-  	<time datetime="2016-10-26T06:31:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-10-26</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Oracle下要将用户A里的表T复制给用户B，首先要登陆用户A，用如下语句把查询表T的权限赋给用户B：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">GRANT SELECT ON T TO A;</div></pre></td></tr></table></figure>
-<p>然后登陆用户B，复制表T并命名为S：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">CREATE TABLE S AS SELECT * FROM A.T;</div></pre></td></tr></table></figure>
-<p>这样就可以了（表名前一定要加上模式名）</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Oracle</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/10/26/Oracle复制另一用户下的表/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/3/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/5/">Next &raquo;</a>
@@ -620,19 +639,19 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">计算机</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">学习心得</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">SVG</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">计算机</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">树莓派</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">学习心得</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -713,6 +732,10 @@
           
             <li class="search-li">
               <a href="http://dingdingblog.com/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>丁丁</a>
+            </li>
+          
+            <li class="search-li">
+              <a href="http://selfboot.cn/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>Just For Fun</a>
             </li>
           
         </ul>

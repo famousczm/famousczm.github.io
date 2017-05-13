@@ -6,17 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://famousczm.github.io">
-  <title>柱铭</title>
+  <title>CSS学习小记（三） | 柱铭</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="嘿！朋友">
-<meta property="og:type" content="website">
-<meta property="og:title" content="柱铭">
-<meta property="og:url" content="http://famousczm.github.io/page/5/index.html">
+  <meta name="description" content="max-width 属性和 min-width属性这两个属性由字面上来看是就是最大和最小长度，的确是这样。
+max-width 属性用来给元素设置最大宽度值. 定义了 max-width 的元素会在达到 max-width 值之后避免进一步按照 width 属性设置变大.也就是说 width 的值怎么也不能超过这个值。一个有点意思的值就是 fit-content ，设置值为 fit-content">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS学习小记（三）">
+<meta property="og:url" content="http://famousczm.github.io/2017/05/10/CSS学习小记（三）/index.html">
 <meta property="og:site_name" content="柱铭">
-<meta property="og:description" content="嘿！朋友">
+<meta property="og:description" content="max-width 属性和 min-width属性这两个属性由字面上来看是就是最大和最小长度，的确是这样。
+max-width 属性用来给元素设置最大宽度值. 定义了 max-width 的元素会在达到 max-width 值之后避免进一步按照 width 属性设置变大.也就是说 width 的值怎么也不能超过这个值。一个有点意思的值就是 fit-content ，设置值为 fit-content">
+<meta property="og:updated_time" content="2017-05-10T16:06:04.470Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="柱铭">
-<meta name="twitter:description" content="嘿！朋友">
+<meta name="twitter:title" content="CSS学习小记（三）">
+<meta name="twitter:description" content="max-width 属性和 min-width属性这两个属性由字面上来看是就是最大和最小长度，的确是这样。
+max-width 属性用来给元素设置最大宽度值. 定义了 max-width 的元素会在达到 max-width 值之后避免进一步按照 width 属性设置变大.也就是说 width 的值怎么也不能超过这个值。一个有点意思的值就是 fit-content ，设置值为 fit-content">
   
     <link rel="alternative" href="/atom.xml" title="柱铭" type="application/atom+xml">
   
@@ -148,35 +152,67 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-JAVA-java-io-Writer-write-Unknown-Source" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-CSS学习小记（三）" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/05/JAVA-java-io-Writer-write-Unknown-Source/">JAVA java.io.Writer.write(Unknown Source)</a>
+    <h1 class="article-title" itemprop="name">
+      CSS学习小记（三）
     </h1>
   
 
         
-        <a href="/2016/11/05/JAVA-java-io-Writer-write-Unknown-Source/" class="archive-article-date">
-  	<time datetime="2016-11-05T06:35:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-11-05</time>
+        <a href="/2017/05/10/CSS学习小记（三）/" class="archive-article-date">
+  	<time datetime="2017-05-10T15:03:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-10</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>今天在做一个使用JAVA的输入输出流将一个文本文件的内容按行读出，每读出一行就顺序添加行号，并写入到另一个文件中的练习时，写入文件的过程中遇到未知错误如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Exception in thread &quot;main&quot; java.lang.NullPointerException</div><div class="line">	at java.io.Writer.write(Unknown Source)</div><div class="line">	at sy_10.sy10_7.main(sy10_7.java:26)</div></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2016/11/05/JAVA-java-io-Writer-write-Unknown-Source/#more">more >></a>
-        
+        <h4 id="max-width-属性和-min-width属性"><a href="#max-width-属性和-min-width属性" class="headerlink" title="max-width 属性和 min-width属性"></a>max-width 属性和 min-width属性</h4><p>这两个属性由字面上来看是就是最大和最小长度，的确是这样。</p>
+<p>max-width 属性用来给元素设置最大宽度值. 定义了 max-width 的元素会在达到 max-width 值之后避免进一步按照 width 属性设置变大.也就是说 width 的值怎么也不能超过这个值。一个有点意思的值就是 fit-content ，设置值为 fit-content 时可以使其根据内容的长度来决定最大宽度。设置了 max-width 后，之前设置的 width 就会失效被覆盖。</p>
+<p>min-width 属性与 max-width 差不多，设置指定元素的最小宽度，不过它比 max-width 更强，如果设置了 min-width ，之前设置的 width 和 max-width 都会失效被覆盖。</p>
+<p>这两个属性一般用于 <strong>CSS 媒体查询</strong>中</p>
+<h4 id="CSS-媒体查询"><a href="#CSS-媒体查询" class="headerlink" title="CSS 媒体查询"></a>CSS 媒体查询</h4><p>好吧，媒体查询，看名字我还真猜不出是干啥用的。上网查了资料总结一些就是：<strong>能够实现“响应式设计”，针对不同的浏览器和设备“呈现”不同显示效果，毕竟不同的设备屏幕大小都会有不一样的状况出现，要使页面能够适应不同的浏览器和设备，可以用弹性盒子实现，也可以用媒体查询来实现</strong></p>
+<p>嗯，看起来用处很大，看看是怎么用的</p>
+<p>举一个例子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">@media(max-width: 600px) &#123;</div><div class="line">  .facet_sidebar &#123;</div><div class="line">     display: none;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>声明一个媒体查询的方式是<code>@media</code>，一个页面中可以有多个，后面跟的是一个或多个表达式，表达式内容会被解释成<code>true</code>或<code>false</code>，当表达式的值都是<code>true</code>时，则执行花括号里的语句，否则不执行。诶….？？？是不是跟什么好像？对，就那个判断语句<code>if</code>，正确则执行。所以媒体查询其实是 CSS 的判断语句？其实也不算，本质是相同的，不过媒体查询还有很多玩法</p>
+<p>表达式可以有多个，那么各表达式怎么连起来？可以使用<code>not</code>，<code>and</code>和<code>only</code> 。</p>
+<p>当使用<code>and</code>连接时，如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">(min-width: 700px) and (orientation: landscape) &#123; ... &#125;</div></pre></td></tr></table></figure></p>
+<p>起到合并多个表达式（下面统称媒体属性）的作用，只有所有媒体属性都为真时，才执行内容。这相当于<code>&amp;&amp;</code> 吧。</p>
+<p>那么，使用<code>or</code>时就是任一个为真就执行咯，除了用<code>or</code>来连接媒体属性还可以用<code>,</code>逗号来代替，效果一样。这个相当于<code>||</code></p>
+<p>然后使用<code>not</code>就是当媒体属性为假时就为真！！相当于<code>!</code></p>
+<p>使用<code>only</code>用来防止老旧的浏览器不支持呆媒体属性的查询而执行的样式。</p>
+<p>除了这些，媒体查询还有很多媒体属性，这里不一一介绍，总结一下，我总算明白媒体查询的意义和名字代表的意思了，这是用于对不同设备做出不同的页面布局调整，用媒体属性来作为一种判断方法区分各种设备，然后在花括号中对不同设备的调整。</p>
+<h4 id="checked"><a href="#checked" class="headerlink" title=":checked"></a>:checked</h4><p>又遇到一个伪类了，先从名字上看，马上想到<code>checkbox</code>，对，没错就是与这玩意有关的，而且还和<code>radio</code>有关，当我们选中<code>radio</code>或<code>checkbox</code>或<code>select</code>中的<code>option</code>时，<code>:checked</code>就生效了。所以根据这一特性，我们可以实现选中<code>radio</code>或<code>checkbox</code>或<code>option</code>而使页面产生某种变化的功能。</p>
+<p>常规的用法是，给<code>radio</code>加个 :checked ，然后隐藏 <code>radio</code> ，再弄个<code>label</code>标签关联<code>radio</code> ，在：checked 中改变 label 的状态，然后只要点击 label 就会勾选上 <code>radio</code> ，然后触发：checked 改变 label 样式。流程就是这样。用来自定义一个<code>radio</code>的样式我想大概就是用这种方法的吧，毕竟不能直接改它们的样式，真有点想不明白为什么这样设计</p>
+
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -187,7 +223,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">JAVA</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
         		</li>
       		
 		</ul>
@@ -196,18 +232,83 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/11/05/JAVA-java-io-Writer-write-Unknown-Source/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://famousczm.github.io/2017/05/10/CSS学习小记（三）/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
 
-
+  
+<nav id="article-nav">
+  
+    <a href="/2017/05/13/从修改hosts文件科学上网中理解DNS（下）/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          从修改hosts文件科学上网中理解DNS（下）
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/05/07/从修改hosts文件科学上网中理解DNS（上）/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">从修改hosts文件科学上网中理解DNS（上）</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
 
 
 
@@ -215,292 +316,28 @@
 
 
   
-    <article id="post-Oracle复制另一用户下的表" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/10/26/Oracle复制另一用户下的表/">Oracle复制另一用户下的表</a>
-    </h1>
-  
-
-        
-        <a href="/2016/10/26/Oracle复制另一用户下的表/" class="archive-article-date">
-  	<time datetime="2016-10-26T06:31:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-10-26</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Oracle下要将用户A里的表T复制给用户B，首先要登陆用户A，用如下语句把查询表T的权限赋给用户B：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">GRANT SELECT ON T TO A;</div></pre></td></tr></table></figure>
-<p>然后登陆用户B，复制表T并命名为S：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">CREATE TABLE S AS SELECT * FROM A.T;</div></pre></td></tr></table></figure>
-<p>这样就可以了（表名前一定要加上模式名）</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Oracle</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/10/26/Oracle复制另一用户下的表/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
+  <div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="CSS学习小记（三）" data-title="CSS学习小记（三）" data-url="http://famousczm.github.io/2017/05/10/CSS学习小记（三）/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"famousczm"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
 
   
-    <article id="post-PHP字符编码" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/10/18/PHP字符编码/">PHP字符编码</a>
-    </h1>
-  
-
-        
-        <a href="/2016/10/18/PHP字符编码/" class="archive-article-date">
-  	<time datetime="2016-10-18T06:31:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-10-18</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>昨天用PHP做项目的时候遇到了浏览器字符编码的问题，用Chrome和FF来做测试。本想着改浏览器网页显示的字符编码就可以了，结果一刷新或重新打开就又乱码了。解决方法是设置要浏览器的默认字符编码</p>
-<p><em>Chrome</em>很简单，打开设置-&gt;显示高级设置-&gt;网络内容-&gt;自定义字体-&gt;编码，设置为UTF-8即可</p>
-<p><em>FireFox</em>的49.01版设置不了UTF-8编码，只有各种语言的选择。只能用alt弹出隐藏的菜单栏，在查看那里设置文字编码，不过这不是默认的，刷新就又重置了。</p>
-<p>所以以上都不是办法，别人访问你的网站可不能要让别人要先设置默认的字符编码才能看到中文啊。真正的方法是在PHP中设置<em>meta</em>标签</p>
-<p>在html的head标签里加上：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot; /&gt;</div></pre></td></tr></table></figure>
-<p>即可。我写PHP是用Zend Studio，新建PHP文件的时候没有xml的模板，在Windows-&gt;Preferences-&gt;PHP-&gt;Editor-&gt;Templates中新建一个也不行。解决方法是替换原来的html4.01的模板，Windows-&gt;Preferences-&gt;PHP-&gt;Code Style-&gt;Code Templates-&gt;Code,选中html4.01frameset然后编辑把xml的模板替换原来的模板。到这里还没有完成，因为Zend Studio还没有将charset设置的值转化。</p>
-<p>继续设置Generate-&gt;WorkSpace,把Text file encoding勾选other选中UTF-8就可以了</p>
-<p>今天大雨。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">PHP</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/10/18/PHP字符编码/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
 
 
-
-
-
-
-
-
-  
-    <article id="post-树莓派初体验" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/10/12/树莓派初体验/">树莓派初体验</a>
-    </h1>
-  
-
-        
-        <a href="/2016/10/12/树莓派初体验/" class="archive-article-date">
-  	<time datetime="2016-10-12T06:13:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-10-12</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>上课的时候突然想买个树莓派来玩玩，就马上入手了Raspberry Pi3 B+，等了三天，今天终于来了。这玩意看似便宜，其实为了能真正使用它，还要配备其它器件啊。我顺带买了32G的内存卡（树莓派要外带硬盘），电源适配器（Pi3要求有5V，2.5A的电源，懒得找，就买了）还有个官方外壳（保护作用，没错，树莓派来的时候是裸着的）。本来还需要个显示器的，因为树莓派的视频接口是HDMI，很遗憾我宿舍没有电视机，台式显示屏倒是有一个，可是我忘了买转VGA的转换器，而且人家也要用。所以就按照网上说的用笔记本远程连接咯。于是我又买了路由器，两条网线。一切准备就绪！</p>
-<p><img src="http://i1.piimg.com/4851/cad680e0b2b57bf1.jpg" alt="Aaron Swartz"><br><img src="http://i1.piimg.com/4851/6f62da8832b7f139.jpg" alt="Aaron Swartz"></p>
-<p>首先，格式化并烧录SD卡，格式化的时候系统提示磁盘写保护，不能写入数据也不能格式化。把读卡器的LOCK来回拨了几次，修改注册表也不行。其实是读卡器的问题，换一个就好了</p>
-<p>用软件<em>Win32DiskImager</em>把下载好的<em>2016-05-10-raspbian-jessie.img</em>镜像烧录进SD卡，几分钟就完事了</p>
-<p>把内存卡插进树莓派，接上电源，用网线连上路由器。打开软件<em>advanced_ip_scanner</em>，检索树莓派的IP地址</p>
-<p>再用<em>putty</em>输入IP，端口22连接。默认用户名：pi 密码：raspberry</p>
-<p><img src="http://i1.piimg.com/4851/c773e7d0ad053886.png" alt="Aaron Swartz"><br>
-        
-          <a class="article-more-a" href="/2016/10/12/树莓派初体验/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">树莓派</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/10/12/树莓派初体验/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-Linux添加磁盘" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/10/08/Linux添加磁盘/">Linux添加磁盘</a>
-    </h1>
-  
-
-        
-        <a href="/2016/10/08/Linux添加磁盘/" class="archive-article-date">
-  	<time datetime="2016-10-08T06:13:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-10-08</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>今天学习了Linux关于磁盘的知识，以添加磁盘为例总结一下：</p>
-<ul>
-<li><font size='2'>我用的是VirtualBox虚拟机，先关掉Linux，然后在VBox的设置-&gt;存储-&gt;控制器，右键添加虚拟硬盘-&gt;选创建一个新的虚拟盘-&gt;选VDI-&gt;动态分配-&gt;然后就分配自己想要的磁盘大小，不过要在分配的那个盘所接受的范围内就行。</font>
-</li>
-<li><font size='2'>创建好后，运行Linux。</font>
-</li>
-<li><font size='2'>为新添加的磁盘分区。用管理员权限输入命令</font>
-
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">fdisk -l</div></pre></td></tr></table></figure>
-<p>查看目前磁盘信息，看到<br>
-        
-          <a class="article-more-a" href="/2016/10/08/Linux添加磁盘/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/10/08/Linux添加磁盘/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-  
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/4/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/6/">Next &raquo;</a>
-    </nav>
-  
 
 
           </div>
@@ -522,8 +359,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
