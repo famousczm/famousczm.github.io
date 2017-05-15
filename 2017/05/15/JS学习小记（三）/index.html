@@ -6,17 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://famousczm.github.io">
-  <title>Archives: 2016 | 柱铭</title>
+  <title>JS学习小记（三） | 柱铭</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="嘿！朋友">
-<meta property="og:type" content="website">
-<meta property="og:title" content="柱铭">
-<meta property="og:url" content="http://famousczm.github.io/archives/2016/page/2/index.html">
+  <meta name="description" content="return 后面换行的问题这是在一个 JS 的面试题里看到的，觉得应该注意一下，先看下面的两个函数：12345function fool()&amp;#123;	return&amp;#123;		bar:&amp;quot;hello&amp;quot;	&amp;#125;;&amp;#125;
+123456function foo2()&amp;#123;	return    &amp;#123;		bar:&amp;quot;hello&amp;quot;	&amp;#12">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JS学习小记（三）">
+<meta property="og:url" content="http://famousczm.github.io/2017/05/15/JS学习小记（三）/index.html">
 <meta property="og:site_name" content="柱铭">
-<meta property="og:description" content="嘿！朋友">
+<meta property="og:description" content="return 后面换行的问题这是在一个 JS 的面试题里看到的，觉得应该注意一下，先看下面的两个函数：12345function fool()&amp;#123;	return&amp;#123;		bar:&amp;quot;hello&amp;quot;	&amp;#125;;&amp;#125;
+123456function foo2()&amp;#123;	return    &amp;#123;		bar:&amp;quot;hello&amp;quot;	&amp;#12">
+<meta property="og:image" content="http://i2.muimg.com/1949/b66d297264c067b7.png">
+<meta property="og:image" content="http://i2.muimg.com/1949/40288c64df4969ca.png">
+<meta property="og:updated_time" content="2017-05-15T08:28:58.612Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="柱铭">
-<meta name="twitter:description" content="嘿！朋友">
+<meta name="twitter:title" content="JS学习小记（三）">
+<meta name="twitter:description" content="return 后面换行的问题这是在一个 JS 的面试题里看到的，觉得应该注意一下，先看下面的两个函数：12345function fool()&amp;#123;	return&amp;#123;		bar:&amp;quot;hello&amp;quot;	&amp;#125;;&amp;#125;
+123456function foo2()&amp;#123;	return    &amp;#123;		bar:&amp;quot;hello&amp;quot;	&amp;#12">
+<meta name="twitter:image" content="http://i2.muimg.com/1949/b66d297264c067b7.png">
   
     <link rel="alternative" href="/atom.xml" title="柱铭" type="application/atom+xml">
   
@@ -148,216 +155,189 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-JS学习小记（三）" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      JS学习小记（三）
+    </h1>
+  
+
+        
+        <a href="/2017/05/15/JS学习小记（三）/" class="archive-article-date">
+  	<time datetime="2017-05-15T04:45:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-15</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="return-后面换行的问题"><a href="#return-后面换行的问题" class="headerlink" title="return 后面换行的问题"></a>return 后面换行的问题</h4><p>这是在一个 JS 的面试题里看到的，觉得应该注意一下，先看下面的两个函数：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">function fool()&#123;</div><div class="line">	return&#123;</div><div class="line">		bar:&quot;hello&quot;</div><div class="line">	&#125;;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">function foo2()&#123;</div><div class="line">	return</div><div class="line">    &#123;</div><div class="line">		bar:&quot;hello&quot;</div><div class="line">	&#125;;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<p>这两个函数好像没什么不一样的地方，除了 return 后面的花括号一个是在同一行上，一个换行了。根据以往的编程经验，这种无所谓的事情到了 JS 中就要注意一下了，分别调用两个函数的结果如下:</p>
+<p><img src="http://i2.muimg.com/1949/b66d297264c067b7.png" alt=""></p>
+<p>为什么 return 后面换行之后就是 <strong>Undefined</strong> 了呢？</p>
+<p>一般编程语言的<code>;</code>是起到将两个语句分隔的作用，在 JS 中，只要一个语句自己独占一行的话，后面不用写<code>;</code>编译也不会有问题的，解析器会根据换行来判断两个语句是否独立。因此当使用到<code>return</code>、<code>break</code>、<code>continue</code>等语句后面换行时，解析器就误以为在这一行已经结束了，相当于：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">function foo2()&#123;</div><div class="line">	return;</div><div class="line">    &#123;</div><div class="line">		bar:&quot;hello&quot;</div><div class="line">	&#125;;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>所以就返回了个 undefined.</p>
+<p>我平时的习惯都是后面紧跟花括号的哈哈，喜欢直接换行的朋友要注意一下了，不然发生错误的话我还真猜不到居然是这里出错了。</p>
+<h4 id="let-和-const"><a href="#let-和-const" class="headerlink" title="let 和 const"></a>let 和 const</h4><p>let 是什么？<br>let 是更完美的 var</p>
+<p>到这里，我们明白了 let 是声明变量的另一种方法。但明明已经有 var 了，为什么还要用 let 呢？这要从 JavaScript 在设计之初引起的一些错误特性说起…这里不提，let 是为了弥补 var 的不足而诞生的，如我之前说的<strong> var 没有块级作用域，而 let 有</strong>；let 声明的全局变量不再是全局对象的属性了<strong>，而是存在于全局对象之外的一个不可见的作用域中，真正意义上的全局；用 let 重定义的时候会报错</strong>，所以 let 好像比较适合与严格模式；<strong>let 声明的变量直到控制流到达该变量被定义的代码行时才会被装载</strong>，这意味着在这之前调用 let 声明的变量的话就会报错，很严谨，跟 var 不一样。</p>
+<p>感觉 var 用多了会变得越来越不严谨哈哈，这对编程来说可不好。</p>
+<p>那么 const 有是什么？</p>
+<p>const 和 let 是同一时期的产物，基本功能一样，唯一的区别就是，const 必须在声明时赋值，只声明不赋值是会报错的，而且声明赋值后，重新给它赋值也是会报错的。感觉 const 更像传统意义上的全局变量啊。</p>
+<p>为了迎合 ES6，以后还是多用 let 吧，大势所趋。</p>
+<h4 id="0-1-0-2-！-0-3？"><a href="#0-1-0-2-！-0-3？" class="headerlink" title="0.1 + 0.2 ！= 0.3？"></a>0.1 + 0.2 ！= 0.3？</h4><p>又来一个 JS 奇葩的特性，当执行下面的语句时：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">console.log(0.1 + 0.2 == 0.3);</div></pre></td></tr></table></figure></p>
+<p>结果是莫名其妙的 <strong>false</strong>。就好像有人告诉我 1+1 不是等于 2 一样，一脸懵逼。</p>
+<p>再输出 0.1 + 0.2 看看结果是什么</p>
+<p><img src="http://i2.muimg.com/1949/40288c64df4969ca.png" alt=""></p>
+<p>看到这串怪异的数字就意识到事情并不简单，JS 中的 Number类型是浮点型来的，而且是二进制的浮点型，其运算过程是，先将 0.1 和 0.2 转换为二进制浮点数进行运算，再将结果转换成十进制输出。二进制浮点数并不能精确表示类似 0.1 这样的数字，所以会有舍入误差。</p>
+<p>那么解决方法是：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">function add(num1,num2)&#123;</div><div class="line">	let r1,r2,m;</div><div class="line">	r1 = (&apos;&apos; + num1).split(&apos;.&apos;)[1].length;</div><div class="line">	r2 = (&apos;&apos; + num2).split(&apos;.&apos;)[1].length;</div><div class="line">	m = Math.pow(10,Math.max(r1,r2));</div><div class="line">	return (num1 * m + num2 * m) / m;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>先升幂再降幂</p>
+<p>Happy Hacking!</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/10/06/Linux的目录/" class="archive-article-date">
-  	<time datetime="2016-10-06T06:00:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-10-06</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/10/06/Linux的目录/">Linux的目录</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://famousczm.github.io/2017/05/15/JS学习小记（三）/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/10/06/Hexo的评论功能/" class="archive-article-date">
-  	<time datetime="2016-10-06T05:58:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-10-06</time>
-</a>
-        </div>
-    	 
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/10/06/Hexo的评论功能/">Hexo的评论功能</a>
-    </h1>
+  
+    <a href="/2017/05/13/从修改hosts文件科学上网中理解DNS（下）/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">从修改hosts文件科学上网中理解DNS（下）</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+
+  
+  <div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="JS学习小记（三）" data-title="JS学习小记（三）" data-url="http://famousczm.github.io/2017/05/15/JS学习小记（三）/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"famousczm"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Hexo</a>
-        		</li>
-      		
-		</ul>
-	</div>
 
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/10/05/Eclispe不能导入java-util-Arrays/" class="archive-article-date">
-  	<time datetime="2016-10-05T05:55:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-10-05</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/10/05/Eclispe不能导入java-util-Arrays/">Eclispe不能导入java.util.Arrays</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/10/05/Hexo中文乱码/" class="archive-article-date">
-  	<time datetime="2016-10-05T05:52:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-10-05</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/10/05/Hexo中文乱码/">Hexo中文乱码</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Hexo</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/10/05/第一篇博客/" class="archive-article-date">
-  	<time datetime="2016-10-05T05:46:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-10-05</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/10/05/第一篇博客/">第一篇博客</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">学习心得</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/2016/">&laquo; Prev</a><a class="page-number" href="/archives/2016/">1</a><span class="page-number current">2</span>
-    </nav>
-  
 
 
           </div>
@@ -380,8 +360,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

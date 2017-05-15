@@ -16,7 +16,7 @@ max-width 属性用来给元素设置最大宽度值. 定义了 max-width 的元
 <meta property="og:site_name" content="柱铭">
 <meta property="og:description" content="max-width 属性和 min-width属性这两个属性由字面上来看是就是最大和最小长度，的确是这样。
 max-width 属性用来给元素设置最大宽度值. 定义了 max-width 的元素会在达到 max-width 值之后避免进一步按照 width 属性设置变大.也就是说 width 的值怎么也不能超过这个值。一个有点意思的值就是 fit-content ，设置值为 fit-content">
-<meta property="og:updated_time" content="2017-05-10T16:06:04.470Z">
+<meta property="og:updated_time" content="2017-05-15T08:29:56.327Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS学习小记（三）">
 <meta name="twitter:description" content="max-width 属性和 min-width属性这两个属性由字面上来看是就是最大和最小长度，的确是这样。
@@ -179,6 +179,7 @@ max-width 属性用来给元素设置最大宽度值. 定义了 max-width 的元
 <h4 id="CSS-媒体查询"><a href="#CSS-媒体查询" class="headerlink" title="CSS 媒体查询"></a>CSS 媒体查询</h4><p>好吧，媒体查询，看名字我还真猜不出是干啥用的。上网查了资料总结一些就是：<strong>能够实现“响应式设计”，针对不同的浏览器和设备“呈现”不同显示效果，毕竟不同的设备屏幕大小都会有不一样的状况出现，要使页面能够适应不同的浏览器和设备，可以用弹性盒子实现，也可以用媒体查询来实现</strong></p>
 <p>嗯，看起来用处很大，看看是怎么用的</p>
 <p>举一个例子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">@media(max-width: 600px) &#123;</div><div class="line">  .facet_sidebar &#123;</div><div class="line">     display: none;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<a id="more"></a>
 <p>声明一个媒体查询的方式是<code>@media</code>，一个页面中可以有多个，后面跟的是一个或多个表达式，表达式内容会被解释成<code>true</code>或<code>false</code>，当表达式的值都是<code>true</code>时，则执行花括号里的语句，否则不执行。诶….？？？是不是跟什么好像？对，就那个判断语句<code>if</code>，正确则执行。所以媒体查询其实是 CSS 的判断语句？其实也不算，本质是相同的，不过媒体查询还有很多玩法</p>
 <p>表达式可以有多个，那么各表达式怎么连起来？可以使用<code>not</code>，<code>and</code>和<code>only</code> 。</p>
 <p>当使用<code>and</code>连接时，如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">(min-width: 700px) and (orientation: landscape) &#123; ... &#125;</div></pre></td></tr></table></figure></p>
@@ -434,19 +435,19 @@ max-width 属性用来给元素设置最大宽度值. 定义了 max-width 的元
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Foundation</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">JS</a>
+                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">JAVA</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">JS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -462,11 +463,11 @@ max-width 属性用来给元素设置最大宽度值. 定义了 max-width 的元
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">PHP</a>
+                <a href="javascript:void(0)" class="js-tag color5">.NET</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">.NET</a>
+                <a href="javascript:void(0)" class="js-tag color4">PHP</a>
               </li>
              
               <li class="article-tag-list-item">
