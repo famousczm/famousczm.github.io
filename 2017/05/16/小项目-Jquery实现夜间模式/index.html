@@ -6,24 +6,27 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://famousczm.github.io">
-  <title>Eclispe不能导入java.util.Arrays | 柱铭</title>
+  <title>小项目:Jquery实现夜间模式 | 柱铭</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="做练习的时候，出现了不能导入java.util.Arrays的问题，找来两大java高手（反正java方面比我厉害）来研究了很久都没法解决。
-这个问题看起来的确很诡异，Arrays类确确实实存在着，能找到，其它类也能导入，但就是没办法导入这个。网上众说纷纷，都是没有什么好解决方法。
-今天把JDK1.8换成了1.7，就成功了，看来确实是版本的问题，据说是JDK1.8太新了，不太稳定。而且顺带发现并解">
+  <meta name="description" content="项目起源手机的看书软件有夜间模式来降低屏幕的亮度，在黑夜的环境下使眼睛没有那么疲惫。所以想到在用户浏览网页的时候也有这个功能就好了。而且实现也不难，在借鉴一些前辈的思路完成了这个作品
+项目功能按下按钮使背景颜色变深，文字颜色变亮，再按一下就回复原状
+实现思路按钮用隐藏 checkbox ，把 label 设置成按钮的方法。然后监听 checkbox 如果发生 onchange 事件，就判断 che">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Eclispe不能导入java.util.Arrays">
-<meta property="og:url" content="http://famousczm.github.io/2016/10/05/Eclispe不能导入java-util-Arrays/index.html">
+<meta property="og:title" content="小项目:Jquery实现夜间模式">
+<meta property="og:url" content="http://famousczm.github.io/2017/05/16/小项目-Jquery实现夜间模式/index.html">
 <meta property="og:site_name" content="柱铭">
-<meta property="og:description" content="做练习的时候，出现了不能导入java.util.Arrays的问题，找来两大java高手（反正java方面比我厉害）来研究了很久都没法解决。
-这个问题看起来的确很诡异，Arrays类确确实实存在着，能找到，其它类也能导入，但就是没办法导入这个。网上众说纷纷，都是没有什么好解决方法。
-今天把JDK1.8换成了1.7，就成功了，看来确实是版本的问题，据说是JDK1.8太新了，不太稳定。而且顺带发现并解">
-<meta property="og:updated_time" content="2017-03-18T06:00:09.597Z">
+<meta property="og:description" content="项目起源手机的看书软件有夜间模式来降低屏幕的亮度，在黑夜的环境下使眼睛没有那么疲惫。所以想到在用户浏览网页的时候也有这个功能就好了。而且实现也不难，在借鉴一些前辈的思路完成了这个作品
+项目功能按下按钮使背景颜色变深，文字颜色变亮，再按一下就回复原状
+实现思路按钮用隐藏 checkbox ，把 label 设置成按钮的方法。然后监听 checkbox 如果发生 onchange 事件，就判断 che">
+<meta property="og:image" content="http://i4.buimg.com/1949/65baed9d62bdc441.png">
+<meta property="og:image" content="http://i4.buimg.com/1949/cdf481f8100654d0.png">
+<meta property="og:updated_time" content="2017-05-16T06:12:56.897Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Eclispe不能导入java.util.Arrays">
-<meta name="twitter:description" content="做练习的时候，出现了不能导入java.util.Arrays的问题，找来两大java高手（反正java方面比我厉害）来研究了很久都没法解决。
-这个问题看起来的确很诡异，Arrays类确确实实存在着，能找到，其它类也能导入，但就是没办法导入这个。网上众说纷纷，都是没有什么好解决方法。
-今天把JDK1.8换成了1.7，就成功了，看来确实是版本的问题，据说是JDK1.8太新了，不太稳定。而且顺带发现并解">
+<meta name="twitter:title" content="小项目:Jquery实现夜间模式">
+<meta name="twitter:description" content="项目起源手机的看书软件有夜间模式来降低屏幕的亮度，在黑夜的环境下使眼睛没有那么疲惫。所以想到在用户浏览网页的时候也有这个功能就好了。而且实现也不难，在借鉴一些前辈的思路完成了这个作品
+项目功能按下按钮使背景颜色变深，文字颜色变亮，再按一下就回复原状
+实现思路按钮用隐藏 checkbox ，把 label 设置成按钮的方法。然后监听 checkbox 如果发生 onchange 事件，就判断 che">
+<meta name="twitter:image" content="http://i4.buimg.com/1949/65baed9d62bdc441.png">
   
     <link rel="alternative" href="/atom.xml" title="柱铭" type="application/atom+xml">
   
@@ -155,30 +158,40 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Eclispe不能导入java-util-Arrays" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-小项目-Jquery实现夜间模式" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Eclispe不能导入java.util.Arrays
+      小项目:Jquery实现夜间模式
     </h1>
   
 
         
-        <a href="/2016/10/05/Eclispe不能导入java-util-Arrays/" class="archive-article-date">
-  	<time datetime="2016-10-05T05:55:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-10-05</time>
+        <a href="/2017/05/16/小项目-Jquery实现夜间模式/" class="archive-article-date">
+  	<time datetime="2017-05-16T04:54:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-16</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>做练习的时候，出现了不能导入java.util.Arrays的问题，找来两大java高手（反正java方面比我厉害）来研究了很久都没法解决。</p>
-<p>这个问题看起来的确很诡异，Arrays类确确实实存在着，能找到，其它类也能导入，但就是没办法导入这个。网上众说纷纷，都是没有什么好解决方法。</p>
-<p>今天把JDK1.8换成了1.7，就成功了，看来确实是版本的问题，据说是JDK1.8太新了，不太稳定。而且顺带发现并解决了在命令行中无法编译java文件的问题 ，原因是安装JDK和jre的过程中，不能放在同一文件夹下，会有冲突。</p>
-<p>这下可以继续做作业了。</p>
+        <h5 id="项目起源"><a href="#项目起源" class="headerlink" title="项目起源"></a>项目起源</h5><p>手机的看书软件有夜间模式来降低屏幕的亮度，在黑夜的环境下使眼睛没有那么疲惫。所以想到在用户浏览网页的时候也有这个功能就好了。而且实现也不难，在借鉴一些前辈的思路完成了这个作品</p>
+<h5 id="项目功能"><a href="#项目功能" class="headerlink" title="项目功能"></a>项目功能</h5><p>按下按钮使背景颜色变深，文字颜色变亮，再按一下就回复原状</p>
+<h5 id="实现思路"><a href="#实现思路" class="headerlink" title="实现思路"></a>实现思路</h5><p>按钮用隐藏 checkbox ，把 label 设置成按钮的方法。然后监听 checkbox 如果发生 onchange 事件，就判断 checkbox 是否为 changed ，若是改变背景和字体颜色，若不是，变为原来的颜色。</p>
+<h5 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h5><p><strong>HTML</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;mode&quot;&gt;</div><div class="line">       &lt;input type=&quot;checkbox&quot; name=&quot;check&quot; id=&quot;mode&quot; class=&quot;mode__i&quot; /&gt;</div><div class="line">       &lt;label class=&quot;mode__l&quot; for=&quot;mode&quot;&gt;&lt;/label&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">&lt;p&gt;Today is a nice day&lt;/p&gt;</div></pre></td></tr></table></figure></p>
+<p>label 标签要关联 input</p>
+<p><strong>CSS</strong><br>这里我用定义全局变量的做法把背景颜色和文字颜色定义好：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">:root&#123;</div><div class="line">	--light:#ddd;</div><div class="line">	--dark:#333;</div><div class="line"></div><div class="line">	--text:var(--dark);</div><div class="line">	--bg:var(--light);</div><div class="line"></div><div class="line">	--size:100%;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>隐藏 checkbox<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.mode__i&#123;</div><div class="line">	display:none;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>用 label 代替 checkbox<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">.mode__l&#123;           /*准备代替checkbox*/</div><div class="line">	display:block;</div><div class="line">	position:relative;</div><div class="line">	width:140px;</div><div class="line">	height:40px;</div><div class="line">	margin:0 auto;</div><div class="line">	border-radius:20px;</div><div class="line">	background:#888;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>画出按钮的样式<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line">.mode__l:hover&#123;</div><div class="line">	cursor:pointer;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.mode__l::before&#123;       /*画圆*/</div><div class="line">	position:absolute;</div><div class="line">	top:0;</div><div class="line">	left:calc(50% - 20px);</div><div class="line">	background:#555;</div><div class="line">	border-radius:20px;</div><div class="line">	transition:all 300ms;</div><div class="line">	transform:translateX(-50px);</div><div class="line">	width:40px;</div><div class="line">	height:40px;</div><div class="line">	content:&apos;&apos;;</div><div class="line">	z-index:1;</div><div class="line">&#125;</div><div class="line">.mode__l::after&#123;</div><div class="line">	position:absolute;</div><div class="line">	top:50%;</div><div class="line">	left:50%;</div><div class="line">	transform:translate(-50%,-50%);</div><div class="line">	font-size:14px;</div><div class="line">	font-family:monospace;</div><div class="line">	color:#fff;</div><div class="line">	content:&apos;day&apos;;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.mode__i:checked + label::before&#123;</div><div class="line">	transform:translateX(50px);</div><div class="line">&#125;</div><div class="line">.mode__i:checked + label:after&#123;</div><div class="line">	content:&apos;night&apos;;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><strong>JavaScript</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">$(&apos;#mode&apos;).on(&apos;change&apos;,function()&#123;</div><div class="line">	if($(&apos;#mode&apos;).is(&apos;:checked&apos;) === true)&#123;</div><div class="line">		$(&apos;body&apos;).css(&apos;--bg&apos;,&apos;var(--dark)&apos;);</div><div class="line">		$(&apos;body&apos;).css(&apos;--text&apos;,&apos;var(--light)&apos;);</div><div class="line">	&#125;else&#123;</div><div class="line">		$(&apos;body&apos;).css(&apos;--bg&apos;,&apos;var(--light)&apos;);</div><div class="line">		$(&apos;body&apos;).css(&apos;--text&apos;,&apos;var(--dark)&apos;);</div><div class="line">	&#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p>记得要先引入 JQuery 文件</p>
+<h5 id="运行结果"><a href="#运行结果" class="headerlink" title="运行结果"></a>运行结果</h5><p><img src="http://i4.buimg.com/1949/65baed9d62bdc441.png" alt=""></p>
+<p><img src="http://i4.buimg.com/1949/cdf481f8100654d0.png" alt=""></p>
+<p>详细代码我放在了 github 上 <a href="https://github.com/famousczm/Night-Mode/tree/master" target="_blank">点我</a></p>
 
       
 
@@ -213,7 +226,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">项目</a>
         		</li>
       		
 		</ul>
@@ -269,7 +282,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://famousczm.github.io/2016/10/05/Eclispe不能导入java-util-Arrays/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://famousczm.github.io/2017/05/16/小项目-Jquery实现夜间模式/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -283,18 +296,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2016/10/06/Hexo的评论功能/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Hexo的评论功能
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/10/05/Hexo中文乱码/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Hexo中文乱码</div>
+    <a href="/2017/05/15/JS学习小记（三）/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">JS学习小记（三）</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -308,7 +312,7 @@
   
   <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="Eclispe不能导入java-util-Arrays" data-title="Eclispe不能导入java.util.Arrays" data-url="http://famousczm.github.io/2016/10/05/Eclispe不能导入java-util-Arrays/"></div>
+	<div class="ds-thread" data-thread-key="小项目-Jquery实现夜间模式" data-title="小项目:Jquery实现夜间模式" data-url="http://famousczm.github.io/2017/05/16/小项目-Jquery实现夜间模式/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
