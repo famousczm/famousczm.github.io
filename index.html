@@ -150,6 +150,79 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-CSS学习小记（四）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/05/17/CSS学习小记（四）/">CSS学习小记（四）</a>
+    </h1>
+  
+
+        
+        <a href="/2017/05/17/CSS学习小记（四）/" class="archive-article-date">
+  	<time datetime="2017-05-17T14:15:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-17</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="box-sizing"><a href="#box-sizing" class="headerlink" title="box-sizing"></a>box-sizing</h4><p>在做项目的过程中，有时定义了两个宽度相同的 div ，但是为其中一个添加了 padding 和 border 之后，宽度却不一样了，因为被 padding 和 border 硬生生给撑开了，这种事情是非常苦恼的，之前是通过减少宽度来使总宽度保持一致。直到发现了这个属性。</p>
+<p><strong>box-sizing</strong> 属性用于更改用于计算元素宽度和高度的默认的 CSS 盒子模型。可以使用此属性来模拟不正确支持CSS盒子模型规范的浏览器的行为。</p>
+<p>我的那个问题只需要在两个 div 内设置<code>box-sizing:border-box</code>就 ok 了，这属性设置的意思是此元素的内边距和边框不再会增加它的宽度。这样 div 的宽度就不会因为 padding 和 border 的设置而改变了。</p>
+<p>默认值是<code>box-sizing:content-box</code>，这个就是平时说的标准盒子模型了，设置边框和内边框会使宽度增加。</p>
+<p>由于这也是实验中的属性，使用时最好加上浏览器前缀。</p>
+<h4 id="transform-style-和-outline-style"><a href="#transform-style-和-outline-style" class="headerlink" title="transform-style 和 outline-style"></a>transform-style 和 outline-style</h4><p><code>transform-style</code>这个属性用于指定使用该属性的元素的子元素是位于三维空间还是二维平面上。所以其值有两个，<code>flat</code> 和 <code>preserve-3d</code>。<code>flat</code>指定子元素位于平面内，是默认值。<code>preserve-3d</code>指定子元素位于三维空间中。在实现3D效果时，该属性起到非常关键的作用。</p>
+<p><code>outline-style</code>属性是用于设置一个元素轮廓的样式。那么轮廓是什么？跟边框有什么区别吗？</p>
+<p>轮廓是围绕元素绘制的线，在边框边缘之外，以突出元素。边框是矩形的且占据一定空间，而轮廓虚无缥缈，不一定是矩形也不占据空间。</p>
+<p><code>outline-style</code>的取值和<code>border-style</code>差不多，而<code>border</code>是集合了<code>border-style</code>、<code>border-width</code>、<code>border-color</code>三种属性的简写属性，同理，<code>outline</code>也是集合了<code>outline-style</code>、<code>outline-width</code>、<code>outline-color</code>三种属性的简写属性。用法也就和<code>border</code>一样。</p>
+<h4 id="显示-title-标签内容"><a href="#显示-title-标签内容" class="headerlink" title="显示 title 标签内容"></a>显示 title 标签内容</h4><p>以前我一直认为 title 标签只是设置网页顶部的文字，只存在于那里。直到我偶然地使用JQuery选择器将所有的元素显示出来时，即如下语句：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(&quot;*&quot;).css(&quot;display&quot;,&quot;block&quot;);</div></pre></td></tr></table></figure></p>
+<p>发现多了个奇怪的字符，对比了一下文档中只有 title 元素才设置了这个值。用开发者工具查看，原来 title 元素平时默认是隐藏的。嘛，这的确是些微不足道的细节，但是突然发现这些细节时又会觉得很惊奇像发现什么新大陆似的。</p>
+<p>下个星期要去面试了，希望一切都好</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/05/17/CSS学习小记（四）/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-小项目-Jquery实现夜间模式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -426,73 +499,6 @@
 
 
   
-    <article id="post-从修改hosts文件科学上网中理解DNS（上）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/05/07/从修改hosts文件科学上网中理解DNS（上）/">从修改hosts文件科学上网中理解DNS（上）</a>
-    </h1>
-  
-
-        
-        <a href="/2017/05/07/从修改hosts文件科学上网中理解DNS（上）/" class="archive-article-date">
-  	<time datetime="2017-05-07T09:43:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-07</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>科学上网的方法有多种，我之前用的免费软件 <strong>Lantern</strong> 已经开始限流量了。经朋友指点，只要修改电脑中的 <strong>hosts</strong> 文件就可以访问 Google 了，为什么会这么神奇呢？先看看里面的是什么东西，Window 上的 hosts 文件在<code>C:\Windows\System32\drivers\etc\hosts</code>这个地方。用文本编辑器打开：</p>
-<p><img src="http://i1.piimg.com/1949/f8a3f523691bfab8.png" alt=""></p>
-<p>可以看出里面都是一条条 IP 地址 + 域名的记录，用来进行 IP 地址的映射，当我们在浏览器上输入一个域名的时候，如百度：<code>www.baidu.com</code>，浏览器会先在 这个 hosts 文件中根据域名找到对应的 IP 地址，然后访问目标主机。这个过程是不是很熟悉？对！这就是 <strong>DNS</strong> (域名解析系统)的工作方式了。</p>
-<p>可以发现更熟悉的代表本地计算机的回环 IP 地址的映射<code>127.0.0.1    localhost</code>都是在 hosts 文件中定义的。<br>
-        
-          <a class="article-more-a" href="/2017/05/07/从修改hosts文件科学上网中理解DNS（上）/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">计算机</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/05/07/从修改hosts文件科学上网中理解DNS（上）/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -602,11 +608,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">JS</a>
+                <a href="javascript:void(0)" class="js-tag color5">JAVA</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">JAVA</a>
+                <a href="javascript:void(0)" class="js-tag color3">JS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -618,19 +624,19 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Oracle</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">PHP</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">.NET</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Oracle</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">SVG</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">PHP</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -642,11 +648,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">树莓派</a>
+                <a href="javascript:void(0)" class="js-tag color5">学习心得</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">学习心得</a>
+                <a href="javascript:void(0)" class="js-tag color4">树莓派</a>
               </li>
              
               <li class="article-tag-list-item">
