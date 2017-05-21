@@ -20,7 +20,7 @@
 实现思路按钮用隐藏 checkbox ，把 label 设置成按钮的方法。然后监听 checkbox 如果发生 onchange 事件，就判断 che">
 <meta property="og:image" content="http://i4.buimg.com/1949/65baed9d62bdc441.png">
 <meta property="og:image" content="http://i4.buimg.com/1949/cdf481f8100654d0.png">
-<meta property="og:updated_time" content="2017-05-16T06:12:56.897Z">
+<meta property="og:updated_time" content="2017-05-18T12:14:30.115Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="小项目:Jquery实现夜间模式">
 <meta name="twitter:description" content="项目起源手机的看书软件有夜间模式来降低屏幕的亮度，在黑夜的环境下使眼睛没有那么疲惫。所以想到在用户浏览网页的时候也有这个功能就好了。而且实现也不难，在借鉴一些前辈的思路完成了这个作品
@@ -180,7 +180,7 @@
       
         <h5 id="项目起源"><a href="#项目起源" class="headerlink" title="项目起源"></a>项目起源</h5><p>手机的看书软件有夜间模式来降低屏幕的亮度，在黑夜的环境下使眼睛没有那么疲惫。所以想到在用户浏览网页的时候也有这个功能就好了。而且实现也不难，在借鉴一些前辈的思路完成了这个作品</p>
 <h5 id="项目功能"><a href="#项目功能" class="headerlink" title="项目功能"></a>项目功能</h5><p>按下按钮使背景颜色变深，文字颜色变亮，再按一下就回复原状</p>
-<h5 id="实现思路"><a href="#实现思路" class="headerlink" title="实现思路"></a>实现思路</h5><p>按钮用隐藏 checkbox ，把 label 设置成按钮的方法。然后监听 checkbox 如果发生 onchange 事件，就判断 checkbox 是否为 changed ，若是改变背景和字体颜色，若不是，变为原来的颜色。</p>
+<h5 id="实现思路"><a href="#实现思路" class="headerlink" title="实现思路"></a>实现思路</h5><p>按钮用隐藏 checkbox ，把 label 设置成按钮的方法。然后监听 checkbox 如果发生 onchange 事件，就判断 checkbox 是否为 changed ，若是改变背景和字体颜色，若不是，变为原来的颜色。<br><a id="more"></a></p>
 <h5 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h5><p><strong>HTML</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;mode&quot;&gt;</div><div class="line">       &lt;input type=&quot;checkbox&quot; name=&quot;check&quot; id=&quot;mode&quot; class=&quot;mode__i&quot; /&gt;</div><div class="line">       &lt;label class=&quot;mode__l&quot; for=&quot;mode&quot;&gt;&lt;/label&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">&lt;p&gt;Today is a nice day&lt;/p&gt;</div></pre></td></tr></table></figure></p>
 <p>label 标签要关联 input</p>
 <p><strong>CSS</strong><br>这里我用定义全局变量的做法把背景颜色和文字颜色定义好：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">:root&#123;</div><div class="line">	--light:#ddd;</div><div class="line">	--dark:#333;</div><div class="line"></div><div class="line">	--text:var(--dark);</div><div class="line">	--bg:var(--light);</div><div class="line"></div><div class="line">	--size:100%;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
@@ -437,15 +437,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Foundation</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">JAVA</a>
+                <a href="javascript:void(0)" class="js-tag color1">Foundation</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -461,15 +457,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">.NET</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Oracle</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SVG</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -477,11 +465,19 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">计算机</a>
+                <a href="javascript:void(0)" class="js-tag color5">.NET</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">SVG</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">项目</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">计算机</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -490,6 +486,10 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">树莓派</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">JAVA</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -574,6 +574,10 @@
           
             <li class="search-li">
               <a href="http://selfboot.cn/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>Just For Fun</a>
+            </li>
+          
+            <li class="search-li">
+              <a href="http://www.cnblogs.com/sussski/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>红河小鱼</a>
             </li>
           
         </ul>

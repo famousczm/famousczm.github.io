@@ -16,7 +16,7 @@ box-sizing 属性用于更改用于计算元素宽度和高度的默认的 CSS �
 <meta property="og:site_name" content="柱铭">
 <meta property="og:description" content="box-sizing在做项目的过程中，有时定义了两个宽度相同的 div ，但是为其中一个添加了 padding 和 border 之后，宽度却不一样了，因为被 padding 和 border 硬生生给撑开了，这种事情是非常苦恼的，之前是通过减少宽度来使总宽度保持一致。直到发现了这个属性。
 box-sizing 属性用于更改用于计算元素宽度和高度的默认的 CSS 盒子模型。可以使用此属性来模拟不正">
-<meta property="og:updated_time" content="2017-05-18T10:57:21.910Z">
+<meta property="og:updated_time" content="2017-05-18T12:13:50.443Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS学习小记（四）">
 <meta name="twitter:description" content="box-sizing在做项目的过程中，有时定义了两个宽度相同的 div ，但是为其中一个添加了 padding 和 border 之后，宽度却不一样了，因为被 padding 和 border 硬生生给撑开了，这种事情是非常苦恼的，之前是通过减少宽度来使总宽度保持一致。直到发现了这个属性。
@@ -176,7 +176,7 @@ box-sizing 属性用于更改用于计算元素宽度和高度的默认的 CSS �
 <p><strong>box-sizing</strong> 属性用于更改用于计算元素宽度和高度的默认的 CSS 盒子模型。可以使用此属性来模拟不正确支持CSS盒子模型规范的浏览器的行为。</p>
 <p>我的那个问题只需要在两个 div 内设置<code>box-sizing:border-box</code>就 ok 了，这属性设置的意思是此元素的内边距和边框不再会增加它的宽度。这样 div 的宽度就不会因为 padding 和 border 的设置而改变了。</p>
 <p>默认值是<code>box-sizing:content-box</code>，这个就是平时说的标准盒子模型了，设置边框和内边框会使宽度增加。</p>
-<p>由于这也是实验中的属性，使用时最好加上浏览器前缀。</p>
+<p>由于这也是实验中的属性，使用时最好加上浏览器前缀。<br><a id="more"></a></p>
 <h4 id="transform-style-和-outline-style"><a href="#transform-style-和-outline-style" class="headerlink" title="transform-style 和 outline-style"></a>transform-style 和 outline-style</h4><p><code>transform-style</code>这个属性用于指定使用该属性的元素的子元素是位于三维空间还是二维平面上。所以其值有两个，<code>flat</code> 和 <code>preserve-3d</code>。<code>flat</code>指定子元素位于平面内，是默认值。<code>preserve-3d</code>指定子元素位于三维空间中。在实现3D效果时，该属性起到非常关键的作用。</p>
 <p><code>outline-style</code>属性是用于设置一个元素轮廓的样式。那么轮廓是什么？跟边框有什么区别吗？</p>
 <p>轮廓是围绕元素绘制的线，在边框边缘之外，以突出元素。边框是矩形的且占据一定空间，而轮廓虚无缥缈，不一定是矩形也不占据空间。</p>
@@ -287,6 +287,15 @@ box-sizing 属性用于更改用于计算元素宽度和高度的默认的 CSS �
 
   
 <nav id="article-nav">
+  
+    <a href="/2017/05/21/用CSS实现的效果（一）/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          用CSS实现的效果（一）
+        
+      </div>
+    </a>
   
   
     <a href="/2017/05/16/小项目-Jquery实现夜间模式/" id="article-nav-older" class="article-nav-link-wrap">
@@ -420,15 +429,11 @@ box-sizing 属性用于更改用于计算元素宽度和高度的默认的 CSS �
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Foundation</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">JAVA</a>
+                <a href="javascript:void(0)" class="js-tag color1">Foundation</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -444,15 +449,7 @@ box-sizing 属性用于更改用于计算元素宽度和高度的默认的 CSS �
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">.NET</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Oracle</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SVG</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -460,11 +457,19 @@ box-sizing 属性用于更改用于计算元素宽度和高度的默认的 CSS �
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">计算机</a>
+                <a href="javascript:void(0)" class="js-tag color5">.NET</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">SVG</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">项目</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">计算机</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -473,6 +478,10 @@ box-sizing 属性用于更改用于计算元素宽度和高度的默认的 CSS �
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">树莓派</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">JAVA</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -557,6 +566,10 @@ box-sizing 属性用于更改用于计算元素宽度和高度的默认的 CSS �
           
             <li class="search-li">
               <a href="http://selfboot.cn/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>Just For Fun</a>
+            </li>
+          
+            <li class="search-li">
+              <a href="http://www.cnblogs.com/sussski/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>红河小鱼</a>
             </li>
           
         </ul>

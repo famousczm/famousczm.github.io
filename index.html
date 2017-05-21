@@ -150,6 +150,71 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-用CSS实现的效果（一）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/05/21/用CSS实现的效果（一）/">用CSS实现的效果（一）</a>
+    </h1>
+  
+
+        
+        <a href="/2017/05/21/用CSS实现的效果（一）/" class="archive-article-date">
+  	<time datetime="2017-05-21T07:07:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-21</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>怎么用 CSS 实现鼠标指向某个图标会自动在该图标上方显现相关内容呢？效果如下：</p>
+<p><img src="http://i4.buimg.com/1949/52baf72c9964a050.png" alt=""><br>
+        
+          <a class="article-more-a" href="/2017/05/21/用CSS实现的效果（一）/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/05/21/用CSS实现的效果（一）/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-CSS学习小记（四）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -174,15 +239,10 @@
 <p><strong>box-sizing</strong> 属性用于更改用于计算元素宽度和高度的默认的 CSS 盒子模型。可以使用此属性来模拟不正确支持CSS盒子模型规范的浏览器的行为。</p>
 <p>我的那个问题只需要在两个 div 内设置<code>box-sizing:border-box</code>就 ok 了，这属性设置的意思是此元素的内边距和边框不再会增加它的宽度。这样 div 的宽度就不会因为 padding 和 border 的设置而改变了。</p>
 <p>默认值是<code>box-sizing:content-box</code>，这个就是平时说的标准盒子模型了，设置边框和内边框会使宽度增加。</p>
-<p>由于这也是实验中的属性，使用时最好加上浏览器前缀。</p>
-<h4 id="transform-style-和-outline-style"><a href="#transform-style-和-outline-style" class="headerlink" title="transform-style 和 outline-style"></a>transform-style 和 outline-style</h4><p><code>transform-style</code>这个属性用于指定使用该属性的元素的子元素是位于三维空间还是二维平面上。所以其值有两个，<code>flat</code> 和 <code>preserve-3d</code>。<code>flat</code>指定子元素位于平面内，是默认值。<code>preserve-3d</code>指定子元素位于三维空间中。在实现3D效果时，该属性起到非常关键的作用。</p>
-<p><code>outline-style</code>属性是用于设置一个元素轮廓的样式。那么轮廓是什么？跟边框有什么区别吗？</p>
-<p>轮廓是围绕元素绘制的线，在边框边缘之外，以突出元素。边框是矩形的且占据一定空间，而轮廓虚无缥缈，不一定是矩形也不占据空间。</p>
-<p><code>outline-style</code>的取值和<code>border-style</code>差不多，而<code>border</code>是集合了<code>border-style</code>、<code>border-width</code>、<code>border-color</code>三种属性的简写属性，同理，<code>outline</code>也是集合了<code>outline-style</code>、<code>outline-width</code>、<code>outline-color</code>三种属性的简写属性。用法也就和<code>border</code>一样。</p>
-<h4 id="显示-title-标签内容"><a href="#显示-title-标签内容" class="headerlink" title="显示 title 标签内容"></a>显示 title 标签内容</h4><p>以前我一直认为 title 标签只是设置网页顶部的文字，只存在于那里。直到我偶然地使用JQuery选择器将所有的元素显示出来时，即如下语句：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(&quot;*&quot;).css(&quot;display&quot;,&quot;block&quot;);</div></pre></td></tr></table></figure></p>
-<p>发现多了个奇怪的字符，对比了一下文档中只有 title 元素才设置了这个值。用开发者工具查看，原来 title 元素平时默认是隐藏的。嘛，这的确是些微不足道的细节，但是突然发现这些细节时又会觉得很惊奇像发现什么新大陆似的。</p>
-<p>下个星期要去面试了，希望一切都好</p>
-
+<p>由于这也是实验中的属性，使用时最好加上浏览器前缀。<br>
+        
+          <a class="article-more-a" href="/2017/05/17/CSS学习小记（四）/#more">more >></a>
+        
       
 
       
@@ -245,19 +305,10 @@
       
         <h5 id="项目起源"><a href="#项目起源" class="headerlink" title="项目起源"></a>项目起源</h5><p>手机的看书软件有夜间模式来降低屏幕的亮度，在黑夜的环境下使眼睛没有那么疲惫。所以想到在用户浏览网页的时候也有这个功能就好了。而且实现也不难，在借鉴一些前辈的思路完成了这个作品</p>
 <h5 id="项目功能"><a href="#项目功能" class="headerlink" title="项目功能"></a>项目功能</h5><p>按下按钮使背景颜色变深，文字颜色变亮，再按一下就回复原状</p>
-<h5 id="实现思路"><a href="#实现思路" class="headerlink" title="实现思路"></a>实现思路</h5><p>按钮用隐藏 checkbox ，把 label 设置成按钮的方法。然后监听 checkbox 如果发生 onchange 事件，就判断 checkbox 是否为 changed ，若是改变背景和字体颜色，若不是，变为原来的颜色。</p>
-<h5 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h5><p><strong>HTML</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;mode&quot;&gt;</div><div class="line">       &lt;input type=&quot;checkbox&quot; name=&quot;check&quot; id=&quot;mode&quot; class=&quot;mode__i&quot; /&gt;</div><div class="line">       &lt;label class=&quot;mode__l&quot; for=&quot;mode&quot;&gt;&lt;/label&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">&lt;p&gt;Today is a nice day&lt;/p&gt;</div></pre></td></tr></table></figure></p>
-<p>label 标签要关联 input</p>
-<p><strong>CSS</strong><br>这里我用定义全局变量的做法把背景颜色和文字颜色定义好：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">:root&#123;</div><div class="line">	--light:#ddd;</div><div class="line">	--dark:#333;</div><div class="line"></div><div class="line">	--text:var(--dark);</div><div class="line">	--bg:var(--light);</div><div class="line"></div><div class="line">	--size:100%;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>隐藏 checkbox<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.mode__i&#123;</div><div class="line">	display:none;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>用 label 代替 checkbox<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">.mode__l&#123;           /*准备代替checkbox*/</div><div class="line">	display:block;</div><div class="line">	position:relative;</div><div class="line">	width:140px;</div><div class="line">	height:40px;</div><div class="line">	margin:0 auto;</div><div class="line">	border-radius:20px;</div><div class="line">	background:#888;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>画出按钮的样式<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line">.mode__l:hover&#123;</div><div class="line">	cursor:pointer;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.mode__l::before&#123;       /*画圆*/</div><div class="line">	position:absolute;</div><div class="line">	top:0;</div><div class="line">	left:calc(50% - 20px);</div><div class="line">	background:#555;</div><div class="line">	border-radius:20px;</div><div class="line">	transition:all 300ms;</div><div class="line">	transform:translateX(-50px);</div><div class="line">	width:40px;</div><div class="line">	height:40px;</div><div class="line">	content:&apos;&apos;;</div><div class="line">	z-index:1;</div><div class="line">&#125;</div><div class="line">.mode__l::after&#123;</div><div class="line">	position:absolute;</div><div class="line">	top:50%;</div><div class="line">	left:50%;</div><div class="line">	transform:translate(-50%,-50%);</div><div class="line">	font-size:14px;</div><div class="line">	font-family:monospace;</div><div class="line">	color:#fff;</div><div class="line">	content:&apos;day&apos;;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.mode__i:checked + label::before&#123;</div><div class="line">	transform:translateX(50px);</div><div class="line">&#125;</div><div class="line">.mode__i:checked + label:after&#123;</div><div class="line">	content:&apos;night&apos;;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p><strong>JavaScript</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">$(&apos;#mode&apos;).on(&apos;change&apos;,function()&#123;</div><div class="line">	if($(&apos;#mode&apos;).is(&apos;:checked&apos;) === true)&#123;</div><div class="line">		$(&apos;body&apos;).css(&apos;--bg&apos;,&apos;var(--dark)&apos;);</div><div class="line">		$(&apos;body&apos;).css(&apos;--text&apos;,&apos;var(--light)&apos;);</div><div class="line">	&#125;else&#123;</div><div class="line">		$(&apos;body&apos;).css(&apos;--bg&apos;,&apos;var(--light)&apos;);</div><div class="line">		$(&apos;body&apos;).css(&apos;--text&apos;,&apos;var(--dark)&apos;);</div><div class="line">	&#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
-<p>记得要先引入 JQuery 文件</p>
-<h5 id="运行结果"><a href="#运行结果" class="headerlink" title="运行结果"></a>运行结果</h5><p><img src="http://i4.buimg.com/1949/65baed9d62bdc441.png" alt=""></p>
-<p><img src="http://i4.buimg.com/1949/cdf481f8100654d0.png" alt=""></p>
-<p>详细代码我放在了 github 上 <a href="https://github.com/famousczm/Night-Mode/tree/master" target="_blank">点我</a></p>
-
+<h5 id="实现思路"><a href="#实现思路" class="headerlink" title="实现思路"></a>实现思路</h5><p>按钮用隐藏 checkbox ，把 label 设置成按钮的方法。然后监听 checkbox 如果发生 onchange 事件，就判断 checkbox 是否为 changed ，若是改变背景和字体颜色，若不是，变为原来的颜色。<br>
+        
+          <a class="article-more-a" href="/2017/05/16/小项目-Jquery实现夜间模式/#more">more >></a>
+        
       
 
       
@@ -429,76 +480,6 @@
 
 
   
-    <article id="post-CSS学习小记（三）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/05/10/CSS学习小记（三）/">CSS学习小记（三）</a>
-    </h1>
-  
-
-        
-        <a href="/2017/05/10/CSS学习小记（三）/" class="archive-article-date">
-  	<time datetime="2017-05-10T15:03:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-10</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="max-width-属性和-min-width属性"><a href="#max-width-属性和-min-width属性" class="headerlink" title="max-width 属性和 min-width属性"></a>max-width 属性和 min-width属性</h4><p>这两个属性由字面上来看是就是最大和最小长度，的确是这样。</p>
-<p>max-width 属性用来给元素设置最大宽度值. 定义了 max-width 的元素会在达到 max-width 值之后避免进一步按照 width 属性设置变大.也就是说 width 的值怎么也不能超过这个值。一个有点意思的值就是 fit-content ，设置值为 fit-content 时可以使其根据内容的长度来决定最大宽度。设置了 max-width 后，之前设置的 width 就会失效被覆盖。</p>
-<p>min-width 属性与 max-width 差不多，设置指定元素的最小宽度，不过它比 max-width 更强，如果设置了 min-width ，之前设置的 width 和 max-width 都会失效被覆盖。</p>
-<p>这两个属性一般用于 <strong>CSS 媒体查询</strong>中</p>
-<h4 id="CSS-媒体查询"><a href="#CSS-媒体查询" class="headerlink" title="CSS 媒体查询"></a>CSS 媒体查询</h4><p>好吧，媒体查询，看名字我还真猜不出是干啥用的。上网查了资料总结一些就是：<strong>能够实现“响应式设计”，针对不同的浏览器和设备“呈现”不同显示效果，毕竟不同的设备屏幕大小都会有不一样的状况出现，要使页面能够适应不同的浏览器和设备，可以用弹性盒子实现，也可以用媒体查询来实现</strong></p>
-<p>嗯，看起来用处很大，看看是怎么用的</p>
-<p>举一个例子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">@media(max-width: 600px) &#123;</div><div class="line">  .facet_sidebar &#123;</div><div class="line">     display: none;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-        
-          <a class="article-more-a" href="/2017/05/10/CSS学习小记（三）/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/05/10/CSS学习小记（三）/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -600,15 +581,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Foundation</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">JAVA</a>
+                <a href="javascript:void(0)" class="js-tag color1">Foundation</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -624,15 +601,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">.NET</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Oracle</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SVG</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -640,11 +609,19 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">计算机</a>
+                <a href="javascript:void(0)" class="js-tag color5">.NET</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">SVG</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">项目</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">计算机</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -653,6 +630,10 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">树莓派</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">JAVA</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -737,6 +718,10 @@
           
             <li class="search-li">
               <a href="http://selfboot.cn/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>Just For Fun</a>
+            </li>
+          
+            <li class="search-li">
+              <a href="http://www.cnblogs.com/sussski/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>红河小鱼</a>
             </li>
           
         </ul>
