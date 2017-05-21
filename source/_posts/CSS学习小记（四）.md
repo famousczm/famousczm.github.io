@@ -13,6 +13,7 @@ tags: CSS
 默认值是`box-sizing:content-box`，这个就是平时说的标准盒子模型了，设置边框和内边框会使宽度增加。
 
 由于这也是实验中的属性，使用时最好加上浏览器前缀。
+<!--more-->
 
 #### transform-style 和 outline-style
 `transform-style `这个属性用于指定使用该属性的元素的子元素是位于三维空间还是二维平面上。所以其值有两个，`flat` 和 `preserve-3d`。`flat`指定子元素位于平面内，是默认值。`preserve-3d`指定子元素位于三维空间中。在实现3D效果时，该属性起到非常关键的作用。

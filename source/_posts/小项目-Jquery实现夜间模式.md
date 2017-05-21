@@ -12,6 +12,7 @@ tags: 项目
 
 ##### 实现思路
 按钮用隐藏 checkbox ，把 label 设置成按钮的方法。然后监听 checkbox 如果发生 onchange 事件，就判断 checkbox 是否为 changed ，若是改变背景和字体颜色，若不是，变为原来的颜色。
+<!--more-->
 
 ##### 代码实现
 **HTML**
