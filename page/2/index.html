@@ -150,6 +150,71 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-JS学习小记（三）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/05/15/JS学习小记（三）/">JS学习小记（三）</a>
+    </h1>
+  
+
+        
+        <a href="/2017/05/15/JS学习小记（三）/" class="archive-article-date">
+  	<time datetime="2017-05-15T04:45:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-15</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="return-后面换行的问题"><a href="#return-后面换行的问题" class="headerlink" title="return 后面换行的问题"></a>return 后面换行的问题</h4><p>这是在一个 JS 的面试题里看到的，觉得应该注意一下，先看下面的两个函数：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">function fool()&#123;</div><div class="line">	return&#123;</div><div class="line">		bar:&quot;hello&quot;</div><div class="line">	&#125;;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">function foo2()&#123;</div><div class="line">	return</div><div class="line">    &#123;</div><div class="line">		bar:&quot;hello&quot;</div><div class="line">	&#125;;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2017/05/15/JS学习小记（三）/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/05/15/JS学习小记（三）/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-从修改hosts文件科学上网中理解DNS（下）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -420,78 +485,9 @@
 
 
   
-    <article id="post-CSS学习小记（二）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/05/02/CSS学习小记（二）/">CSS学习小记（二）</a>
-    </h1>
-  
-
-        
-        <a href="/2017/05/02/CSS学习小记（二）/" class="archive-article-date">
-  	<time datetime="2017-05-02T12:32:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-02</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="root伪类"><a href="#root伪类" class="headerlink" title=":root伪类"></a>:root伪类</h3><p><strong>:root</strong> 伪类用于匹配文档树的根元素，在 HTML 文档中，<strong>:root</strong> 表示为<code>&lt;html&gt;</code><br>元素，声明全局 CSS 变量的时候很有用，用法如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">:root&#123;</div><div class="line">  background-color: cornflowerblue;</div><div class="line">  padding: 3em;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>相当于在声明 html 标签的 CSS 变量，不过伪类选择器具有类的特性，优先级比标签选择器要高<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">html&#123;</div><div class="line">  background-color: cornflowerblue;</div><div class="line">  padding: 3em;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h3 id="CSS变量"><a href="#CSS变量" class="headerlink" title="CSS变量"></a>CSS变量</h3><p>在很多编程语言中，都会有变量这种基本的概念，可以方便地传值赋值，使代码变得清晰易懂，还可以提高程序的性能。但是我在学习 CSS 的过程中一直没有发现有变量的存在，CSS 一直用于描述文档的样式，好像变量的用处也不大。但久而久之，例如开发一些大型网站，很多样式都有重复的值，例如颜色，光写这6个字符组成的十六进制数就很容易让人出错。所以也就越发觉得变量的必要。随着 Sass 等 CSS 预编译工具的流行，变量也逐渐被官方所认可并且规定出来了。</p>
-<p>声明一个变量的方法，我们可以在<code>:root</code>里面当做全局变量声明：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">:root&#123;</div><div class="line">   --light: #ddd;</div><div class="line">   --dark: #333;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>在变量名前加上<code>--</code>就可以啦。当在需要使用变量时，用<code>var(变量名)</code>来是使用，十分方便：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">body&#123;</div><div class="line">   color: var(--light);</div><div class="line">   background-color: var(--dark);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>由于这还是个在实验中的功能，所以未来 CSS 变量的语法可能还会改变，让我们继续期待它的成长<br>
-        
-          <a class="article-more-a" href="/2017/05/02/CSS学习小记（二）/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/05/02/CSS学习小记（二）/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
     </nav>
   
 
@@ -586,19 +582,19 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Foundation</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Foundation</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">JAVA</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -618,10 +614,6 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">PHP</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">.NET</a>
               </li>
              
@@ -630,15 +622,19 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">PHP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">计算机</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">项目</a>
+                <a href="javascript:void(0)" class="js-tag color4">树莓派</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">树莓派</a>
+                <a href="javascript:void(0)" class="js-tag color3">项目</a>
               </li>
              
               <li class="article-tag-list-item">
