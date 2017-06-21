@@ -6,17 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://famousczm.github.io">
-  <title>Archives: 2017/5 | 柱铭</title>
+  <title>微信小程序--demo代码分析 | 柱铭</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="嘿！朋友">
-<meta property="og:type" content="website">
-<meta property="og:title" content="柱铭">
-<meta property="og:url" content="http://famousczm.github.io/archives/2017/05/index.html">
+  <meta name="description" content="微信小程序已经出来很久了，很多公司都开发了自家产品的小程序版本来迎合这股热潮，大家都非常看好小程序，认为这就是未来。我也是这么认为的，虽然好像反响不大，朋友圈里也没怎么看到相关消息，不免觉得有点失望。我觉得大部分的原因是大家都找不到小程序的入口在哪哈哈，因为要激活，然后大部分必要的应用自己手机都有安装，而且用习惯了就直接打开手机上的 APP 就行了，所以就感觉小程序没什么新奇的地方。其实小程序不但">
+<meta property="og:type" content="article">
+<meta property="og:title" content="微信小程序--demo代码分析">
+<meta property="og:url" content="http://famousczm.github.io/2017/06/20/微信小程序-demo代码分析/index.html">
 <meta property="og:site_name" content="柱铭">
-<meta property="og:description" content="嘿！朋友">
+<meta property="og:description" content="微信小程序已经出来很久了，很多公司都开发了自家产品的小程序版本来迎合这股热潮，大家都非常看好小程序，认为这就是未来。我也是这么认为的，虽然好像反响不大，朋友圈里也没怎么看到相关消息，不免觉得有点失望。我觉得大部分的原因是大家都找不到小程序的入口在哪哈哈，因为要激活，然后大部分必要的应用自己手机都有安装，而且用习惯了就直接打开手机上的 APP 就行了，所以就感觉小程序没什么新奇的地方。其实小程序不但">
+<meta property="og:image" content="http://i4.piimg.com/1949/07dfb6deed7763ba.png">
+<meta property="og:image" content="http://i4.piimg.com/1949/a8bac6f629f69e05.png">
+<meta property="og:image" content="http://i4.piimg.com/1949/47eafa0eaea92ed4.png">
+<meta property="og:image" content="http://i4.piimg.com/1949/37a933d40e958a23.png">
+<meta property="og:image" content="http://i2.muimg.com/1949/379d2b8bed6b43b5.png">
+<meta property="og:updated_time" content="2017-06-21T03:57:28.785Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="柱铭">
-<meta name="twitter:description" content="嘿！朋友">
+<meta name="twitter:title" content="微信小程序--demo代码分析">
+<meta name="twitter:description" content="微信小程序已经出来很久了，很多公司都开发了自家产品的小程序版本来迎合这股热潮，大家都非常看好小程序，认为这就是未来。我也是这么认为的，虽然好像反响不大，朋友圈里也没怎么看到相关消息，不免觉得有点失望。我觉得大部分的原因是大家都找不到小程序的入口在哪哈哈，因为要激活，然后大部分必要的应用自己手机都有安装，而且用习惯了就直接打开手机上的 APP 就行了，所以就感觉小程序没什么新奇的地方。其实小程序不但">
+<meta name="twitter:image" content="http://i4.piimg.com/1949/07dfb6deed7763ba.png">
   
     <link rel="alternative" href="/atom.xml" title="柱铭" type="application/atom+xml">
   
@@ -148,216 +155,202 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-微信小程序-demo代码分析" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      微信小程序--demo代码分析
+    </h1>
+  
+
+        
+        <a href="/2017/06/20/微信小程序-demo代码分析/" class="archive-article-date">
+  	<time datetime="2017-06-20T11:28:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-20</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>微信小程序已经出来很久了，很多公司都开发了自家产品的小程序版本来迎合这股热潮，大家都非常看好小程序，认为这就是未来。我也是这么认为的，虽然好像反响不大，朋友圈里也没怎么看到相关消息，不免觉得有点失望。我觉得大部分的原因是大家都找不到小程序的入口在哪哈哈，因为要激活，然后大部分必要的应用自己手机都有安装，而且用习惯了就直接打开手机上的 APP 就行了，所以就感觉小程序没什么新奇的地方。其实小程序不但对于开发者来说很方便（跨平台，包装很好的 API ，开发成本低等），而且小程序作为 WEB APP 的代表，对于大众来说不仅能节省手机的内存空间还不用花时间去下载安装，个人认为迟早是要替换手机原生 APP 的。</p>
+<p>之前刚出的时候是听说只有企业和政府能开发和发布小程序，我就没有去凑一脚了，现在有了个人开发者这一选项，我决定去一探究竟。<br><a id="more"></a></p>
+<p>顺利注册下载了个微信 web 开发者工具之后，就可以边读文档边开发了，刚开始不太懂小程序的项目架构是怎样的，它还很贴心地为我们准备了个 demo 版本的。作为新手的我肯定是从这里开始学习啦。</p>
+<p>先看看开发界面</p>
+<p><img src="http://i4.piimg.com/1949/07dfb6deed7763ba.png" alt=""></p>
+<p>分三部分，左边就是手机模拟界面，上面有手机型号（默认是 iphone6 ）和 网络选择，中间是项目目录结构，最重要的是以 app 为名字的几个文件，待会分析一下。右边就是编辑器了，相对于其它编辑器来说的确有点简陋，但是胜在界面简洁明了还有自动补全语法提示功能。所以对于开发项目不大的情况下还是可以将就一下的。</p>
+<p>马上开始看看这三个文件，<code>app.js</code>、<code>app.json</code> 、 <code>app.wxss</code>。前两个学过前端的都懂是啥，后面的这个 <code>wxss</code>文件是什么？其实就是微信（wx）自己的 <code>css</code>文件，就是用来写页面样式的，与之对应的 html 就变为 <code>wxml</code>文件，用法就是 html 和 xml 的结合。</p>
+<p><strong>app.wxss</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">/**app.wxss**/</div><div class="line">.container &#123;</div><div class="line">  height: 100%;</div><div class="line">  display: flex;</div><div class="line">  flex-direction: column;</div><div class="line">  align-items: center;</div><div class="line">  justify-content: space-between;</div><div class="line">  padding: 200rpx 0;</div><div class="line">  box-sizing: border-box;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>小程序中每个页面都对应一个目录，每个目录都有四个基本文件（js、json、wxss、wxml）。这个样式表起到一个全局的作用，在这里定义的样式在所有页面中都能起作用。由代码可以看出，小程序都用上了流行的弹性盒子 flex 布局的方法。移动端网页设计必备。</p>
+<p><strong>app.json</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  &quot;pages&quot;:[</div><div class="line">    &quot;pages/index/index&quot;,</div><div class="line">    &quot;pages/logs/logs&quot;</div><div class="line">  ],</div><div class="line">  &quot;window&quot;:&#123;</div><div class="line">    &quot;backgroundTextStyle&quot;:&quot;light&quot;,</div><div class="line">    &quot;navigationBarBackgroundColor&quot;: &quot;#fff&quot;,</div><div class="line">    &quot;navigationBarTitleText&quot;: &quot;WeChat&quot;,</div><div class="line">    &quot;navigationBarTextStyle&quot;:&quot;black&quot;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>配置文件中的 <code>pages</code>用来放置每个页面的路径，以 [ 路径 + 页面名 ] 的格式存储，创建页面的时候，也可以直接在这里想要创建的页面路径和页面名然后保存，就会自动生成对应的目录和文件。</p>
+<p><code>window</code>也就是配置窗口信息。用来设置最顶端的标题栏的内容。字体颜色、背景颜色等。</p>
+<p><strong>app.js</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">//app.js</div><div class="line">App(&#123;</div><div class="line">  onLaunch: function () &#123;</div><div class="line">    //调用API从本地缓存中获取数据</div><div class="line">    var logs = wx.getStorageSync(&apos;logs&apos;) || []</div><div class="line">    logs.unshift(Date.now())</div><div class="line">    wx.setStorageSync(&apos;logs&apos;, logs)</div><div class="line">  &#125;,</div><div class="line">  getUserInfo:function(cb)&#123;</div><div class="line">    var that = this</div><div class="line">    if(this.globalData.userInfo)&#123;</div><div class="line">      typeof cb == &quot;function&quot; &amp;&amp; cb(this.globalData.userInfo)</div><div class="line">    &#125;else&#123;</div><div class="line">      //调用登录接口</div><div class="line">      wx.login(&#123;</div><div class="line">        success: function () &#123;</div><div class="line">          wx.getUserInfo(&#123;</div><div class="line">            success: function (res) &#123;</div><div class="line">              that.globalData.userInfo = res.userInfo</div><div class="line">              console.log(res.userInfo);</div><div class="line">              typeof cb == &quot;function&quot; &amp;&amp; cb(that.globalData.userInfo)</div><div class="line">            &#125;</div><div class="line">          &#125;)</div><div class="line">        &#125;</div><div class="line">      &#125;)</div><div class="line">    &#125;</div><div class="line">  &#125;,</div><div class="line">  globalData:&#123;</div><div class="line">    userInfo:null</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<p>app.js 负责处理逻辑的脚本文件。纵观整个文件，只是调用了一个 App() 函数而已。这个函数是小程序里内置的一个函数，用来注册一个小程序，接受一个 object 参数。该参数里面指定小程序的生命周期函数。这个有点像 Android 。不知道是特意借鉴的还是怎样，看来生命周期函数对于一个 App 来说是很重要的。</p>
+<p>先看看 <code>onLauch:</code>，当小程序初始化完成时会被触发，执行里面的函数。全局下只能触发一次，也就是每次打开小程序就会触发一次。触发后先使用 <code>wx.getStorageSync(&#39;logs&#39;) || []</code> 从本地缓存中获取 logs 的数据，如果 logs 有数据的时候，就把数据赋值给变量 logs 。如果没数据或者不存在 logs ，则把变量 logs 初始化为空数组。<code>logs.unshift(Date.now())</code>把当前时间插入到数组的第一个元素前，记录每次打开小程序的时间。然后<code>wx.setStorageSync(&#39;logs&#39;, logs)</code>把数组 logs 的内容存储到本地缓存的 logs 中。</p>
+<p>将<code>wx.getStorageSync(&#39;logs&#39;)</code> 打印出来可看到里面记录的值</p>
+<p><img src="http://i4.piimg.com/1949/a8bac6f629f69e05.png" alt=""></p>
+<p>以数组的形式记录着每次登录时间的时间戳。</p>
+<p>再看看最下面的<code>globalData:</code>，从名字可以知道这是定义一些全局数据的。这里只有一个数据<code>userInfo: null</code>，记录用户信息，初始为空。</p>
+<p><code>getUserInfo:</code>由名字可知获取用户信息，此函数中有个形参 <code>cb</code>，这里先不管它是什么，继续看下面的代码。有一个 if else 语句，当<code>this.globalData.userInfo</code>存在或有值的时候，就执行 if 里面的，否则执行 else 里的语句。这个<code>this.globalData.userInfo</code>就是我们刚说的初始化为 null 的用户信息，所以一开始都执行 else 里面的代码。</p>
+<p><code>wx.login()</code>有注释，调用登录接口。<code>success:</code>表示调用成功后执行的回调函数，与此对应的还有<code>fail:</code>调用失败后执行的和<code>complete:</code>调用结束后执行的，即成功失败都执行。所以，调用成功后就来这个<code>wx.getUserInfo()</code>获取用户信息了，不过这个 API 生效的前提是必须先调用<code>wx.login()</code>，获取用户信息函数调用成功后，就把<code>this.globalData.userInfo</code>设置为刚登录的用户信息<code>res.userInfo</code>。再看看这个<code>res.userInfo</code>里到底存储了什么样的用户信息</p>
+<p><img src="http://i4.piimg.com/1949/47eafa0eaea92ed4.png" alt=""></p>
+<p>可看出用户信息是 Object 类型的，<code>avatarUrl</code>就是用户头像的图片地址，还有名字、语言、国家、省份、城市什么的。</p>
+<p>接下来就看这个是什么意思了<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">typeof cb == &quot;function&quot; &amp;&amp; cb(this.globalData.userInfo)</div></pre></td></tr></table></figure></p>
+<p>先判断 cb 是不是一个 function 类型，是的话，把刚取得的用户信息作为实参传进函数中，关于使用用户信息的地方由界面可以知道是在 index 这个页面中，再来看看 index.js，最下面那里有这么一段：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">onLoad: function () &#123;</div><div class="line">    console.log(&apos;onLoad&apos;)</div><div class="line">    var that = this</div><div class="line">    //调用应用实例的方法获取全局数据</div><div class="line">    app.getUserInfo(function(userInfo)&#123;</div><div class="line">      //更新数据</div><div class="line">      that.setData(&#123;</div><div class="line">        userInfo:userInfo</div><div class="line">      &#125;)</div><div class="line">    &#125;)</div><div class="line">  &#125;</div></pre></td></tr></table></figure></p>
+<p>在页面加载的时候调用<code>app.getUserInfo(function(userInfo){...})</code>来获取全局数据，没错，这个语句就是在 app.js 中定义的用来获取用户信息的那一段，参数 cb 就是这里的函数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">function(userInfo)&#123;</div><div class="line">      //更新数据</div><div class="line">      that.setData(&#123;</div><div class="line">        userInfo:userInfo</div><div class="line">      &#125;)</div><div class="line">    &#125;</div></pre></td></tr></table></figure></p>
+<p>结合 index.js 前面设置的<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">data: &#123;</div><div class="line">    motto: &apos;Hello World&apos;,</div><div class="line">    userInfo: &#123;&#125;</div><div class="line">  &#125;</div></pre></td></tr></table></figure></p>
+<p>这个函数是用来设置<code>userInfo</code>的数据的，<code>userInfo:userInfo</code>中前一个 userInfo 是 data 里的 userInfo ，后一个是传进来的参数 userInfo。再看回 app,js 里的<code>cb(this.globalData.userInfo)</code>，嗯，这里就是把用户信息传进去的。有种绕了几圈的感觉哈哈。</p>
+<p><strong>index.wxml</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&lt;!--index.wxml--&gt;</div><div class="line">&lt;view class=&quot;container&quot;&gt;</div><div class="line">  &lt;view  bindtap=&quot;bindViewTap&quot; class=&quot;userinfo&quot;&gt;</div><div class="line">    &lt;image class=&quot;userinfo-avatar&quot; src=&quot;&#123;&#123;userInfo.avatarUrl&#125;&#125;&quot; background-size=&quot;cover&quot;&gt;&lt;/image&gt;</div><div class="line">    &lt;text class=&quot;userinfo-nickname&quot;&gt;&#123;&#123;userInfo.nickName&#125;&#125;&lt;/text&gt;</div><div class="line">  &lt;/view&gt;</div><div class="line">  &lt;view class=&quot;usermotto&quot;&gt;</div><div class="line">    &lt;text class=&quot;user-motto&quot;&gt;&#123;&#123;motto&#125;&#125;&lt;/text&gt;</div><div class="line">  &lt;/view&gt;</div><div class="line">&lt;/view&gt;</div></pre></td></tr></table></figure></p>
+<p>嗯，可看出<code></code>就是使用用户信息了，这个<code>bindtap=&quot;bindViewTap&quot;</code>用来绑定事件，当点击头像或者名字的时候就会触发事件执行 index.js 中设置的事件处理函数 bindViewTap<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">bindViewTap: function() &#123;</div><div class="line">    wx.navigateTo(&#123;</div><div class="line">      url: &apos;../logs/logs&apos;</div><div class="line">    &#125;)</div><div class="line">  &#125;</div></pre></td></tr></table></figure></p>
+<p><code>wx.navigateTo()</code>用来跳转页面，跳转到日志页面 logs 里去</p>
+<p><img src="http://i4.piimg.com/1949/37a933d40e958a23.png" alt=""></p>
+<p><strong>logs.js</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">var util = require(&apos;../../utils/util.js&apos;)</div><div class="line">Page(&#123;</div><div class="line">  data: &#123;</div><div class="line">    logs: []</div><div class="line">  &#125;,</div><div class="line">  onLoad: function () &#123;</div><div class="line">    this.setData(&#123;</div><div class="line">      logs: (wx.getStorageSync(&apos;logs&apos;) || []).map(function (log) &#123;</div><div class="line">        return util.formatTime(new Date(log))</div><div class="line">      &#125;)</div><div class="line">    &#125;)</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<p>开头引入 util.js 。util.js 是用来把时间戳转化为我们能读懂的时间格式，具体实现这里就不深究了。logs 页面加载时从本地缓存中取得日志信息，然后用 map 方法加 util 里的转换格式方法，把数组里的时间戳都转换为可阅读的时间格式。查看 logs 数组信息如下：</p>
+<p><img src="http://i2.muimg.com/1949/379d2b8bed6b43b5.png" alt=""></p>
+<p>大概整个 demo 就是这么多内容了，希望小程序能够越做越好，被大众所重视。</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/05/21/用CSS实现的效果（一）/" class="archive-article-date">
-  	<time datetime="2017-05-21T07:07:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-21</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/05/21/用CSS实现的效果（一）/">用CSS实现的效果（一）</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">微信小程序</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://famousczm.github.io/2017/06/20/微信小程序-demo代码分析/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/05/17/CSS学习小记（四）/" class="archive-article-date">
-  	<time datetime="2017-05-17T14:15:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-17</time>
-</a>
-        </div>
-    	 
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/05/17/CSS学习小记（四）/">CSS学习小记（四）</a>
-    </h1>
+  
+    <a href="/2017/06/11/HSLA与RGBA/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">HSLA与RGBA</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+
+  
+  <div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="微信小程序-demo代码分析" data-title="微信小程序--demo代码分析" data-url="http://famousczm.github.io/2017/06/20/微信小程序-demo代码分析/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"famousczm"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
-        		</li>
-      		
-		</ul>
-	</div>
 
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/05/16/小项目-Jquery实现夜间模式/" class="archive-article-date">
-  	<time datetime="2017-05-16T04:54:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/05/16/小项目-Jquery实现夜间模式/">小项目:Jquery实现夜间模式</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">项目</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/05/15/JS学习小记（三）/" class="archive-article-date">
-  	<time datetime="2017-05-15T04:45:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/05/15/JS学习小记（三）/">JS学习小记（三）</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/05/13/从修改hosts文件科学上网中理解DNS（下）/" class="archive-article-date">
-  	<time datetime="2017-05-13T05:26:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/05/13/从修改hosts文件科学上网中理解DNS（下）/">从修改hosts文件科学上网中理解DNS（下）</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">计算机</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/2017/05/page/2/">2</a><a class="extend next" rel="next" href="/archives/2017/05/page/2/">Next &raquo;</a>
-    </nav>
-  
 
 
           </div>
@@ -380,8 +373,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

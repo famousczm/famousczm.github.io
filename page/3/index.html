@@ -150,6 +150,73 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-NET使用MySQL" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/05/04/NET使用MySQL/">.NET使用MySQL</a>
+    </h1>
+  
+
+        
+        <a href="/2017/05/04/NET使用MySQL/" class="archive-article-date">
+  	<time datetime="2017-05-04T15:42:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-04</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>.NET 课程设计要用到数据库，可是.NET 默认使用的是 SQL Server，这个重量级的数据库软件，我电脑配置不高，运行起来很卡，所以我也就打心底里不想使用它。之前有一段时间有用过，不过已经永远丢失在一段硬盘改革的活动中了。所以我决定使用最亲民的 MySQL 。很多同学觉得 .NET 连接 MySQL 会很麻烦，宁愿下载安装 SQL Server，我只想并不比使用 SQL Server麻烦。下面我简单记录一下我的使用过程：</p>
+<p>首先，要下载 <strong>MySql.Data.dll</strong> 文件（这个网上搜会有）</p>
+<p>然后，在项目目录中新建一个 <strong>bin</strong> 文件夹，并把 <strong>MySql.Data.dll</strong> 放进去。</p>
+<p>在需要连接数据库的 .aspx.cs 文件中使用 <strong>using MySql.Data.MySqlClient;</strong>引入 连接 MySQL 的相关函数</p>
+<p>最后用：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">string conn = &quot;Data Source=127.0.0.1;User ID=root;Password=root;DataBase=db123&quot;;</div><div class="line">MySqlConnection myconn = new MySqlConnection(conn);</div><div class="line">myconn.Open();</div><div class="line">string sql = &quot;select * from table“;</div><div class="line">MySqlCommand cmm = new MySqlCommand(sql, myconn);</div><div class="line">myconn.Close();</div></pre></td></tr></table></figure></p>
+<p>再改改相关配置就可以访问数据库和查询数据库中的信息了！！</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">.NET</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/05/04/NET使用MySQL/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-CSS学习小记（二）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -418,73 +485,6 @@
 
 
   
-    <article id="post-JSMin压缩JS文件" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/04/07/JSMin压缩JS文件/">JSMin压缩JS文件</a>
-    </h1>
-  
-
-        
-        <a href="/2017/04/07/JSMin压缩JS文件/" class="archive-article-date">
-  	<time datetime="2017-04-07T03:30:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-07</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>在用 JQuery 或一些其它框架时，总是见到有<strong> min </strong>标记的文件，然后打开里面看代码，结果是一团黑色扭动着蠕虫般的字符密密麻麻地紧挨在一起，瞬间打消我研读的念头。刚开始以为这是防止别人学习抄袭里面的内容，一种版权的控制。到现在我才知道这其实是为了加快脚步的加载速度而把脚本中不必要的空格和注释删除从而达到压缩脚本的效果，也就是精简版本的脚本文件。一般都会把有注释并格式整齐内容清晰的原文件备份，方便以后修改。</p>
-<p>当然，制作精简版脚本这种无聊乏味至极的工作肯定不是手工弄的，有几种比较好的工具可以帮助我们，我平时用的是 <strong>JSMin</strong> ，还有备受好评的 <strong>Closure Compiler</strong> 。这里我就用 <strong>JSMin</strong> 来说明如何压缩 <strong>JS</strong> 。</p>
-<p>首先先把这工具给下载下来，进官网拉到最下有下载，<a herf="http://www.crockford.com/javascript/jsmin.html">点这里</a></p>
-<p>下载完成解压后是一个 <strong>.exe</strong> 文件。随便放在一个自己喜欢的地方。然后打开控制台，命令格式是：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">JSmin.exe的绝对路径 &lt;要压缩的 JS 文件绝对路径&gt;压缩完后的文件名和保存路径</div></pre></td></tr></table></figure></p>
-<p>举个例子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">D:\JS\jsmin.exe &lt;D:\JS\test\demo.js&gt;D:\JS\demo.min.js</div></pre></td></tr></table></figure></p>
-<p>就是这样子，打开压缩完的文件，就能看到熟悉的密密麻麻的字符啦</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/04/07/JSMin压缩JS文件/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
@@ -590,15 +590,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">JAVA</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">JS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">JAVA</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -614,7 +614,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">.NET</a>
+                <a href="javascript:void(0)" class="js-tag color4">PHP</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -622,7 +622,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">PHP</a>
+                <a href="javascript:void(0)" class="js-tag color5">.NET</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -630,7 +630,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">树莓派</a>
+                <a href="javascript:void(0)" class="js-tag color1">微信小程序</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -639,6 +639,10 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">学习心得</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">树莓派</a>
               </li>
              
               <li class="article-tag-list-item">
