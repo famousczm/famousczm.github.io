@@ -20,6 +20,7 @@ background-color: hsla(0, 80%, 80%, 1);
 ![](http://i2.muimg.com/1949/49b213042bb612f2.png)
 
 颜色变浅了
+<!--more-->
 
 如果亮度为 30% ：
 ```
