@@ -150,6 +150,72 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Ubuntu安装软件错误提示" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/04/21/Ubuntu安装软件错误提示/">Ubuntu安装软件错误提示</a>
+    </h1>
+  
+
+        
+        <a href="/2017/04/21/Ubuntu安装软件错误提示/" class="archive-article-date">
+  	<time datetime="2017-04-21T14:37:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-21</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="http://i2.muimg.com/1949/808576e847d69126.png" alt=""></p>
+<p>如图，Ubuntu 上用 apt-get 下载安装 zsh 的时候遇到莫名的错误提示，看错误提示的意识大概就是<code>/var/lib/dpkg/lock</code>这个目录出的问题。网上的说法是，可能有另一个程序正在运行，导致资源被锁不可用。而导致资源被锁的原因可能是上一次运行安装更新时没有正常完成。而我记得上次并没有什么没有正常完成的安装更新，先删除这个目录试试。</p>
+<p>解决方法，运行下面命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo rm /var/cache/apt/archives/lock</div><div class="line">sudo rm /var/lib/dpkg/lock</div></pre></td></tr></table></figure>
+<p>又能正常安装更新了</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/04/21/Ubuntu安装软件错误提示/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-JSMin压缩JS文件" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -419,112 +485,6 @@
 
 
   
-    <article id="post-转-CSS命名规则" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/23/转-CSS命名规则/">(转)CSS命名规则</a>
-    </h1>
-  
-
-        
-        <a href="/2017/03/23/转-CSS命名规则/" class="archive-article-date">
-  	<time datetime="2017-03-23T15:02:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-23</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>网上看到这篇关于CSS的命名规则的文章，觉得很有用，就记录下来学习了</p>
-</blockquote>
-<p><br/></p>
-<h3 id="关于团队合作的css命名规范"><a href="#关于团队合作的css命名规范" class="headerlink" title="关于团队合作的css命名规范"></a>关于团队合作的css命名规范</h3><hr/>
-
-<h5 id="常用的css命名规则"><a href="#常用的css命名规则" class="headerlink" title="常用的css命名规则"></a>常用的css命名规则</h5><p>头：header</p>
-<p>内容：content/container</p>
-<p>尾：footer</p>
-<p>导航：nav</p>
-<p>侧栏：sidebar</p>
-<p>栏目：column</p>
-<p>页面外围控制整体布局宽度：wrapper</p>
-<p>左右中：left right center</p>
-<p>登录条：loginbar</p>
-<p>标志：logo</p>
-<p>广告：banner</p>
-<p>页面主体：main</p>
-<p>热点：hot</p>
-<p>新闻：news</p>
-<p>下载：download</p>
-<p>子导航：subnav</p>
-<p>菜单：menu</p>
-<p>子菜单：submenu</p>
-<p>搜索：search</p>
-<p>友情链接：friendlink</p>
-<p>页脚：footer</p>
-<p>版权：copyright</p>
-<p>滚动：scroll</p>
-<p>内容：content</p>
-<p>标签页：tab</p>
-<p>文章列表：list</p>
-<p>提示信息：msg</p>
-<p>小技巧：tips</p>
-<p>栏目标题：title</p>
-<p>加入：joinus</p>
-<p>指南：guild</p>
-<p>服务：service</p>
-<p>注册：regsiter</p>
-<p>状态：status</p>
-<p>投票：vote</p>
-<p>合作伙伴：partner</p>
-<p><hr/><br>
-        
-          <a class="article-more-a" href="/2017/03/23/转-CSS命名规则/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">HTML+CSS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/03/23/转-CSS命名规则/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/3/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/5/">Next &raquo;</a>
@@ -622,11 +582,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java</a>
+                <a href="javascript:void(0)" class="js-tag color1">Foundation</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Foundation</a>
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -650,11 +610,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Oracle</a>
+                <a href="javascript:void(0)" class="js-tag color5">.NET</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">PHP</a>
+                <a href="javascript:void(0)" class="js-tag color2">Oracle</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -662,7 +622,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">.NET</a>
+                <a href="javascript:void(0)" class="js-tag color4">PHP</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -678,11 +638,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">学习心得</a>
+                <a href="javascript:void(0)" class="js-tag color4">树莓派</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">树莓派</a>
+                <a href="javascript:void(0)" class="js-tag color5">学习心得</a>
               </li>
              
               <li class="article-tag-list-item">

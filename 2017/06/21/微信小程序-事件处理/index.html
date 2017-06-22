@@ -6,17 +6,54 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://famousczm.github.io">
-  <title>Archives: 2017/5 | 柱铭</title>
+  <title>微信小程序-事件处理 | 柱铭</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="嘿！朋友">
-<meta property="og:type" content="website">
-<meta property="og:title" content="柱铭">
-<meta property="og:url" content="http://famousczm.github.io/archives/2017/05/page/2/index.html">
+  <meta name="description" content="先看一下微信小程序对事件的解释：
+
+文字叙述一下
+什么是事件
+事件是视图层到逻辑层的通讯方式。
+事件可以将用户的行为反馈到逻辑层进行处理。
+事件可以绑定在组件上，当达到触发事件，就会执行逻辑层中对应的事件处理函数。
+事件对象可以携带额外信息，如 id, dataset, touches。
+
+就是那些点击、鼠标移进移出之类的动作啦。小程序绑定事件的方法是在 wxml 文件对应的组件中使用 bindt">
+<meta property="og:type" content="article">
+<meta property="og:title" content="微信小程序-事件处理">
+<meta property="og:url" content="http://famousczm.github.io/2017/06/21/微信小程序-事件处理/index.html">
 <meta property="og:site_name" content="柱铭">
-<meta property="og:description" content="嘿！朋友">
+<meta property="og:description" content="先看一下微信小程序对事件的解释：
+
+文字叙述一下
+什么是事件
+事件是视图层到逻辑层的通讯方式。
+事件可以将用户的行为反馈到逻辑层进行处理。
+事件可以绑定在组件上，当达到触发事件，就会执行逻辑层中对应的事件处理函数。
+事件对象可以携带额外信息，如 id, dataset, touches。
+
+就是那些点击、鼠标移进移出之类的动作啦。小程序绑定事件的方法是在 wxml 文件对应的组件中使用 bindt">
+<meta property="og:image" content="http://i1.buimg.com/1949/0c2efc8133e60a31.png">
+<meta property="og:image" content="http://i2.muimg.com/1949/5018aeee4fc2fc85.png">
+<meta property="og:image" content="http://i4.piimg.com/1949/544879d35ae0c4f6.png">
+<meta property="og:image" content="http://i4.piimg.com/1949/dcba65a0ff3c4da6.png">
+<meta property="og:image" content="http://i4.piimg.com/1949/61c42f06161ace74.png">
+<meta property="og:image" content="http://i2.muimg.com/1949/8b14e44d7c2b3f04.png">
+<meta property="og:image" content="http://i2.muimg.com/1949/313191b3fcefc58e.png">
+<meta property="og:image" content="http://i2.muimg.com/1949/234221acc5dba908.png">
+<meta property="og:updated_time" content="2017-06-22T06:51:01.345Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="柱铭">
-<meta name="twitter:description" content="嘿！朋友">
+<meta name="twitter:title" content="微信小程序-事件处理">
+<meta name="twitter:description" content="先看一下微信小程序对事件的解释：
+
+文字叙述一下
+什么是事件
+事件是视图层到逻辑层的通讯方式。
+事件可以将用户的行为反馈到逻辑层进行处理。
+事件可以绑定在组件上，当达到触发事件，就会执行逻辑层中对应的事件处理函数。
+事件对象可以携带额外信息，如 id, dataset, touches。
+
+就是那些点击、鼠标移进移出之类的动作啦。小程序绑定事件的方法是在 wxml 文件对应的组件中使用 bindt">
+<meta name="twitter:image" content="http://i1.buimg.com/1949/0c2efc8133e60a31.png">
   
     <link rel="alternative" href="/atom.xml" title="柱铭" type="application/atom+xml">
   
@@ -148,178 +185,205 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-微信小程序-事件处理" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      微信小程序-事件处理
+    </h1>
+  
+
+        
+        <a href="/2017/06/21/微信小程序-事件处理/" class="archive-article-date">
+  	<time datetime="2017-06-21T14:39:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-21</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>先看一下微信小程序对事件的解释：</p>
+<p><img src="http://i1.buimg.com/1949/0c2efc8133e60a31.png" alt=""></p>
+<p>文字叙述一下</p>
+<h4 id="什么是事件"><a href="#什么是事件" class="headerlink" title="什么是事件"></a>什么是事件</h4><ul>
+<li>事件是视图层到逻辑层的通讯方式。</li>
+<li>事件可以将用户的行为反馈到逻辑层进行处理。</li>
+<li>事件可以绑定在组件上，当达到触发事件，就会执行逻辑层中对应的事件处理函数。</li>
+<li>事件对象可以携带额外信息，如 id, dataset, touches。</li>
+</ul>
+<p>就是那些点击、鼠标移进移出之类的动作啦。小程序绑定事件的方法是在 wxml 文件对应的组件中使用 <code>bindtap</code>加上事件名字就可以了。例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;view bindtap=&quot;test&quot;&gt;&lt;/view&gt;</div></pre></td></tr></table></figure></p>
+<p>然后当点击这个组件的时候小程序就会在该页面对应的脚本文件的 Page 中找到相应的事件处理函数，下面举例写这个 test 事件:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">Page(&#123;</div><div class="line">   ....</div><div class="line">   test: function(event)&#123;</div><div class="line">      console.log(&apos;Click！&apos;);</div><div class="line">   &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<p>先点击一下组件，然后打开控制台看看是否成功。毫无疑问是可以的。接下来再看看获得的这个事件里面到底有什么信息</p>
+<p><img src="http://i2.muimg.com/1949/5018aeee4fc2fc85.png" alt=""></p>
+<p>嗯，首先是 <code>type</code>事件类型是 <strong>tap</strong> ，这个 tap 事件就是手指触摸后马上离开的动作，也就是点击啦。<code>timeStamp</code>为发生事件的时间戳，<code>detail</code>表示事件的某种信息，根据不同的事件会返回不同的信息，这里返回的是点击时的坐标。<code>currentTarget</code>和<code>target</code>这两个属性比较容易搞糊涂，<code>currentTarget</code>在事件流的捕获、目标和冒泡阶段，而<code>target</code>只是在事件流的目标阶段，当事件流是在目标阶段时，这两个的值是一样的，而事件流在捕获和冒泡阶段的话，两个属性的值不一样，下面会具体分析。最后是<code>changedTouches</code>和<code>touches</code>的比较，<code>touches</code>属性当每个事件被触发时，就会获取此时每个触点的信息，并保存在列表中，是只读属性。<code>changedTouches</code>跟差不多也是可以记录触点的信息，但它是根据事件的变法来获取触点的信息，举个栗子就是，当一只手指触碰屏幕时，<code>changedTouches</code>和<code>touches</code>都会同时记录这个触点的信息，信息一样；而当手指离开屏幕时，触点消失，<code>touches</code>中的记录就会消失，而由于这个过程是由接触事件向没有接触事件的变化，所以<code>changedTouches</code>仍然记录着触点移开前的信息，这就是两者之间的区别了。</p>
+<p>再举例分析一下<code>currentTarget</code>和<code>target</code>的不同</p>
+<p>我先把事件 test 绑定在 Image 组件上，即：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;view id=&quot;view&quot; class=&quot;userinfo&quot;&gt;</div><div class="line">    &lt;image id=&quot;image&quot; bindtap=&quot;test&quot; class=&quot;userinfo-avatar&quot; src=&quot;&#123;&#123;userInfo.avatarUrl&#125;&#125;&quot; background-size=&quot;cover&quot;&gt;&lt;/image&gt;</div><div class="line">    &lt;text class=&quot;userinfo-nickname&quot;&gt;&#123;&#123;userInfo.nickName&#125;&#125;&lt;/text&gt;</div><div class="line">  &lt;/view&gt;</div></pre></td></tr></table></figure></p>
+<p>然后点击头像，查看<code>currentTarget</code>和<code>target</code>的信息：</p>
+<p><img src="http://i4.piimg.com/1949/544879d35ae0c4f6.png" alt=""></p>
+<p>一样，因为目标对象都是 image 组件。再把 test 事件绑定到 image 的父组件 view 上：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;view id=&quot;view&quot; bindtap=&quot;test&quot; class=&quot;userinfo&quot;&gt;</div><div class="line">    &lt;image id=&quot;image&quot; class=&quot;userinfo-avatar&quot; src=&quot;&#123;&#123;userInfo.avatarUrl&#125;&#125;&quot; background-size=&quot;cover&quot;&gt;&lt;/image&gt;</div><div class="line">    &lt;text class=&quot;userinfo-nickname&quot;&gt;&#123;&#123;userInfo.nickName&#125;&#125;&lt;/text&gt;</div><div class="line">  &lt;/view&gt;</div></pre></td></tr></table></figure></p>
+<p>然后点击头像，查看<code>currentTarget</code>和<code>target</code>的信息：</p>
+<p><img src="http://i4.piimg.com/1949/dcba65a0ff3c4da6.png" alt=""></p>
+<p>可看到信息不一样了，不难发现这次 target 保存的信息是点击的 image 组件的信息，而 currentTarget 保存的是绑定 test 事件的 view 组件的信息。到这里<code>currentTarget</code>和<code>target</code>的区别已经很明显了。</p>
+<p>分析完 event 对象，继续分析 <code>currentTarget</code> 对象，因为这个很常用，经常用它来获取触发事件的组件信息，先把它打印出来：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">test: function(event)&#123;</div><div class="line">      console.log(event.currentTarget)</div><div class="line">  &#125;</div></pre></td></tr></table></figure></p>
+<p>点击头像，获取信息：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">Object &#123;id: &quot;image&quot;, offsetLeft: 156, offsetTop: 110, dataset: Object&#125;</div><div class="line">dataset:Object</div><div class="line">id:&quot;image&quot;</div><div class="line">offsetLeft:156</div><div class="line">offsetTop:110</div><div class="line">__proto__:Object</div></pre></td></tr></table></figure></p>
+<p>信息主要有<code>dataset</code>对象，目标组件<code>id</code>的值，还有相对页面的偏移量<code>offsetLeft</code>和<code>offsetTop</code>。</p>
+<p>看看 dataset 里面装的是什么<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">test: function(event)&#123;</div><div class="line">      console.log(event.currentTarget.dataset)</div><div class="line">  &#125;</div></pre></td></tr></table></figure></p>
+<p><img src="http://i4.piimg.com/1949/61c42f06161ace74.png" alt=""></p>
+<p>嗯，什么都没有。查阅文档得知，dataset 是组件上由data-开头的自定义属性组成的集合，所以我们在 view 组件上增加几个自定义属性：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;view bindtap=&quot;test&quot; data-num=&quot;1&quot; data-hi=&quot;hello&quot; id=&quot;view&quot; class=&quot;userinfo&quot;&gt;</div><div class="line">    &lt;image id=&quot;image&quot; class=&quot;userinfo-avatar&quot; src=&quot;&#123;&#123;userInfo.avatarUrl&#125;&#125;&quot; background-size=&quot;cover&quot;&gt;&lt;/image&gt;</div><div class="line">    &lt;text class=&quot;userinfo-nickname&quot;&gt;&#123;&#123;userInfo.nickName&#125;&#125;&lt;/text&gt;</div><div class="line">  &lt;/view&gt;</div></pre></td></tr></table></figure></p>
+<p><img src="http://i2.muimg.com/1949/8b14e44d7c2b3f04.png" alt=""></p>
+<p>有了，然后获取数据的时候直接按下面方法使用就行了：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">event.currentTarget.dataset.hi</div><div class="line">event.currentTarget.dataset.num</div></pre></td></tr></table></figure></p>
+<p>绑定事件除了用 <code>bind</code>之外还可以用 <code>catch</code>，区别是 <code>bind</code>不会阻止冒泡事件向上冒泡，而 <code>catch</code>会。举例说明：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">test1: function(event)&#123;</div><div class="line">      console.log(&quot;test1&quot;)</div><div class="line">  &#125;,</div><div class="line">  test2: function (event) &#123;</div><div class="line">    console.log(&quot;test2&quot;)</div><div class="line">  &#125;,</div><div class="line">  test3: function (event) &#123;</div><div class="line">    console.log(&quot;test3&quot;)</div><div class="line">  &#125;</div></pre></td></tr></table></figure></p>
+<p>我定义了三个事件，然后绑定在三个嵌套的组件里<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&lt;view bindtap=&quot;test3&quot; class=&quot;container&quot;&gt;</div><div class="line">  &lt;view bindtap=&quot;test2&quot; data-num=&quot;1&quot; data-hi=&quot;hello&quot; id=&quot;view&quot; class=&quot;userinfo&quot;&gt;</div><div class="line">    &lt;view bindtap=&quot;test1&quot; class=&quot;classname&quot;&gt;</div><div class="line">    &lt;image id=&quot;image&quot; class=&quot;userinfo-avatar&quot; src=&quot;&#123;&#123;userInfo.avatarUrl&#125;&#125;&quot; background-size=&quot;cover&quot;&gt;&lt;/image&gt;</div><div class="line">    &lt;text class=&quot;userinfo-nickname&quot;&gt;&#123;&#123;userInfo.nickName&#125;&#125;&lt;/text&gt;</div><div class="line">  &lt;/view&gt;</div><div class="line">  &lt;/view&gt;</div><div class="line">  &lt;view class=&quot;usermotto&quot;&gt;</div><div class="line">    &lt;text class=&quot;user-motto&quot;&gt;&#123;&#123;motto&#125;&#125;&lt;/text&gt;</div><div class="line">  &lt;/view&gt;</div><div class="line">&lt;/view&gt;</div></pre></td></tr></table></figure></p>
+<p>点击头像，可以发现：</p>
+<p><img src="http://i2.muimg.com/1949/313191b3fcefc58e.png" alt=""></p>
+<p>事件由里向外顺序触发，向冒泡一样。如果在第二层的 view 那里使用 <code>catchtap</code>，即：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&lt;view bindtap=&quot;test3&quot; class=&quot;container&quot;&gt;</div><div class="line">  &lt;view catchtap=&quot;test2&quot; data-num=&quot;1&quot; data-hi=&quot;hello&quot; id=&quot;view&quot; class=&quot;userinfo&quot;&gt;</div><div class="line">    &lt;view bindtap=&quot;test1&quot; class=&quot;classname&quot;&gt;</div><div class="line">    &lt;image id=&quot;image&quot; class=&quot;userinfo-avatar&quot; src=&quot;&#123;&#123;userInfo.avatarUrl&#125;&#125;&quot; background-size=&quot;cover&quot;&gt;&lt;/image&gt;</div><div class="line">    &lt;text class=&quot;userinfo-nickname&quot;&gt;&#123;&#123;userInfo.nickName&#125;&#125;&lt;/text&gt;</div><div class="line">  &lt;/view&gt;</div><div class="line">  &lt;/view&gt;</div><div class="line">  &lt;view class=&quot;usermotto&quot;&gt;</div><div class="line">    &lt;text class=&quot;user-motto&quot;&gt;&#123;&#123;motto&#125;&#125;&lt;/text&gt;</div><div class="line">  &lt;/view&gt;</div><div class="line">&lt;/view&gt;</div></pre></td></tr></table></figure></p>
+<p>点击头像：</p>
+<p><img src="http://i2.muimg.com/1949/234221acc5dba908.png" alt=""></p>
+<p>冒泡在第二层那里被中断了。<code>catch</code>就是这么玩。</p>
+<p>完。</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/05/10/CSS学习小记（三）/" class="archive-article-date">
-  	<time datetime="2017-05-10T15:03:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-10</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/05/10/CSS学习小记（三）/">CSS学习小记（三）</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">微信小程序</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://famousczm.github.io/2017/06/21/微信小程序-事件处理/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/05/07/从修改hosts文件科学上网中理解DNS（上）/" class="archive-article-date">
-  	<time datetime="2017-05-07T09:43:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-07</time>
-</a>
-        </div>
-    	 
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/05/07/从修改hosts文件科学上网中理解DNS（上）/">从修改hosts文件科学上网中理解DNS（上）</a>
-    </h1>
+  
+    <a href="/2017/06/20/微信小程序-demo代码分析/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">微信小程序--demo代码分析</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+
+  
+  <div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="微信小程序-事件处理" data-title="微信小程序-事件处理" data-url="http://famousczm.github.io/2017/06/21/微信小程序-事件处理/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"famousczm"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">计算机</a>
-        		</li>
-      		
-		</ul>
-	</div>
 
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/05/04/NET使用MySQL/" class="archive-article-date">
-  	<time datetime="2017-05-04T15:42:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-04</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/05/04/NET使用MySQL/">.NET使用MySQL</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">.NET</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/05/02/CSS学习小记（二）/" class="archive-article-date">
-  	<time datetime="2017-05-02T12:32:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-02</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/05/02/CSS学习小记（二）/">CSS学习小记（二）</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/2017/05/">&laquo; Prev</a><a class="page-number" href="/archives/2017/05/">1</a><span class="page-number current">2</span>
-    </nav>
-  
 
 
           </div>
@@ -342,8 +406,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
