@@ -150,6 +150,71 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-用CSS实现的效果（一）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/05/21/用CSS实现的效果（一）/">用CSS实现的效果（一）</a>
+    </h1>
+  
+
+        
+        <a href="/2017/05/21/用CSS实现的效果（一）/" class="archive-article-date">
+  	<time datetime="2017-05-21T07:07:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-21</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>怎么用 CSS 实现鼠标指向某个图标会自动在该图标上方显现相关内容呢？效果如下：</p>
+<p><img src="http://i4.buimg.com/1949/52baf72c9964a050.png" alt=""><br>
+        
+          <a class="article-more-a" href="/2017/05/21/用CSS实现的效果（一）/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/05/21/用CSS实现的效果（一）/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-CSS学习小记（四）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -415,76 +480,6 @@
 
 
   
-    <article id="post-CSS学习小记（三）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/05/10/CSS学习小记（三）/">CSS学习小记（三）</a>
-    </h1>
-  
-
-        
-        <a href="/2017/05/10/CSS学习小记（三）/" class="archive-article-date">
-  	<time datetime="2017-05-10T15:03:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-10</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="max-width-属性和-min-width属性"><a href="#max-width-属性和-min-width属性" class="headerlink" title="max-width 属性和 min-width属性"></a>max-width 属性和 min-width属性</h4><p>这两个属性由字面上来看是就是最大和最小长度，的确是这样。</p>
-<p>max-width 属性用来给元素设置最大宽度值. 定义了 max-width 的元素会在达到 max-width 值之后避免进一步按照 width 属性设置变大.也就是说 width 的值怎么也不能超过这个值。一个有点意思的值就是 fit-content ，设置值为 fit-content 时可以使其根据内容的长度来决定最大宽度。设置了 max-width 后，之前设置的 width 就会失效被覆盖。</p>
-<p>min-width 属性与 max-width 差不多，设置指定元素的最小宽度，不过它比 max-width 更强，如果设置了 min-width ，之前设置的 width 和 max-width 都会失效被覆盖。</p>
-<p>这两个属性一般用于 <strong>CSS 媒体查询</strong>中</p>
-<h4 id="CSS-媒体查询"><a href="#CSS-媒体查询" class="headerlink" title="CSS 媒体查询"></a>CSS 媒体查询</h4><p>好吧，媒体查询，看名字我还真猜不出是干啥用的。上网查了资料总结一些就是：<strong>能够实现“响应式设计”，针对不同的浏览器和设备“呈现”不同显示效果，毕竟不同的设备屏幕大小都会有不一样的状况出现，要使页面能够适应不同的浏览器和设备，可以用弹性盒子实现，也可以用媒体查询来实现</strong></p>
-<p>嗯，看起来用处很大，看看是怎么用的</p>
-<p>举一个例子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">@media(max-width: 600px) &#123;</div><div class="line">  .facet_sidebar &#123;</div><div class="line">     display: none;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-        
-          <a class="article-more-a" href="/2017/05/10/CSS学习小记（三）/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/05/10/CSS学习小记（三）/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
@@ -578,11 +573,11 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
+                <a href="javascript:void(0)" class="js-tag color5">AngularJS</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Foundation</a>
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -590,7 +585,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
+                <a href="javascript:void(0)" class="js-tag color1">Foundation</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -598,11 +593,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">JAVA</a>
+                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Laravel</a>
+                <a href="javascript:void(0)" class="js-tag color5">JAVA</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -610,7 +605,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">.NET</a>
+                <a href="javascript:void(0)" class="js-tag color3">Laravel</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -630,19 +625,23 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">微信小程序</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">项目</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">树莓派</a>
+                <a href="javascript:void(0)" class="js-tag color1">微信小程序</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">学习心得</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">.NET</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">树莓派</a>
               </li>
              
               <li class="article-tag-list-item">

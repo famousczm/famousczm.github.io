@@ -6,12 +6,12 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://famousczm.github.io">
-  <title>柱铭</title>
+  <title>Tag: AngularJS | 柱铭</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="嘿！朋友">
 <meta property="og:type" content="website">
 <meta property="og:title" content="柱铭">
-<meta property="og:url" content="http://famousczm.github.io/page/6/index.html">
+<meta property="og:url" content="http://famousczm.github.io/tags/AngularJS/index.html">
 <meta property="og:site_name" content="柱铭">
 <meta property="og:description" content="嘿！朋友">
 <meta name="twitter:card" content="summary">
@@ -150,364 +150,58 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-阿里云学生机硬盘读写速度测试" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
+  
     
-      <header class="article-header">
-        
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2017" class="archive-year">2017</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2017/06/27/AngularJS-Uncaught-Error-injector-modulerr-问题/" class="archive-article-date">
+  	<time datetime="2017-06-27T12:47:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-27</time>
+</a>
+        </div>
+    	 
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/20/阿里云学生机硬盘读写速度测试/">阿里云学生机硬盘读写速度测试</a>
+      <a class="archive-article-title" href="/2017/06/27/AngularJS-Uncaught-Error-injector-modulerr-问题/">AngularJS:Uncaught Error: [$injector:modulerr]!问题</a>
     </h1>
   
 
-        
-        <a href="/2017/03/20/阿里云学生机硬盘读写速度测试/" class="archive-article-date">
-  	<time datetime="2017-03-20T06:41:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-20</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>看了<strong>Linux中国</strong>的一篇文章测试服务器的硬盘读写速度，也想试试看阿里云学生机的硬盘读写速度能到什么水平，毕竟是最低配置…</p>
-<p>先测试写入速度：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">time dd if=/dev/zero of=/var/test bs=2k count=1000000</div></pre></td></tr></table></figure></p>
-<p><strong>命令解释：</strong></p>
-<ul>
-<li><p>time 用于计时</p>
-</li>
-<li><p>dd 用于复制，从if读出，写到of</p>
-</li>
-<li><p>if=/dev/zero不产生IO，因此可以用来测试纯写速度；所以后面测试纯读速度，就是           of=/dev/null不产生IO</p>
-</li>
-<li><p>bs是每次读或者写得大小，即一个块的大小，count是读写块的数量，相乘就是读写数据量大小，我这里测试2G数据的写入速度</p>
-</li>
-</ul>
-<p>连续测试三次的结果如下：<br><img src="http://p1.bpimg.com/1949/2b294ab713f7bfa8.png" alt=""><br>取平均值就是46.1MB/s了，比<strong>Linux中国</strong>测试的23.2MB/s几乎快了一倍，所以还是蛮快的，作为WEB服务器已经足够用了</p>
-<p>所以同理读速度的测试是<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">time dd if=/var/test of=/dev/null bs=2k</div></pre></td></tr></table></figure></p>
-<p>测试结果为：<br><img src="http://p1.bpimg.com/1949/069994b558b6bbbc.png" alt=""></p>
-<p>平均值为20.6MB/s，可看出，读速度远不如写速度快啊</p>
-<p>不过这种低配服务器也只是HDD，不可能是SSD，能用就好</p>
-<hr>
-
-<p>今天天气不错啊，适合出去走走，刚买了域名<strong>www.homehouse.tech</strong>，关于home的域名大部分都被注册了…</p>
-<blockquote>
-<p>寂寞之时，既想热闹；喧嚣之场，亦思闲静。人情大抵皆然。如猴子在树下，则思量树头果；及在树头，则又思量树下饭。往往复复，略无停刻，良亦苦矣。</p>
-<p>节选自《袁宏道集笺校》，卷二十<br>–《兰泽、云泽两叔》</p>
-</blockquote>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">AngularJS</a>
         		</li>
       		
 		</ul>
 	</div>
 
-      
+          
 
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/03/20/阿里云学生机硬盘读写速度测试/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
+        </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-
-
-
-
-
-
-
   
-    <article id="post-Foundation初体验" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
+  
+    </div></section>
+  
+
     
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/19/Foundation初体验/">Foundation初体验</a>
-    </h1>
-  
-
-        
-        <a href="/2017/03/19/Foundation初体验/" class="archive-article-date">
-  	<time datetime="2017-03-19T13:25:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-19</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="http://i1.piimg.com/1949/d94543cb1815be4d.png" alt=""><br>框架的确是一个很奇妙的玩意，好的框架能让你省时省力，更重要的是它还非常简洁美观易于上手！！<em>Foundation</em>就是这样一个集各种优点在一身的响应式前端开发框架，对于想快速搭建一个漂亮的网站的初学者来说，这无疑是一个能让人赞叹“帮了个大忙”的利器啊（嘛，当然前提是要有最基本的前端知识）</p>
-<p><em>Foundation</em>设计好了各种小部件的样式，还有小部件所对应的js控制也做好了，就让我们直接调用就是了。框架就是这么一回事，让开发者集中精力在网站的整体设计和内容上，事半功倍。不过，一直过于依赖框架而从不去了解CSS和js的实现这也是一种停滞不前的做法，我觉得没有对技术的执着追求是不适合干这一行的，程序员不都是这样的一个存在吗？</p>
-<hr>
-
-<p>目前正在和弟弟一起联手开发咱们自己家的网站，这是我一直以来就非常想实现的一个目标，我打算用<em>Foundation</em>来做，让我见识你的强大之处吧，后台方面决定用<em>laravel</em>，希望一切顺利吧~</p>
-<p>(ง๑ •̀_•́)ง</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Foundation</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/03/19/Foundation初体验/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-服务器上部署网站" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/18/服务器上部署网站/">服务器上部署网站</a>
-    </h1>
-  
-
-        
-        <a href="/2017/03/18/服务器上部署网站/" class="archive-article-date">
-  	<time datetime="2017-03-18T15:39:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-18</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>刚学网站开发的时候就很想把自己的作品能发布在网上，能让别人访问到，倍有成就感。但是一直碍于自己的技术还没成熟，想多学学再去想这些事。</p>
-<p>现在由于课程的原因，老师要我们租服务器做实验，我也觉得时机已经到了，在阿里云租了台云服务器，学生机最低配置，每月9.9元，相对来说还是挺值得。有点后悔之前没下决心啊。</p>
-<p><strong>CentOS6.8</strong>系统，内置<strong>Oneinstack</strong>，开发环境是<strong>LNMP</strong>，真是省去了不少功夫啊。</p>
-<p>用<strong>putty</strong>远程登录服务器，<em>Linux</em>基础的操作都烂熟于心了。这里还非常感激阿里云提供的帮助手册，帮了大忙，介绍得非常详细</p>
-        
-          <a class="article-more-a" href="/2017/03/18/服务器上部署网站/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/03/18/服务器上部署网站/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-换电脑后的博客管理" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/18/换电脑后的博客管理/">换电脑后的博客管理</a>
-    </h1>
-  
-
-        
-        <a href="/2017/03/18/换电脑后的博客管理/" class="archive-article-date">
-  	<time datetime="2017-03-18T12:31:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-18</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>之前硬盘坏了，换硬盘后，一切都是空白，以前所有的设置都没有了，包括这博客的更新。最近查阅了网上的资料，终于可以重新更新了，而且这次也吸收教训，要做好备份。</p>
-<p>以前我写完博客deploy到<em>github</em>上，只是把编译后的静态网页给保存了，以至于我clone下来也没什么用。所以这次我新开一个分支用来存放博客的原始文件，另一个分支则用来保存静态网页文件。这样维护起来也简单明了。新分支命名为Hexo。设定为默认分支。</p>
-<p>然后在本地新建个文件夹，shift+鼠标右键打开Git Bash输入：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git clone git@github.com:famousczm/famousczm.github.io.git</div></pre></td></tr></table></figure>
-<p>拷贝仓库<br>
-        
-          <a class="article-more-a" href="/2017/03/18/换电脑后的博客管理/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Hexo</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/03/18/换电脑后的博客管理/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-JAVA-java-io-Writer-write-Unknown-Source" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/05/JAVA-java-io-Writer-write-Unknown-Source/">JAVA java.io.Writer.write(Unknown Source)</a>
-    </h1>
-  
-
-        
-        <a href="/2016/11/05/JAVA-java-io-Writer-write-Unknown-Source/" class="archive-article-date">
-  	<time datetime="2016-11-05T06:35:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-11-05</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>今天在做一个使用JAVA的输入输出流将一个文本文件的内容按行读出，每读出一行就顺序添加行号，并写入到另一个文件中的练习时，写入文件的过程中遇到未知错误如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Exception in thread &quot;main&quot; java.lang.NullPointerException</div><div class="line">	at java.io.Writer.write(Unknown Source)</div><div class="line">	at sy_10.sy10_7.main(sy10_7.java:26)</div></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2016/11/05/JAVA-java-io-Writer-write-Unknown-Source/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">JAVA</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/11/05/JAVA-java-io-Writer-write-Unknown-Source/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-  
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/5/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/7/">Next &raquo;</a>
-    </nav>
-  
 
 
           </div>
@@ -529,10 +223,10 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
+		isHome: false,
 		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: false,
 		root: "/",
