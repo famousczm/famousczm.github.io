@@ -150,6 +150,73 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-CSS学习小记（五）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/03/CSS学习小记（五）/">CSS学习小记（五）</a>
+    </h1>
+  
+
+        
+        <a href="/2017/06/03/CSS学习小记（五）/" class="archive-article-date">
+  	<time datetime="2017-06-03T09:24:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-03</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="height-100-没有效果"><a href="#height-100-没有效果" class="headerlink" title="height: 100% 没有效果"></a>height: 100% 没有效果</h5><p>做项目的时候遇到了给一个 div 的样式设置 <code>height: 100%</code> 加上背景颜色，结果没反应，也就是说<code>height: 100%</code> 并没有起作用，之前我用好像都没什么问题。</p>
+<p>先来分析一下<code>height: 100%</code> 的作用，是使当前元素的高度与其父元素的高度一样。假如父元素的高度是 100px ，那么该元素的高度也是 100px，<code>height: 50%</code> 的话高度就是 50px，所以在计算该元素的高度之前先要求出父元素的高度。</p>
+<p>所以我也给 div 的父元素 body 也设置了个  <code>height: 100%</code> ，可是页面还是没有反应，因为 body 还有个父元素 html ，所以也要给 html 设置了个  <code>height: 100%</code>，这样才起效果。</p>
+<p>页面的宽度没有设置的话默认是 <code>width: 100%</code>，但是高度就不行了，浏览器高度没有默认值，所以必须设置高度的值才会有效。<br>
+        
+          <a class="article-more-a" href="/2017/06/03/CSS学习小记（五）/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/06/03/CSS学习小记（五）/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-用CSS实现的效果（一）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -414,72 +481,6 @@
 
 
   
-    <article id="post-从修改hosts文件科学上网中理解DNS（下）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/05/13/从修改hosts文件科学上网中理解DNS（下）/">从修改hosts文件科学上网中理解DNS（下）</a>
-    </h1>
-  
-
-        
-        <a href="/2017/05/13/从修改hosts文件科学上网中理解DNS（下）/" class="archive-article-date">
-  	<time datetime="2017-05-13T05:26:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-13</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>上次简单说了下 hosts 文件的作用，然后又看了很多这方面的资料，再来总结一下：</p>
-<p>在很早之前，全球的网络主机还很少的时候，IP 地址的映射主要靠的就是各主机里的 hosts 文件来实现，那时候的 hosts 文件保存着互联网上所有主机地址的映射。而 hosts 文件的更新是由一个专门来维护 hosts 文件的站点来实现。也就是说那时根本就不需要也没有 DNS 服务器这东西，用自己主机上的 hosts 文件就可以找到对方的 IP 地址然后建立连接了。</p>
-<p>但是很明显随着互联网的规模增大，hosts 文件根本不可能存放这么多地址映射的记录，而且这个数量级光数查找就要好些时间了，效率很低。最可悲的还要算那个负责维护更新的站点，要同时为世界上所有主机更新规模巨大的 hosts 文件。<br>
-        
-          <a class="article-more-a" href="/2017/05/13/从修改hosts文件科学上网中理解DNS（下）/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">计算机</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/05/13/从修改hosts文件科学上网中理解DNS（下）/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
@@ -589,11 +590,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">JS</a>
+                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
+                <a href="javascript:void(0)" class="js-tag color3">JS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -601,11 +602,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+                <a href="javascript:void(0)" class="js-tag color3">Laravel</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Laravel</a>
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -613,11 +614,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SVG</a>
+                <a href="javascript:void(0)" class="js-tag color5">.NET</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">PHP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">SVG</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -637,15 +642,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">.NET</a>
+                <a href="javascript:void(0)" class="js-tag color4">HTML+CSS</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">树莓派</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">HTML+CSS</a>
               </li>
             
             <div class="clearfix"></div>

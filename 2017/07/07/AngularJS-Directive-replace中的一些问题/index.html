@@ -6,17 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://famousczm.github.io">
-  <title>Archives: 2017 | 柱铭</title>
+  <title>AngularJS Directive replace中的一些问题 | 柱铭</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="嘿！朋友">
-<meta property="og:type" content="website">
-<meta property="og:title" content="柱铭">
-<meta property="og:url" content="http://famousczm.github.io/archives/2017/page/5/index.html">
+  <meta name="description" content="自定义 Directive 中使用 template 和 replace 来定义替换的内容时遇到了1Error: [$compile:tplrt] Template for directive &amp;apos;people&amp;apos; must have exactly one root element.
+这样的错误，自定义的名为‘ people ’的 directive 必须只能拥有一个根节点。
+部">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AngularJS Directive replace中的一些问题">
+<meta property="og:url" content="http://famousczm.github.io/2017/07/07/AngularJS-Directive-replace中的一些问题/index.html">
 <meta property="og:site_name" content="柱铭">
-<meta property="og:description" content="嘿！朋友">
+<meta property="og:description" content="自定义 Directive 中使用 template 和 replace 来定义替换的内容时遇到了1Error: [$compile:tplrt] Template for directive &amp;apos;people&amp;apos; must have exactly one root element.
+这样的错误，自定义的名为‘ people ’的 directive 必须只能拥有一个根节点。
+部">
+<meta property="og:updated_time" content="2017-07-07T09:25:45.414Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="柱铭">
-<meta name="twitter:description" content="嘿！朋友">
+<meta name="twitter:title" content="AngularJS Directive replace中的一些问题">
+<meta name="twitter:description" content="自定义 Directive 中使用 template 和 replace 来定义替换的内容时遇到了1Error: [$compile:tplrt] Template for directive &amp;apos;people&amp;apos; must have exactly one root element.
+这样的错误，自定义的名为‘ people ’的 directive 必须只能拥有一个根节点。
+部">
   
     <link rel="alternative" href="/atom.xml" title="柱铭" type="application/atom+xml">
   
@@ -148,216 +155,177 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-AngularJS-Directive-replace中的一些问题" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      AngularJS Directive replace中的一些问题
+    </h1>
+  
+
+        
+        <a href="/2017/07/07/AngularJS-Directive-replace中的一些问题/" class="archive-article-date">
+  	<time datetime="2017-07-07T08:39:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-07</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>自定义 Directive 中使用 template 和 replace 来定义替换的内容时遇到了<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Error: [$compile:tplrt] Template for directive &apos;people&apos; must have exactly one root element.</div></pre></td></tr></table></figure></p>
+<p>这样的错误，自定义的名为‘ people ’的 directive 必须只能拥有一个根节点。</p>
+<p>部分源程序如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">var App = angular.module(&quot;myApp&quot;, []);</div><div class="line"></div><div class="line">App.directive(&quot;people&quot;, function()&#123;</div><div class="line">	return &#123;</div><div class="line">		restrict: &quot;E&quot;,</div><div class="line">		replace: true,</div><div class="line">		template: &quot;&lt;p&gt;姓名:&#123;&#123;data.name&#125;&#125;&lt;/p&gt;&lt;p&gt;性别:&#123;&#123;data.sex&#125;&#125;&lt;/p&gt;&quot;</div><div class="line">	&#125;;</div><div class="line">&#125;);</div><div class="line"></div><div class="line">App.controller(&quot;PhoneListCtrl&quot;, function($scope)&#123;</div><div class="line">	$scope.data = &#123;</div><div class="line">		name: &quot;Jack&quot;,</div><div class="line">		sex: &quot;男&quot;</div><div class="line">	&#125;;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p>当 replace 为 false （默认）时，template 的内容插入到自定义的 Directive 中；当 replace 为 true 时，template 的内容替换掉自定义的 Directive 且 template 的内容只能有一个根节点，即只能有一个元素。</p>
+<p>所以解决方法是删掉一个 p 元素，或者把 replace 改为 false 。</p>
+<p>然后我想能不能在 people 元素内把删掉的 p 元素内容加进去即这样：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;people&gt;&lt;p&gt;性别:&#123;&#123;data.sex&#125;&#125;&lt;/p&gt;&lt;/people&gt;</div></pre></td></tr></table></figure></p>
+<p>结果是，不行。</p>
+<p>不论是 replace 为 true 或者 false，people 里面的内容全部都会被 template 替换掉，目前我还不知道有什么方法可以保存这些内容。</p>
+<hr>
+
+<p>这几天沉迷于《巫师3》，要是有机会参与开发这样的游戏该是多美妙的事情</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/04/03/JS学习小记（一）/" class="archive-article-date">
-  	<time datetime="2017-04-03T02:53:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-03</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/04/03/JS学习小记（一）/">JS学习小记（一）</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">AngularJS</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://famousczm.github.io/2017/07/07/AngularJS-Directive-replace中的一些问题/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/04/01/cannot-read-property-getContext-of-null/" class="archive-article-date">
-  	<time datetime="2017-04-01T08:40:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-01</time>
-</a>
-        </div>
-    	 
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/04/01/cannot-read-property-getContext-of-null/">cannot read property getContext of null</a>
-    </h1>
+  
+    <a href="/2017/06/27/AngularJS-Uncaught-Error-injector-modulerr-问题/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">AngularJS:Uncaught Error: [$injector:modulerr]!问题</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+
+  
+  <div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="AngularJS-Directive-replace中的一些问题" data-title="AngularJS Directive replace中的一些问题" data-url="http://famousczm.github.io/2017/07/07/AngularJS-Directive-replace中的一些问题/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"famousczm"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
-        		</li>
-      		
-		</ul>
-	</div>
 
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/03/23/转-CSS命名规则/" class="archive-article-date">
-  	<time datetime="2017-03-23T15:02:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-23</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/03/23/转-CSS命名规则/">(转)CSS命名规则</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">HTML+CSS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/03/21/Laravel之Auth数据库连接错误/" class="archive-article-date">
-  	<time datetime="2017-03-21T03:03:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-21</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/03/21/Laravel之Auth数据库连接错误/">Laravel之Auth数据库连接错误</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Laravel</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/03/21/Linux之sl命令/" class="archive-article-date">
-  	<time datetime="2017-03-21T02:10:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-21</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/03/21/Linux之sl命令/">Linux之sl命令</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/2017/page/4/">&laquo; Prev</a><a class="page-number" href="/archives/2017/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/2017/page/3/">3</a><a class="page-number" href="/archives/2017/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/archives/2017/page/6/">6</a><a class="extend next" rel="next" href="/archives/2017/page/6/">Next &raquo;</a>
-    </nav>
-  
 
 
           </div>
@@ -380,8 +348,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

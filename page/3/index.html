@@ -150,6 +150,72 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-从修改hosts文件科学上网中理解DNS（下）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/05/13/从修改hosts文件科学上网中理解DNS（下）/">从修改hosts文件科学上网中理解DNS（下）</a>
+    </h1>
+  
+
+        
+        <a href="/2017/05/13/从修改hosts文件科学上网中理解DNS（下）/" class="archive-article-date">
+  	<time datetime="2017-05-13T05:26:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-13</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>上次简单说了下 hosts 文件的作用，然后又看了很多这方面的资料，再来总结一下：</p>
+<p>在很早之前，全球的网络主机还很少的时候，IP 地址的映射主要靠的就是各主机里的 hosts 文件来实现，那时候的 hosts 文件保存着互联网上所有主机地址的映射。而 hosts 文件的更新是由一个专门来维护 hosts 文件的站点来实现。也就是说那时根本就不需要也没有 DNS 服务器这东西，用自己主机上的 hosts 文件就可以找到对方的 IP 地址然后建立连接了。</p>
+<p>但是很明显随着互联网的规模增大，hosts 文件根本不可能存放这么多地址映射的记录，而且这个数量级光数查找就要好些时间了，效率很低。最可悲的还要算那个负责维护更新的站点，要同时为世界上所有主机更新规模巨大的 hosts 文件。<br>
+        
+          <a class="article-more-a" href="/2017/05/13/从修改hosts文件科学上网中理解DNS（下）/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">计算机</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/05/13/从修改hosts文件科学上网中理解DNS（下）/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-CSS学习小记（三）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -423,74 +489,6 @@
 
 
   
-    <article id="post-CSS学习小记（一）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/04/29/CSS学习小记（一）/">CSS学习小记（一）</a>
-    </h1>
-  
-
-        
-        <a href="/2017/04/29/CSS学习小记（一）/" class="archive-article-date">
-  	<time datetime="2017-04-29T14:39:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-29</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="user-select属性"><a href="#user-select属性" class="headerlink" title="user-select属性"></a>user-select属性</h3><p>在浏览一些网站的文章时，读到一些有趣的文字，想把它复制收藏到自己的收藏集中，发现文字不可以选择，也就不可以复制。这种方法可以保护文章版权的效果，虽然花点时间手打也行，不过也是一定程度上保护了文章的传播。</p>
-<p>这种效果是怎样实现的呢，用<code>user-select</code>属性就可以实现，在样式中使<code>user-select:none</code>即可使用户不能选择元素中的任何内容，包括文本节点。非常方便，<code>user-select</code>是用来控制内容的可选择性的属性。由于该属性是 CSS3 新增属性，部分浏览器可能不兼容，使用时最好加上各浏览器内核前缀。</p>
-<p>嘛~在使用的时候发现了一招瞬间破解这种禁止复制的方法 orz 。对着要复制的文字右键选择 “<strong>检查</strong>” （我以Chrome为例），弹出开发者控制台，在代码栏中找到 CSS 样式设置，把<code>user-select:none</code>改为<code>user-select:auto</code>，即可启用复制功能。</p>
-<p>哈哈，这什么鬼，同样的方法可应用于查看浏览器保存的密码上！一般我们输入账号密码登录某一网站的时候浏览器会提示你是否要保存密码，或者网站上有复选框可以勾选记住密码，这都是利用浏览器的 <strong>cookie</strong> 来把密码暂存于浏览器中，以便下次登录可以方便点。而那些密码一般都是以黑色圆点方式来显示，但是不要天真地以为这样就看不见密码的内容了。用刚才所说的方法，只要把密码框的<code>type=&quot;password&quot;</code>改为<code>type=&quot;text&quot;</code> 即可将那可悲的密码暴露于艳阳下，一览无遗。</p>
-<p>这个故事告诉我们，把密码保存于浏览器中虽然方便，但是也是不安全的。大家请多加注意<br>
-        
-          <a class="article-more-a" href="/2017/04/29/CSS学习小记（一）/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/04/29/CSS学习小记（一）/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
@@ -600,11 +598,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">JS</a>
+                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
+                <a href="javascript:void(0)" class="js-tag color3">JS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -612,11 +610,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+                <a href="javascript:void(0)" class="js-tag color3">Laravel</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Laravel</a>
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -624,11 +622,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SVG</a>
+                <a href="javascript:void(0)" class="js-tag color5">.NET</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">PHP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">SVG</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -648,15 +650,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">.NET</a>
+                <a href="javascript:void(0)" class="js-tag color4">HTML+CSS</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">树莓派</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">HTML+CSS</a>
               </li>
             
             <div class="clearfix"></div>

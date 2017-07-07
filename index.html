@@ -150,6 +150,78 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-AngularJS-Directive-replace中的一些问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/07/AngularJS-Directive-replace中的一些问题/">AngularJS Directive replace中的一些问题</a>
+    </h1>
+  
+
+        
+        <a href="/2017/07/07/AngularJS-Directive-replace中的一些问题/" class="archive-article-date">
+  	<time datetime="2017-07-07T08:39:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-07</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>自定义 Directive 中使用 template 和 replace 来定义替换的内容时遇到了<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Error: [$compile:tplrt] Template for directive &apos;people&apos; must have exactly one root element.</div></pre></td></tr></table></figure></p>
+<p>这样的错误，自定义的名为‘ people ’的 directive 必须只能拥有一个根节点。</p>
+<p>部分源程序如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">var App = angular.module(&quot;myApp&quot;, []);</div><div class="line"></div><div class="line">App.directive(&quot;people&quot;, function()&#123;</div><div class="line">	return &#123;</div><div class="line">		restrict: &quot;E&quot;,</div><div class="line">		replace: true,</div><div class="line">		template: &quot;&lt;p&gt;姓名:&#123;&#123;data.name&#125;&#125;&lt;/p&gt;&lt;p&gt;性别:&#123;&#123;data.sex&#125;&#125;&lt;/p&gt;&quot;</div><div class="line">	&#125;;</div><div class="line">&#125;);</div><div class="line"></div><div class="line">App.controller(&quot;PhoneListCtrl&quot;, function($scope)&#123;</div><div class="line">	$scope.data = &#123;</div><div class="line">		name: &quot;Jack&quot;,</div><div class="line">		sex: &quot;男&quot;</div><div class="line">	&#125;;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p>当 replace 为 false （默认）时，template 的内容插入到自定义的 Directive 中；当 replace 为 true 时，template 的内容替换掉自定义的 Directive 且 template 的内容只能有一个根节点，即只能有一个元素。</p>
+<p>所以解决方法是删掉一个 p 元素，或者把 replace 改为 false 。</p>
+<p>然后我想能不能在 people 元素内把删掉的 p 元素内容加进去即这样：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;people&gt;&lt;p&gt;性别:&#123;&#123;data.sex&#125;&#125;&lt;/p&gt;&lt;/people&gt;</div></pre></td></tr></table></figure></p>
+<p>结果是，不行。</p>
+<p>不论是 replace 为 true 或者 false，people 里面的内容全部都会被 template 替换掉，目前我还不知道有什么方法可以保存这些内容。</p>
+<hr>
+
+<p>这几天沉迷于《巫师3》，要是有机会参与开发这样的游戏该是多美妙的事情</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">AngularJS</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/07/07/AngularJS-Directive-replace中的一些问题/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-AngularJS-Uncaught-Error-injector-modulerr-问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -455,73 +527,6 @@
 
 
   
-    <article id="post-CSS学习小记（五）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/03/CSS学习小记（五）/">CSS学习小记（五）</a>
-    </h1>
-  
-
-        
-        <a href="/2017/06/03/CSS学习小记（五）/" class="archive-article-date">
-  	<time datetime="2017-06-03T09:24:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-03</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h5 id="height-100-没有效果"><a href="#height-100-没有效果" class="headerlink" title="height: 100% 没有效果"></a>height: 100% 没有效果</h5><p>做项目的时候遇到了给一个 div 的样式设置 <code>height: 100%</code> 加上背景颜色，结果没反应，也就是说<code>height: 100%</code> 并没有起作用，之前我用好像都没什么问题。</p>
-<p>先来分析一下<code>height: 100%</code> 的作用，是使当前元素的高度与其父元素的高度一样。假如父元素的高度是 100px ，那么该元素的高度也是 100px，<code>height: 50%</code> 的话高度就是 50px，所以在计算该元素的高度之前先要求出父元素的高度。</p>
-<p>所以我也给 div 的父元素 body 也设置了个  <code>height: 100%</code> ，可是页面还是没有反应，因为 body 还有个父元素 html ，所以也要给 html 设置了个  <code>height: 100%</code>，这样才起效果。</p>
-<p>页面的宽度没有设置的话默认是 <code>width: 100%</code>，但是高度就不行了，浏览器高度没有默认值，所以必须设置高度的值才会有效。<br>
-        
-          <a class="article-more-a" href="/2017/06/03/CSS学习小记（五）/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/06/03/CSS学习小记（五）/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -631,11 +636,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">JS</a>
+                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
+                <a href="javascript:void(0)" class="js-tag color3">JS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -643,11 +648,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+                <a href="javascript:void(0)" class="js-tag color3">Laravel</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Laravel</a>
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -655,11 +660,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SVG</a>
+                <a href="javascript:void(0)" class="js-tag color5">.NET</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">PHP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">SVG</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -679,15 +688,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">.NET</a>
+                <a href="javascript:void(0)" class="js-tag color4">HTML+CSS</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">树莓派</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">HTML+CSS</a>
               </li>
             
             <div class="clearfix"></div>
