@@ -6,45 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://famousczm.github.io">
-  <title>阿里云学生机硬盘读写速度测试 | 柱铭</title>
+  <title>AngularJS实现两种表单错误处理的方式 | 柱铭</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="看了Linux中国的一篇文章测试服务器的硬盘读写速度，也想试试看阿里云学生机的硬盘读写速度能到什么水平，毕竟是最低配置…
-先测试写入速度：1time dd if=/dev/zero of=/var/test bs=2k count=1000000
-命令解释：
-
-time 用于计时
-
-dd 用于复制，从if读出，写到of
-
-if=/dev/zero不产生IO，因此可以用来测试纯写速度；所以后面测试纯">
+  <meta name="description" content="AngularJS 的自动双向数据绑定的确非常强大，对表单的处理也十分出色。它能和 HTML5 的混合使用更是让我震惊不已，这里我利用 AngularJS 的强大简便地实现表单的两种错误处理方式。
+表单错误处理即在输入表单数据时实时判断数据的正确与否并将错误提示显示给用户。第一种是当输入框失焦时才显示错误信息；第二种是当点击提交按钮时才显示错误信息。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="阿里云学生机硬盘读写速度测试">
-<meta property="og:url" content="http://famousczm.github.io/2017/03/20/阿里云学生机硬盘读写速度测试/index.html">
+<meta property="og:title" content="AngularJS实现两种表单错误处理的方式">
+<meta property="og:url" content="http://famousczm.github.io/2017/07/09/AngularJS实现两种表单错误处理的方式/index.html">
 <meta property="og:site_name" content="柱铭">
-<meta property="og:description" content="看了Linux中国的一篇文章测试服务器的硬盘读写速度，也想试试看阿里云学生机的硬盘读写速度能到什么水平，毕竟是最低配置…
-先测试写入速度：1time dd if=/dev/zero of=/var/test bs=2k count=1000000
-命令解释：
-
-time 用于计时
-
-dd 用于复制，从if读出，写到of
-
-if=/dev/zero不产生IO，因此可以用来测试纯写速度；所以后面测试纯">
-<meta property="og:image" content="http://p1.bpimg.com/1949/2b294ab713f7bfa8.png">
-<meta property="og:image" content="http://p1.bpimg.com/1949/069994b558b6bbbc.png">
-<meta property="og:updated_time" content="2017-03-20T07:39:43.034Z">
+<meta property="og:description" content="AngularJS 的自动双向数据绑定的确非常强大，对表单的处理也十分出色。它能和 HTML5 的混合使用更是让我震惊不已，这里我利用 AngularJS 的强大简便地实现表单的两种错误处理方式。
+表单错误处理即在输入表单数据时实时判断数据的正确与否并将错误提示显示给用户。第一种是当输入框失焦时才显示错误信息；第二种是当点击提交按钮时才显示错误信息。">
+<meta property="og:updated_time" content="2017-07-10T05:59:27.049Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="阿里云学生机硬盘读写速度测试">
-<meta name="twitter:description" content="看了Linux中国的一篇文章测试服务器的硬盘读写速度，也想试试看阿里云学生机的硬盘读写速度能到什么水平，毕竟是最低配置…
-先测试写入速度：1time dd if=/dev/zero of=/var/test bs=2k count=1000000
-命令解释：
-
-time 用于计时
-
-dd 用于复制，从if读出，写到of
-
-if=/dev/zero不产生IO，因此可以用来测试纯写速度；所以后面测试纯">
-<meta name="twitter:image" content="http://p1.bpimg.com/1949/2b294ab713f7bfa8.png">
+<meta name="twitter:title" content="AngularJS实现两种表单错误处理的方式">
+<meta name="twitter:description" content="AngularJS 的自动双向数据绑定的确非常强大，对表单的处理也十分出色。它能和 HTML5 的混合使用更是让我震惊不已，这里我利用 AngularJS 的强大简便地实现表单的两种错误处理方式。
+表单错误处理即在输入表单数据时实时判断数据的正确与否并将错误提示显示给用户。第一种是当输入框失焦时才显示错误信息；第二种是当点击提交按钮时才显示错误信息。">
   
     <link rel="alternative" href="/atom.xml" title="柱铭" type="application/atom+xml">
   
@@ -176,51 +152,48 @@ if=/dev/zero不产生IO，因此可以用来测试纯写速度；所以后面测
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-阿里云学生机硬盘读写速度测试" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-AngularJS实现两种表单错误处理的方式" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      阿里云学生机硬盘读写速度测试
+      AngularJS实现两种表单错误处理的方式
     </h1>
   
 
         
-        <a href="/2017/03/20/阿里云学生机硬盘读写速度测试/" class="archive-article-date">
-  	<time datetime="2017-03-20T06:41:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-20</time>
+        <a href="/2017/07/09/AngularJS实现两种表单错误处理的方式/" class="archive-article-date">
+  	<time datetime="2017-07-09T11:59:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-09</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>看了<strong>Linux中国</strong>的一篇文章测试服务器的硬盘读写速度，也想试试看阿里云学生机的硬盘读写速度能到什么水平，毕竟是最低配置…</p>
-<p>先测试写入速度：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">time dd if=/dev/zero of=/var/test bs=2k count=1000000</div></pre></td></tr></table></figure></p>
-<p><strong>命令解释：</strong></p>
-<ul>
-<li><p>time 用于计时</p>
-</li>
-<li><p>dd 用于复制，从if读出，写到of</p>
-</li>
-<li><p>if=/dev/zero不产生IO，因此可以用来测试纯写速度；所以后面测试纯读速度，就是           of=/dev/null不产生IO</p>
-</li>
-<li><p>bs是每次读或者写得大小，即一个块的大小，count是读写块的数量，相乘就是读写数据量大小，我这里测试2G数据的写入速度</p>
-</li>
-</ul>
-<p>连续测试三次的结果如下：<br><img src="http://p1.bpimg.com/1949/2b294ab713f7bfa8.png" alt=""><br>取平均值就是46.1MB/s了，比<strong>Linux中国</strong>测试的23.2MB/s几乎快了一倍，所以还是蛮快的，作为WEB服务器已经足够用了</p>
-<p>所以同理读速度的测试是<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">time dd if=/var/test of=/dev/null bs=2k</div></pre></td></tr></table></figure></p>
-<p>测试结果为：<br><img src="http://p1.bpimg.com/1949/069994b558b6bbbc.png" alt=""></p>
-<p>平均值为20.6MB/s，可看出，读速度远不如写速度快啊</p>
-<p>不过这种低配服务器也只是HDD，不可能是SSD，能用就好</p>
-<hr>
-
-<p>今天天气不错啊，适合出去走走，刚买了域名<strong>www.homehouse.tech</strong>，关于home的域名大部分都被注册了…</p>
-<blockquote>
-<p>寂寞之时，既想热闹；喧嚣之场，亦思闲静。人情大抵皆然。如猴子在树下，则思量树头果；及在树头，则又思量树下饭。往往复复，略无停刻，良亦苦矣。</p>
-<p>节选自《袁宏道集笺校》，卷二十<br>–《兰泽、云泽两叔》</p>
-</blockquote>
+        <p>AngularJS 的自动双向数据绑定的确非常强大，对表单的处理也十分出色。它能和 HTML5 的混合使用更是让我震惊不已，这里我利用 AngularJS 的强大简便地实现表单的两种错误处理方式。</p>
+<p>表单错误处理即在输入表单数据时实时判断数据的正确与否并将错误提示显示给用户。第一种是当输入框失焦时才显示错误信息；第二种是当点击提交按钮时才显示错误信息。<br><a id="more"></a></p>
+<h5 id="失焦才显示错误信息"><a href="#失焦才显示错误信息" class="headerlink" title="失焦才显示错误信息"></a>失焦才显示错误信息</h5><p>自定义一个 Directive 命名为 <code>ngFocus</code>，<code>app.js</code>代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">var app = angular.module(&apos;myApp&apos;, [&apos;ngMessages&apos;]);</div><div class="line"></div><div class="line">app.directive(&apos;ngFocus&apos;, [function()&#123;</div><div class="line">	return &#123;</div><div class="line">		restrict: &apos;A&apos;,</div><div class="line">		require: &apos;ngModel&apos;,</div><div class="line">		link: function(scope, element, attrs, ctrl)&#123;</div><div class="line">			ctrl.$focused = false;</div><div class="line">			element.bind(&apos;focus&apos;, function(evt)&#123;</div><div class="line">				scope.$apply(function()&#123;</div><div class="line">					ctrl.$focused = true;</div><div class="line">				&#125;);</div><div class="line">			&#125;).bind(&apos;blur&apos;, function(evt)&#123;</div><div class="line">				scope.$apply(function()&#123;</div><div class="line">					ctrl.$focused = false;</div><div class="line">				&#125;);</div><div class="line">			&#125;);</div><div class="line">		&#125;</div><div class="line">	&#125;;</div><div class="line">&#125;]);</div></pre></td></tr></table></figure></p>
+<p>设置 Directive 为属性类型，并引入 ngModel Directive，定义数据变量 <code>$focused</code>，用来记录当前是否获得焦点。然后在当前元素上绑定 <code>focus</code>和<code>blur</code>两个事件，根据不同情况分别设置<code>$focused</code>的值。</p>
+<p>由于要使用 ngMessages 这个模块，所以在创建 app 模块时要引入这个模块。</p>
+<p><code>index.html</code>的代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">&lt;form name=&quot;signup_form&quot; novalidate ng-submit=&quot;signupForm()&quot;&gt;</div><div class="line">	&lt;fieldset&gt;</div><div class="line">		&lt;legend&gt;Signup&lt;/legend&gt;</div><div class="line">		&lt;div class=&quot;row&quot;&gt;</div><div class="line">			&lt;div class=&quot;large-12 columns&quot;&gt;</div><div class="line">				&lt;label&gt;Your name&lt;/label&gt;</div><div class="line">				&lt;input type=&quot;text&quot;</div><div class="line">				  placeholder=&quot;Name&quot;</div><div class="line">				  name=&quot;name&quot;</div><div class="line">				  ng-model=&quot;signup.name&quot;</div><div class="line">				  ng-minlength=&quot;3&quot;</div><div class="line">				  ng-maxlength=&quot;20&quot; required ng-focus /&gt;</div><div class="line">			&lt;/div&gt;</div><div class="line">			&lt;div class=&quot;error&quot;</div><div class="line">                 ng-messages=&quot;signup_form.name.$error&quot;</div><div class="line">                 ng-messages-multiple</div><div class="line">                 ng-if=&quot;!signup_form.name.$focused &amp;&amp; signup_form.name.$dirty&quot;&gt;</div><div class="line">				&lt;div ng-messages-include=&quot;templates/other.html&quot;&gt;&lt;/div&gt;</div><div class="line">			&lt;/div&gt;</div><div class="line">		&lt;/div&gt;</div><div class="line">        &lt;button type=&quot;submit&quot; class=&quot;button radius&quot; ng-disabled=&quot;signup_form.$invalid&quot;&gt;</div><div class="line">			Submit</div><div class="line">		&lt;/button&gt;</div><div class="line">    &lt;/fieldset&gt;</div><div class="line">&lt;/form&gt;</div></pre></td></tr></table></figure></p>
+<p>这里注意的是表单里无论是 form 还是 input 元素都要有 <strong>name</strong> 属性，因为后面获取输入框信息的时候要用到。</p>
+<p><code>novalidate</code>取消了浏览器对表单的默认验证，我们自己来设置对表单的验证。</p>
+<p><code>ng-submit</code>是提交时执行的函数，这里先不管</p>
+<p><code>input</code> 输入框可设置指令 <code>ng-minlength</code> 和 <code>ng-maxlength</code> 来规定输入的字符串长度，结合 H5 的 required 属性，规定输入框不能为空。再加上刚自定义的 Directive <code>ng-focus</code>，html 中的命名跟 JS 中的不一样，JS 对大小写敏感而 html 不敏感，所以转化的时候要注意。</p>
+<p>最底的那个 div 就是错误信息了，我们要控制它的显示，当输入框有输入数据并且失焦的时候我们才去检查它并显示错误提示，其它情况隐藏。要是以往用直接用 JS 写要操作 DOM 很麻烦。而用 AngularJS 超级方便，用 <code>ng-if</code>就可以像平时使用的 if-else 语句一样选择显示了，使用 <code>form名字.input名字.变量名</code>的格式获取想要的数据，这里当输入框数据被更改过而且失焦的时候 显示错误信息。</p>
+<p><code>ng-messages=&quot;signup_form.name.$error&quot;</code>获取错误信息，错误信息包括，<code>required</code>、<code>minlength</code> 和 <code>maxlength</code>，当输入框数据不满足设置条件时，对应的项就会为 true。可以通过打印<code>signup_form.name.$error</code>来深入理解。</p>
+<p><code>ng-messages-multiple</code>可以显示多条错误信息</p>
+<p>提交按钮中设置了 <code>ng-disabled=&quot;signup_form.$invalid&quot;</code>，当表单有错误输入时禁止提交，等到全部输入正确后才允许提交</p>
+<p>里面包含一个 div ，为了能复用相同的代码，使用<code>ng-messages-include</code>来引入外部文件。这个 other.html 的代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;small class=&quot;error&quot; ng-message=&quot;required&quot;&gt;不能为空&lt;/small&gt;</div><div class="line">&lt;small class=&quot;error&quot; ng-message=&quot;minlength&quot;&gt;长度不能少于3位&lt;/small&gt;</div><div class="line">&lt;small class=&quot;error&quot; ng-message=&quot;maxlength&quot;&gt;长度不能大于20位&lt;/small&gt;</div></pre></td></tr></table></figure></p>
+<p><code>ng-message</code>使相关的错误显示对应的错误信息，值为 true 时才显示。</p>
+<p>记得要引入外部文件 <strong>angular-messages.min.js</strong>，并且放在 <strong>angular.js</strong> 后面不然会报错 。我这里还使用了 <strong>foundation</strong> 框架，为了少写点样式。</p>
+<h5 id="提交才显示错误信息"><a href="#提交才显示错误信息" class="headerlink" title="提交才显示错误信息"></a>提交才显示错误信息</h5><p><code>app.js</code>的代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">var app = angular.module(&apos;myApp&apos;, [&apos;ngMessages&apos;]);</div><div class="line"></div><div class="line">app.controller(&apos;myController&apos;, function($scope)&#123;</div><div class="line">	$scope.submitted = false;    //submitted为true时才显示错误信息</div><div class="line">	$scope.signupForm = function()&#123;</div><div class="line">		if($scope.signup_form.$valid)&#123;</div><div class="line">			//正常提交</div><div class="line">		&#125;else&#123;</div><div class="line">			$scope.signup_form.submitted = true;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p>在控制器中定义变量 <code>submitted</code>，提交前为 false，提交后有错误为 true。当表单提交后执行函数 <code>signupForm</code>，判断表单是否有错，没错正常提交，有错将 submmitted 改为 true。</p>
+<p><code>index.html</code>的代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">&lt;form name=&quot;signup_form&quot; novalidate ng-submit=&quot;signupForm()&quot; ng_controller=&quot;myController&quot;&gt;</div><div class="line">	&lt;fieldset&gt;</div><div class="line">		&lt;legend&gt;Signup&lt;/legend&gt;</div><div class="line">		&lt;div class=&quot;row&quot;&gt;</div><div class="line">			&lt;div class=&quot;large-12 columns&quot;&gt;</div><div class="line">				&lt;label&gt;Your name&lt;/label&gt;</div><div class="line">				&lt;input type=&quot;text&quot;</div><div class="line">				  placeholder=&quot;Name&quot;</div><div class="line">				  name=&quot;name&quot;</div><div class="line">				  ng-model=&quot;signup.name&quot;</div><div class="line">				  ng-minlength=&quot;3&quot;</div><div class="line">				  ng-maxlength=&quot;20&quot; required ng-focus /&gt;</div><div class="line">			&lt;/div&gt;</div><div class="line">			&lt;div class=&quot;error&quot; ng-messages=&quot;signup_form.name.$error&quot; ng-messages-multiple ng-if=&quot;signup_form.submitted &amp;&amp; signup_form.name.$dirty&quot;&gt;</div><div class="line">				&lt;div ng-messages-include=&quot;templates/other.html&quot;&gt;&lt;/div&gt;</div><div class="line">			&lt;/div&gt;</div><div class="line">		&lt;/div&gt;</div><div class="line">        &lt;button type=&quot;submit&quot; class=&quot;button radius&quot;&gt;</div><div class="line">			Submit</div><div class="line">		&lt;/button&gt;</div><div class="line">    &lt;/fieldset&gt;</div><div class="line">&lt;/form&gt;</div></pre></td></tr></table></figure></p>
+<p>基本与上一种方法差不多，不过要把判断语句 ng-if 改为判断<code>signup_form.submitted</code>，然后提交按钮去掉 ng-disabled，因为已经没有意义了。</p>
+<p>就是这样。</p>
 
       
 
@@ -255,7 +228,7 @@ if=/dev/zero不产生IO，因此可以用来测试纯写速度；所以后面测
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">AngularJS</a>
         		</li>
       		
 		</ul>
@@ -311,7 +284,7 @@ if=/dev/zero不产生IO，因此可以用来测试纯写速度；所以后面测
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://famousczm.github.io/2017/03/20/阿里云学生机硬盘读写速度测试/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://famousczm.github.io/2017/07/09/AngularJS实现两种表单错误处理的方式/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -325,18 +298,9 @@ if=/dev/zero不产生IO，因此可以用来测试纯写速度；所以后面测
   
 <nav id="article-nav">
   
-    <a href="/2017/03/20/Laravel初体验/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Laravel初体验
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/03/19/Foundation初体验/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Foundation初体验</div>
+    <a href="/2017/07/07/AngularJS-Directive-replace中的一些问题/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">AngularJS Directive replace中的一些问题</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -350,7 +314,7 @@ if=/dev/zero不产生IO，因此可以用来测试纯写速度；所以后面测
   
   <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="阿里云学生机硬盘读写速度测试" data-title="阿里云学生机硬盘读写速度测试" data-url="http://famousczm.github.io/2017/03/20/阿里云学生机硬盘读写速度测试/"></div>
+	<div class="ds-thread" data-thread-key="AngularJS实现两种表单错误处理的方式" data-title="AngularJS实现两种表单错误处理的方式" data-url="http://famousczm.github.io/2017/07/09/AngularJS实现两种表单错误处理的方式/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">

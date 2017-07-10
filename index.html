@@ -150,6 +150,71 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-AngularJS实现两种表单错误处理的方式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/09/AngularJS实现两种表单错误处理的方式/">AngularJS实现两种表单错误处理的方式</a>
+    </h1>
+  
+
+        
+        <a href="/2017/07/09/AngularJS实现两种表单错误处理的方式/" class="archive-article-date">
+  	<time datetime="2017-07-09T11:59:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-09</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>AngularJS 的自动双向数据绑定的确非常强大，对表单的处理也十分出色。它能和 HTML5 的混合使用更是让我震惊不已，这里我利用 AngularJS 的强大简便地实现表单的两种错误处理方式。</p>
+<p>表单错误处理即在输入表单数据时实时判断数据的正确与否并将错误提示显示给用户。第一种是当输入框失焦时才显示错误信息；第二种是当点击提交按钮时才显示错误信息。<br>
+        
+          <a class="article-more-a" href="/2017/07/09/AngularJS实现两种表单错误处理的方式/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">AngularJS</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/07/09/AngularJS实现两种表单错误处理的方式/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-AngularJS-Directive-replace中的一些问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -177,7 +242,7 @@
 <p>所以解决方法是删掉一个 p 元素，或者把 replace 改为 false 。</p>
 <p>然后我想能不能在 people 元素内把删掉的 p 元素内容加进去即这样：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;people&gt;&lt;p&gt;性别:&#123;&#123;data.sex&#125;&#125;&lt;/p&gt;&lt;/people&gt;</div></pre></td></tr></table></figure></p>
 <p>结果是，不行。</p>
-<p>不论是 replace 为 true 或者 false，people 里面的内容全部都会被 template 替换掉，目前我还不知道有什么方法可以保存这些内容。</p>
+<p>不论是 replace 为 true 或者 false，people 里面的内容全部都会被 template 替换掉，要想保存 people 里原有的内容，要加入<code>transclude: true</code>，并在 template 中加入 <code>&lt;div ng-transclude&gt;&lt;/div&gt;</code>来保存原有的内容，修改后的内容为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">App.directive(&quot;people&quot;, function()&#123;</div><div class="line">	return &#123;</div><div class="line">		restrict: &quot;E&quot;,</div><div class="line">		transclude: true,</div><div class="line">		template: &quot;&lt;p&gt;姓名:&#123;&#123;data.name&#125;&#125;&lt;/p&gt;&lt;p&gt;性别:&#123;&#123;data.sex&#125;&#125;&lt;/p&gt;&lt;div ng-transclude&gt;&lt;/div&gt;&quot;</div></pre></td></tr></table></figure></p>
 <hr>
 
 <p>这几天沉迷于《巫师3》，要是有机会参与开发这样的游戏该是多美妙的事情</p>
@@ -457,79 +522,9 @@
 
 
   
-    <article id="post-HSLA与RGBA" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/11/HSLA与RGBA/">HSLA与RGBA</a>
-    </h1>
-  
-
-        
-        <a href="/2017/06/11/HSLA与RGBA/" class="archive-article-date">
-  	<time datetime="2017-06-11T03:20:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-11</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>选择颜色的时候我一般使用 rgba 的方式，简便易理解，所有颜色都是由三原色（红、绿、蓝）各种混合而成。但其实真正明白 CSS3 的 HSLA 就知道 HSLA 其实更好用，例如在在提高颜色亮度方面非常方便。</p>
-<p>HSLA 是由 H：HUE（色调）、S：Saturation（饱和度）、L：Lightness（亮度）和 A：Alpha（透明度）组成。控制颜色的是色调，0 为红色、120 为绿色、240 为蓝色</p>
-<p>如红色就是<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">background-color: hsla(0, 80%, 50%, 1);</div></pre></td></tr></table></figure></p>
-<p><img src="http://i2.muimg.com/1949/29a0e51c22072fd4.png" alt=""></p>
-<p>然后把亮度调到 80%，即：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">background-color: hsla(0, 80%, 80%, 1);</div></pre></td></tr></table></figure></p>
-<p><img src="http://i2.muimg.com/1949/49b213042bb612f2.png" alt=""></p>
-<p>颜色变浅了<br>
-        
-          <a class="article-more-a" href="/2017/06/11/HSLA与RGBA/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/06/11/HSLA与RGBA/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
     </nav>
   
 
@@ -628,10 +623,6 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Foundation</a>
               </li>
              
@@ -640,11 +631,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">JS</a>
+                <a href="javascript:void(0)" class="js-tag color5">JAVA</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">JAVA</a>
+                <a href="javascript:void(0)" class="js-tag color3">JS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -660,11 +651,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">.NET</a>
+                <a href="javascript:void(0)" class="js-tag color4">PHP</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">PHP</a>
+                <a href="javascript:void(0)" class="js-tag color5">.NET</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -684,6 +675,10 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">树莓派</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">学习心得</a>
               </li>
              
@@ -692,7 +687,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">树莓派</a>
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
             
             <div class="clearfix"></div>
