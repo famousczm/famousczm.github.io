@@ -38,7 +38,15 @@ App.controller("PhoneListCtrl", function($scope){
 ```
 结果是，不行。
 
-不论是 replace 为 true 或者 false，people 里面的内容全部都会被 template 替换掉，目前我还不知道有什么方法可以保存这些内容。
+不论是 replace 为 true 或者 false，people 里面的内容全部都会被 template 替换掉，要想保存 people 里原有的内容，要加入` transclude: true`，并在 template 中加入 `<div ng-transclude></div>`来保存原有的内容，修改后的内容为：
+```
+App.directive("people", function(){
+	return {
+		restrict: "E",
+		transclude: true,
+		template: "<p>姓名:{{data.name}}</p><p>性别:{{data.sex}}</p><div ng-transclude></div>"
+
+```
 
 <hr/>
 
