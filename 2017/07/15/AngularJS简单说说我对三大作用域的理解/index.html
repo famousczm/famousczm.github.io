@@ -6,17 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://famousczm.github.io">
-  <title>Tag: Linux | 柱铭</title>
+  <title>AngularJS简单说说我对三大作用域的理解 | 柱铭</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="嘿！朋友">
-<meta property="og:type" content="website">
-<meta property="og:title" content="柱铭">
-<meta property="og:url" content="http://famousczm.github.io/tags/Linux/index.html">
+  <meta name="description" content="最近在看《AngualrJS 权威教程》，深感这个框架确实有点消耗脑力，明明每个字都会读，连在一起怎么就不懂了呢 (´_ゝ`) 。看到三大作用域（外部作用域，继承作用域和隔离作用域）那里刚开始有点乱，现在理清了思路简单说说我的理解。
+外部作用域这个很容易理解，就是当前指令的作用域以外的作用域就是外部作用域，例如父级作用域，爷级作用域之类的。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AngularJS简单说说我对三大作用域的理解">
+<meta property="og:url" content="http://famousczm.github.io/2017/07/15/AngularJS简单说说我对三大作用域的理解/index.html">
 <meta property="og:site_name" content="柱铭">
-<meta property="og:description" content="嘿！朋友">
+<meta property="og:description" content="最近在看《AngualrJS 权威教程》，深感这个框架确实有点消耗脑力，明明每个字都会读，连在一起怎么就不懂了呢 (´_ゝ`) 。看到三大作用域（外部作用域，继承作用域和隔离作用域）那里刚开始有点乱，现在理清了思路简单说说我的理解。
+外部作用域这个很容易理解，就是当前指令的作用域以外的作用域就是外部作用域，例如父级作用域，爷级作用域之类的。">
+<meta property="og:updated_time" content="2017-07-15T09:29:20.856Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="柱铭">
-<meta name="twitter:description" content="嘿！朋友">
+<meta name="twitter:title" content="AngularJS简单说说我对三大作用域的理解">
+<meta name="twitter:description" content="最近在看《AngualrJS 权威教程》，深感这个框架确实有点消耗脑力，明明每个字都会读，连在一起怎么就不懂了呢 (´_ゝ`) 。看到三大作用域（外部作用域，继承作用域和隔离作用域）那里刚开始有点乱，现在理清了思路简单说说我的理解。
+外部作用域这个很容易理解，就是当前指令的作用域以外的作用域就是外部作用域，例如父级作用域，爷级作用域之类的。">
   
     <link rel="alternative" href="/atom.xml" title="柱铭" type="application/atom+xml">
   
@@ -148,226 +152,198 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-AngularJS简单说说我对三大作用域的理解" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/04/21/Ubuntu安装软件错误提示/" class="archive-article-date">
-  	<time datetime="2017-04-21T14:37:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-21</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/04/21/Ubuntu安装软件错误提示/">Ubuntu安装软件错误提示</a>
+    <h1 class="article-title" itemprop="name">
+      AngularJS简单说说我对三大作用域的理解
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2017/07/15/AngularJS简单说说我对三大作用域的理解/" class="archive-article-date">
+  	<time datetime="2017-07-15T07:10:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-15</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>最近在看《AngualrJS 权威教程》，深感这个框架确实有点消耗脑力，明明每个字都会读，连在一起怎么就不懂了呢 (´_ゝ`) 。看到三大作用域（外部作用域，继承作用域和隔离作用域）那里刚开始有点乱，现在理清了思路简单说说我的理解。</p>
+<h5 id="外部作用域"><a href="#外部作用域" class="headerlink" title="外部作用域"></a>外部作用域</h5><p>这个很容易理解，就是当前指令的作用域以外的作用域就是外部作用域，例如父级作用域，爷级作用域之类的。<br><a id="more"></a></p>
+<h5 id="继承作用域"><a href="#继承作用域" class="headerlink" title="继承作用域"></a>继承作用域</h5><p>从父级作用域继承并创建一个新的子作用域，这个子作用域就是继承作用域，它拥有父级作用域定义的的属性，可以在定义指令的时候用 <code>scope: true</code>来声明，这样使用该指令的时候就会生成一个继承作用域，如常见的内置指令 <code>ng-controller</code>就是这种类型。也就是说继承作用域能访问获取它父级作用域的属性，而父级作用域则不能访问继承作用域的，学过 Java 或其它面向对象语言的朋友应该都不难理解，举个栗子：</p>
+<p>HTML<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;div ng-init=&quot;fatherProperty=&apos;我在父级作用域生成&apos;&quot;&gt;</div><div class="line">	           我是父级作用域: &#123;&#123; fatherProperty &#125;&#125;&lt;br/&gt;</div><div class="line">	           我是父级作用域: &#123;&#123; sonProperty &#125;&#125;</div><div class="line">		&lt;div ng-controller=&quot;son&quot;&gt;</div><div class="line">			我是继承作用域: &#123;&#123; fatherProperty &#125;&#125;&lt;br/&gt;</div><div class="line">			我是继承作用域: &#123;&#123; sonProperty &#125;&#125;</div><div class="line">		&lt;/div&gt;</div><div class="line">	&lt;/div&gt;</div></pre></td></tr></table></figure></p>
+<p>JavaScript<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var app = angular.module(&apos;myApp&apos;, []);</div><div class="line">app.controller(&apos;son&apos;, function($scope)&#123;</div><div class="line">	$scope.sonProperty = &quot;我在子作用域生成&quot;;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p>结果为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">我是父级作用域: 我在父级作用域生成</div><div class="line">我是父级作用域:</div><div class="line">我是继承作用域: 我在父级作用域生成</div><div class="line">我是继承作用域: 我在继承作用域生成</div></pre></td></tr></table></figure></p>
+<p>一目了然。还有一点是，在继承作用域修改父级作用域的属性值时，父级作用域的属性值会不会也被改变呢？如果也被改变了那么继承作用域继承的是属性引用，如果没被改变就是单纯的属性复制了。栗子：</p>
+<p>HTML<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;div ng-init=&quot;fatherProperty=&apos;我在父级作用域生成&apos;&quot;&gt;</div><div class="line">	           我是父级作用域: &#123;&#123; fatherProperty &#125;&#125;&lt;br/&gt;</div><div class="line">		&lt;div ng-controller=&quot;son&quot;&gt;</div><div class="line">			我是继承作用域: &#123;&#123; fatherProperty &#125;&#125;&lt;br/&gt;</div><div class="line">		&lt;/div&gt;</div><div class="line">	&lt;/div&gt;</div></pre></td></tr></table></figure></p>
+<p>Javascript<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var app = angular.module(&apos;myApp&apos;, []);</div><div class="line">app.controller(&apos;son&apos;, function($scope)&#123;</div><div class="line">	$scope.fatherProperty = &quot;我在继承作用域改变了&quot;;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p>结果是：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">我是父级作用域: 我在父级作用域生成</div><div class="line">我是子作用域: 我在子作用域改变了</div></pre></td></tr></table></figure></p>
+<p>OK，属性复制。但也只是限于属性是字符串、数字之类的值而已，当继承的是数组或对象的话，就是属性引用了。栗子：</p>
+<p>HTML<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;div ng-init=&quot;fatherProperty=&#123;data: &apos;我在父级作用域中生成&apos;&#125;&quot;&gt;</div><div class="line">	           我是父级作用域: &#123;&#123; fatherProperty.data &#125;&#125;&lt;br/&gt;</div><div class="line">		&lt;div ng-controller=&quot;son&quot;&gt;</div><div class="line">			我是继承作用域: &#123;&#123; fatherProperty.data &#125;&#125;&lt;br/&gt;</div><div class="line">		&lt;/div&gt;</div><div class="line">	&lt;/div&gt;</div></pre></td></tr></table></figure></p>
+<p>Javascript<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var app = angular.module(&apos;myApp&apos;, []);</div><div class="line">app.controller(&apos;son&apos;, function($scope)&#123;</div><div class="line">	$scope.fatherProperty.data = &quot;我在继承作用域改变了&quot;;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p>结果是：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">我是父级作用域: 我在继承作用域改变了</div><div class="line">我是继承作用域: 我在继承作用域改变了</div></pre></td></tr></table></figure></p>
+<p>继承作用域也就差不多这样，也很好理解。</p>
+<h5 id="隔离作用域"><a href="#隔离作用域" class="headerlink" title="隔离作用域"></a>隔离作用域</h5><p>书上说较难理解的隔离作用域，其实也没多难。外部作用域和继承作用域之间多少有点关系，而隔离作用域如它名字的一样非常内向，很少和别人接触，所以它不像继承作用域一样可以访问它的外部作用域，隔离作用域自己跟自己玩，不能访问外部作用域。</p>
+<p>在定义指令时用<code>scope: {}</code>来声明，举个栗子：</p>
+<p>HTML<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;div ng-init=&quot;fatherProperty=&#123;data: &apos;我在父级作用域中生成&apos;&#125;&quot;&gt;</div><div class="line">	           我是父级作用域: &#123;&#123; fatherProperty.data &#125;&#125;</div><div class="line">		&lt;div my-directive&gt;&lt;/div&gt;</div><div class="line">	&lt;/div&gt;</div></pre></td></tr></table></figure></p>
+<p>Javascript<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">var app = angular.module(&apos;myApp&apos;, []);</div><div class="line">app.directive(&apos;myDirective&apos;, function() &#123;</div><div class="line">	return &#123;</div><div class="line">		restrict: &apos;A&apos;,</div><div class="line">		scope: &#123;&#125;,</div><div class="line">		template: &apos;我是隔离作用域: &#123;&#123; fatherProperty.data &#125;&#125;&apos;</div><div class="line">	&#125;;</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<p>结果是：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">我是父级作用域: 我在父级作用域中生成</div><div class="line">我是隔离作用域:</div></pre></td></tr></table></figure></p>
+<p>那么隔离作用域可不可以像 ng-controller 那样可以自己定义属性？</p>
+<p>当然可以自己定义属性，不然还怎么玩，定义属性的方法就是在<code>{}</code>里面定义，但是不能直接给它赋值，只能接受外界的传值（看来也没有很自闭），怎么传，要用绑定策略，看个栗子：</p>
+<p>HTML<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;div ng-init=&quot;fatherProperty=&#123;data: &apos;我在父级作用域中生成&apos;&#125;&quot;&gt;</div><div class="line">	           我是父级作用域: &#123;&#123; fatherProperty.data &#125;&#125;</div><div class="line">		&lt;div my-directive test=&quot;&#123;&#123;fatherProperty.data&#125;&#125;&quot;&gt;&lt;/div&gt;</div><div class="line">	&lt;/div&gt;</div></pre></td></tr></table></figure></p>
+<p>Javascript<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">var app = angular.module(&apos;myApp&apos;, []);</div><div class="line">app.directive(&apos;myDirective&apos;, function() &#123;</div><div class="line">	return &#123;</div><div class="line">		restrict: &apos;A&apos;,</div><div class="line">		scope: &#123;</div><div class="line">			test: &quot;@&quot;</div><div class="line">		&#125;,</div><div class="line">		template: &apos;我是隔离作用域: &#123;&#123; test &#125;&#125;&apos;</div><div class="line">	&#125;;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p>结果是：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">我是父级作用域: 我在父级作用域中生成</div><div class="line">我是隔离作用域: 我在父级作用域中生成</div></pre></td></tr></table></figure></p>
+<p>可以看到，隔离作用域也能访问外部作用域了，其实更像外部作用域将数据从一个接口处传进隔离作用域里…这隔离作用域不但内向还懒啊哈哈。这个 <code>@</code>符号用来接受传进来的字符串然后赋值给属性，但只能接受字符串，所以遇到表达式的时候还要用 { { } } 来翻译成字符串输入。用<code>=</code>就不用这么麻烦了，直接写就 ok，如下：</p>
+<p>HTML<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;div ng-init=&quot;fatherProperty=&#123;data: &apos;我在父级作用域中生成&apos;&#125;&quot;&gt;</div><div class="line">	           我是父级作用域: &#123;&#123; fatherProperty.data &#125;&#125;</div><div class="line">		&lt;div my-directive test=&quot;fatherProperty.data&quot;&gt;&lt;/div&gt;</div><div class="line">	&lt;/div&gt;</div></pre></td></tr></table></figure></p>
+<p>Javascript<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">var app = angular.module(&apos;myApp&apos;, []);</div><div class="line">app.directive(&apos;myDirective&apos;, function() &#123;</div><div class="line">	return &#123;</div><div class="line">		restrict: &apos;A&apos;,</div><div class="line">		scope: &#123;</div><div class="line">			test: &quot;=&quot;</div><div class="line">		&#125;,</div><div class="line">		template: &apos;我是隔离作用域: &#123;&#123; test &#125;&#125;&apos;</div><div class="line">	&#125;;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p>结果同上。</p>
+<p>如果直接把 <code>fatherProperty</code>这个对象传进去，则隔离作用域内的属性<code>test</code>接受的是一个对象，输出时应为 。</p>
+<p>隔离作用域目前也了解至此。</p>
+<p>That’s all ~</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">AngularJS</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/03/21/Linux之sl命令/" class="archive-article-date">
-  	<time datetime="2017-03-21T02:10:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-21</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/03/21/Linux之sl命令/">Linux之sl命令</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/03/20/阿里云学生机硬盘读写速度测试/" class="archive-article-date">
-  	<time datetime="2017-03-20T06:41:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/03/20/阿里云学生机硬盘读写速度测试/">阿里云学生机硬盘读写速度测试</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/03/18/服务器上部署网站/" class="archive-article-date">
-  	<time datetime="2017-03-18T15:39:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-18</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/03/18/服务器上部署网站/">服务器上部署网站</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
       
-        </div></section>
+
       
+
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/10/08/Linux添加磁盘/" class="archive-article-date">
-  	<time datetime="2016-10-08T06:13:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-10-08</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/10/08/Linux添加磁盘/">Linux添加磁盘</a>
-    </h1>
-  
+      </div>
+    </span>
+  </div>
+</div>
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
-        		</li>
-      		
-		</ul>
-	</div>
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://famousczm.github.io/2017/07/15/AngularJS简单说说我对三大作用域的理解/" alt="微信分享二维码">
+    </div>
+</div>
 
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2017/07/09/AngularJS实现两种表单错误处理的方式/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">AngularJS实现两种表单错误处理的方式</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+
+  
+  <div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="AngularJS简单说说我对三大作用域的理解" data-title="AngularJS简单说说我对三大作用域的理解" data-url="http://famousczm.github.io/2017/07/15/AngularJS简单说说我对三大作用域的理解/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"famousczm"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
   
 
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/tags/Linux/page/2/">2</a><a class="extend next" rel="next" href="/tags/Linux/page/2/">Next &raquo;</a>
-    </nav>
-  
+
 
 
           </div>
@@ -390,9 +366,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		root: "/",

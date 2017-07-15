@@ -150,6 +150,76 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-树莓派初体验" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/12/树莓派初体验/">树莓派初体验</a>
+    </h1>
+  
+
+        
+        <a href="/2016/10/12/树莓派初体验/" class="archive-article-date">
+  	<time datetime="2016-10-12T06:13:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-10-12</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>上课的时候突然想买个树莓派来玩玩，就马上入手了Raspberry Pi3 B+，等了三天，今天终于来了。这玩意看似便宜，其实为了能真正使用它，还要配备其它器件啊。我顺带买了32G的内存卡（树莓派要外带硬盘），电源适配器（Pi3要求有5V，2.5A的电源，懒得找，就买了）还有个官方外壳（保护作用，没错，树莓派来的时候是裸着的）。本来还需要个显示器的，因为树莓派的视频接口是HDMI，很遗憾我宿舍没有电视机，台式显示屏倒是有一个，可是我忘了买转VGA的转换器，而且人家也要用。所以就按照网上说的用笔记本远程连接咯。于是我又买了路由器，两条网线。一切准备就绪！</p>
+<p><img src="http://i1.piimg.com/4851/cad680e0b2b57bf1.jpg" alt="Aaron Swartz"><br><img src="http://i1.piimg.com/4851/6f62da8832b7f139.jpg" alt="Aaron Swartz"></p>
+<p>首先，格式化并烧录SD卡，格式化的时候系统提示磁盘写保护，不能写入数据也不能格式化。把读卡器的LOCK来回拨了几次，修改注册表也不行。其实是读卡器的问题，换一个就好了</p>
+<p>用软件<em>Win32DiskImager</em>把下载好的<em>2016-05-10-raspbian-jessie.img</em>镜像烧录进SD卡，几分钟就完事了</p>
+<p>把内存卡插进树莓派，接上电源，用网线连上路由器。打开软件<em>advanced_ip_scanner</em>，检索树莓派的IP地址</p>
+<p>再用<em>putty</em>输入IP，端口22连接。默认用户名：pi 密码：raspberry</p>
+<p><img src="http://i1.piimg.com/4851/c773e7d0ad053886.png" alt="Aaron Swartz"><br>
+        
+          <a class="article-more-a" href="/2016/10/12/树莓派初体验/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">树莓派</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2016/10/12/树莓派初体验/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-Linux添加磁盘" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -429,78 +499,6 @@
 
 
   
-    <article id="post-Hexo中文乱码" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/10/05/Hexo中文乱码/">Hexo中文乱码</a>
-    </h1>
-  
-
-        
-        <a href="/2016/10/05/Hexo中文乱码/" class="archive-article-date">
-  	<time datetime="2016-10-05T05:52:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-10-05</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>用<em>Hexo</em>搭建的博客title默认为Hexo，我想修改为自己设置的值。于是在public文件夹下的index.html中修改title的值，可是重新生成静态文件时一切又恢复为默认值Hexo。</p>
-<p>原因是每次更新博客时都是在<strong>Git Shell</strong>中清除缓存文件和已生成的静态文件，然后再重新生成新的静态文件。最后deploy到github上，所以原来的index.html文件已经被毁灭了再生成，原先的设置也不复存在了</p>
-<p>这要在文件_config.yml中修改title的值，把</p>
-<p><code>title： Hexo</code></p>
-<p>修改为</p>
-<p><code>title: 柱铭（填要修改的值）</code></p>
-<p>即可，要注意的是，：后面要空一个格</p>
-<p>到这里重新部署时，网页的title出现乱码</p>
-<p><strong>解决方法：</strong></p>
-<p>把_config.yml文件编码成UTF-8即可</p>
-<p>我用<em>Notepad++</em>的操作是：<strong>格式-&gt;转为UTF-8编码格式-&gt;保存</strong></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Hexo</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/10/05/Hexo中文乱码/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/7/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/9/">Next &raquo;</a>
@@ -602,6 +600,10 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Foundation</a>
               </li>
              
@@ -610,11 +612,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">JAVA</a>
+                <a href="javascript:void(0)" class="js-tag color3">JS</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">JS</a>
+                <a href="javascript:void(0)" class="js-tag color5">JAVA</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -658,15 +660,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">学习心得</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">HTML+CSS</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java</a>
+                <a href="javascript:void(0)" class="js-tag color5">学习心得</a>
               </li>
             
             <div class="clearfix"></div>
