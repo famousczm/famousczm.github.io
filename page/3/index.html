@@ -150,6 +150,74 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-CSS学习小记（四）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/05/17/CSS学习小记（四）/">CSS学习小记（四）</a>
+    </h1>
+  
+
+        
+        <a href="/2017/05/17/CSS学习小记（四）/" class="archive-article-date">
+  	<time datetime="2017-05-17T14:15:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-17</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="box-sizing"><a href="#box-sizing" class="headerlink" title="box-sizing"></a>box-sizing</h4><p>在做项目的过程中，有时定义了两个宽度相同的 div ，但是为其中一个添加了 padding 和 border 之后，宽度却不一样了，因为被 padding 和 border 硬生生给撑开了，这种事情是非常苦恼的，之前是通过减少宽度来使总宽度保持一致。直到发现了这个属性。</p>
+<p><strong>box-sizing</strong> 属性用于更改用于计算元素宽度和高度的默认的 CSS 盒子模型。可以使用此属性来模拟不正确支持CSS盒子模型规范的浏览器的行为。</p>
+<p>我的那个问题只需要在两个 div 内设置<code>box-sizing:border-box</code>就 ok 了，这属性设置的意思是此元素的内边距和边框不再会增加它的宽度。这样 div 的宽度就不会因为 padding 和 border 的设置而改变了。</p>
+<p>默认值是<code>box-sizing:content-box</code>，这个就是平时说的标准盒子模型了，设置边框和内边框会使宽度增加。</p>
+<p>由于这也是实验中的属性，使用时最好加上浏览器前缀。<br>
+        
+          <a class="article-more-a" href="/2017/05/17/CSS学习小记（四）/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/05/17/CSS学习小记（四）/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-小项目-Jquery实现夜间模式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -417,73 +485,6 @@
 
 
   
-    <article id="post-从修改hosts文件科学上网中理解DNS（上）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/05/07/从修改hosts文件科学上网中理解DNS（上）/">从修改hosts文件科学上网中理解DNS（上）</a>
-    </h1>
-  
-
-        
-        <a href="/2017/05/07/从修改hosts文件科学上网中理解DNS（上）/" class="archive-article-date">
-  	<time datetime="2017-05-07T09:43:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-07</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>科学上网的方法有多种，我之前用的免费软件 <strong>Lantern</strong> 已经开始限流量了。经朋友指点，只要修改电脑中的 <strong>hosts</strong> 文件就可以访问 Google 了，为什么会这么神奇呢？先看看里面的是什么东西，Window 上的 hosts 文件在<code>C:\Windows\System32\drivers\etc\hosts</code>这个地方。用文本编辑器打开：</p>
-<p><img src="http://i1.piimg.com/1949/f8a3f523691bfab8.png" alt=""></p>
-<p>可以看出里面都是一条条 IP 地址 + 域名的记录，用来进行 IP 地址的映射，当我们在浏览器上输入一个域名的时候，如百度：<code>www.baidu.com</code>，浏览器会先在 这个 hosts 文件中根据域名找到对应的 IP 地址，然后访问目标主机。这个过程是不是很熟悉？对！这就是 <strong>DNS</strong> (域名解析系统)的工作方式了。</p>
-<p>可以发现更熟悉的代表本地计算机的回环 IP 地址的映射<code>127.0.0.1    localhost</code>都是在 hosts 文件中定义的。<br>
-        
-          <a class="article-more-a" href="/2017/05/07/从修改hosts文件科学上网中理解DNS（上）/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">计算机</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/05/07/从修改hosts文件科学上网中理解DNS（上）/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
@@ -597,11 +598,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">JS</a>
+                <a href="javascript:void(0)" class="js-tag color5">JAVA</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">JAVA</a>
+                <a href="javascript:void(0)" class="js-tag color3">JS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -617,11 +618,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">PHP</a>
+                <a href="javascript:void(0)" class="js-tag color5">.NET</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">.NET</a>
+                <a href="javascript:void(0)" class="js-tag color4">PHP</a>
               </li>
              
               <li class="article-tag-list-item">

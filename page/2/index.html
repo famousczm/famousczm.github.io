@@ -150,6 +150,106 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-微信小程序-事件处理" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/21/微信小程序-事件处理/">微信小程序-事件处理</a>
+    </h1>
+  
+
+        
+        <a href="/2017/06/21/微信小程序-事件处理/" class="archive-article-date">
+  	<time datetime="2017-06-21T14:39:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-21</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>先看一下微信小程序对事件的解释：</p>
+<p><img src="http://i1.buimg.com/1949/0c2efc8133e60a31.png" alt=""></p>
+<p>文字叙述一下</p>
+<h4 id="什么是事件"><a href="#什么是事件" class="headerlink" title="什么是事件"></a>什么是事件</h4><ul>
+<li>事件是视图层到逻辑层的通讯方式。</li>
+<li>事件可以将用户的行为反馈到逻辑层进行处理。</li>
+<li>事件可以绑定在组件上，当达到触发事件，就会执行逻辑层中对应的事件处理函数。</li>
+<li>事件对象可以携带额外信息，如 id, dataset, touches。</li>
+</ul>
+<p>就是那些点击、鼠标移进移出之类的动作啦。小程序绑定事件的方法是在 wxml 文件对应的组件中使用 <code>bindtap</code>加上事件名字就可以了。例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;view bindtap=&quot;test&quot;&gt;&lt;/view&gt;</div></pre></td></tr></table></figure></p>
+<p>然后当点击这个组件的时候小程序就会在该页面对应的脚本文件的 Page 中找到相应的事件处理函数，下面举例写这个 test 事件:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">Page(&#123;</div><div class="line">   ....</div><div class="line">   test: function(event)&#123;</div><div class="line">      console.log(&apos;Click！&apos;);</div><div class="line">   &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<p>先点击一下组件，然后打开控制台看看是否成功。毫无疑问是可以的。接下来再看看获得的这个事件里面到底有什么信息</p>
+<p><img src="http://i2.muimg.com/1949/5018aeee4fc2fc85.png" alt=""></p>
+<p>嗯，首先是 <code>type</code>事件类型是 <strong>tap</strong> ，这个 tap 事件就是手指触摸后马上离开的动作，也就是点击啦。<code>timeStamp</code>为发生事件的时间戳，<code>detail</code>表示事件的某种信息，根据不同的事件会返回不同的信息，这里返回的是点击时的坐标。<code>currentTarget</code>和<code>target</code>这两个属性比较容易搞糊涂，<code>currentTarget</code>在事件流的捕获、目标和冒泡阶段，而<code>target</code>只是在事件流的目标阶段，当事件流是在目标阶段时，这两个的值是一样的，而事件流在捕获和冒泡阶段的话，两个属性的值不一样，下面会具体分析。最后是<code>changedTouches</code>和<code>touches</code>的比较，<code>touches</code>属性当每个事件被触发时，就会获取此时每个触点的信息，并保存在列表中，是只读属性。<code>changedTouches</code>跟差不多也是可以记录触点的信息，但它是根据事件的变法来获取触点的信息，举个栗子就是，当一只手指触碰屏幕时，<code>changedTouches</code>和<code>touches</code>都会同时记录这个触点的信息，信息一样；而当手指离开屏幕时，触点消失，<code>touches</code>中的记录就会消失，而由于这个过程是由接触事件向没有接触事件的变化，所以<code>changedTouches</code>仍然记录着触点移开前的信息，这就是两者之间的区别了。</p>
+<p>再举例分析一下<code>currentTarget</code>和<code>target</code>的不同</p>
+<p>我先把事件 test 绑定在 Image 组件上，即：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;view id=&quot;view&quot; class=&quot;userinfo&quot;&gt;</div><div class="line">    &lt;image id=&quot;image&quot; bindtap=&quot;test&quot; class=&quot;userinfo-avatar&quot; src=&quot;&#123;&#123;userInfo.avatarUrl&#125;&#125;&quot; background-size=&quot;cover&quot;&gt;&lt;/image&gt;</div><div class="line">    &lt;text class=&quot;userinfo-nickname&quot;&gt;&#123;&#123;userInfo.nickName&#125;&#125;&lt;/text&gt;</div><div class="line">  &lt;/view&gt;</div></pre></td></tr></table></figure></p>
+<p>然后点击头像，查看<code>currentTarget</code>和<code>target</code>的信息：</p>
+<p><img src="http://i4.piimg.com/1949/544879d35ae0c4f6.png" alt=""></p>
+<p>一样，因为目标对象都是 image 组件。再把 test 事件绑定到 image 的父组件 view 上：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;view id=&quot;view&quot; bindtap=&quot;test&quot; class=&quot;userinfo&quot;&gt;</div><div class="line">    &lt;image id=&quot;image&quot; class=&quot;userinfo-avatar&quot; src=&quot;&#123;&#123;userInfo.avatarUrl&#125;&#125;&quot; background-size=&quot;cover&quot;&gt;&lt;/image&gt;</div><div class="line">    &lt;text class=&quot;userinfo-nickname&quot;&gt;&#123;&#123;userInfo.nickName&#125;&#125;&lt;/text&gt;</div><div class="line">  &lt;/view&gt;</div></pre></td></tr></table></figure></p>
+<p>然后点击头像，查看<code>currentTarget</code>和<code>target</code>的信息：</p>
+<p><img src="http://i4.piimg.com/1949/dcba65a0ff3c4da6.png" alt=""></p>
+<p>可看到信息不一样了，不难发现这次 target 保存的信息是点击的 image 组件的信息，而 currentTarget 保存的是绑定 test 事件的 view 组件的信息。到这里<code>currentTarget</code>和<code>target</code>的区别已经很明显了。</p>
+<p>分析完 event 对象，继续分析 <code>currentTarget</code> 对象，因为这个很常用，经常用它来获取触发事件的组件信息，先把它打印出来：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">test: function(event)&#123;</div><div class="line">      console.log(event.currentTarget)</div><div class="line">  &#125;</div></pre></td></tr></table></figure></p>
+<p>点击头像，获取信息：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">Object &#123;id: &quot;image&quot;, offsetLeft: 156, offsetTop: 110, dataset: Object&#125;</div><div class="line">dataset:Object</div><div class="line">id:&quot;image&quot;</div><div class="line">offsetLeft:156</div><div class="line">offsetTop:110</div><div class="line">__proto__:Object</div></pre></td></tr></table></figure></p>
+<p>信息主要有<code>dataset</code>对象，目标组件<code>id</code>的值，还有相对页面的偏移量<code>offsetLeft</code>和<code>offsetTop</code>。</p>
+<p>看看 dataset 里面装的是什么<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">test: function(event)&#123;</div><div class="line">      console.log(event.currentTarget.dataset)</div><div class="line">  &#125;</div></pre></td></tr></table></figure></p>
+<p><img src="http://i4.piimg.com/1949/61c42f06161ace74.png" alt=""></p>
+<p>嗯，什么都没有。查阅文档得知，dataset 是组件上由data-开头的自定义属性组成的集合，所以我们在 view 组件上增加几个自定义属性：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;view bindtap=&quot;test&quot; data-num=&quot;1&quot; data-hi=&quot;hello&quot; id=&quot;view&quot; class=&quot;userinfo&quot;&gt;</div><div class="line">    &lt;image id=&quot;image&quot; class=&quot;userinfo-avatar&quot; src=&quot;&#123;&#123;userInfo.avatarUrl&#125;&#125;&quot; background-size=&quot;cover&quot;&gt;&lt;/image&gt;</div><div class="line">    &lt;text class=&quot;userinfo-nickname&quot;&gt;&#123;&#123;userInfo.nickName&#125;&#125;&lt;/text&gt;</div><div class="line">  &lt;/view&gt;</div></pre></td></tr></table></figure></p>
+<p><img src="http://i2.muimg.com/1949/8b14e44d7c2b3f04.png" alt=""></p>
+<p>有了，然后获取数据的时候直接按下面方法使用就行了：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">event.currentTarget.dataset.hi</div><div class="line">event.currentTarget.dataset.num</div></pre></td></tr></table></figure></p>
+<p>绑定事件除了用 <code>bind</code>之外还可以用 <code>catch</code>，区别是 <code>bind</code>不会阻止冒泡事件向上冒泡，而 <code>catch</code>会。举例说明：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">test1: function(event)&#123;</div><div class="line">      console.log(&quot;test1&quot;)</div><div class="line">  &#125;,</div><div class="line">  test2: function (event) &#123;</div><div class="line">    console.log(&quot;test2&quot;)</div><div class="line">  &#125;,</div><div class="line">  test3: function (event) &#123;</div><div class="line">    console.log(&quot;test3&quot;)</div><div class="line">  &#125;</div></pre></td></tr></table></figure></p>
+<p>我定义了三个事件，然后绑定在三个嵌套的组件里<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&lt;view bindtap=&quot;test3&quot; class=&quot;container&quot;&gt;</div><div class="line">  &lt;view bindtap=&quot;test2&quot; data-num=&quot;1&quot; data-hi=&quot;hello&quot; id=&quot;view&quot; class=&quot;userinfo&quot;&gt;</div><div class="line">    &lt;view bindtap=&quot;test1&quot; class=&quot;classname&quot;&gt;</div><div class="line">    &lt;image id=&quot;image&quot; class=&quot;userinfo-avatar&quot; src=&quot;&#123;&#123;userInfo.avatarUrl&#125;&#125;&quot; background-size=&quot;cover&quot;&gt;&lt;/image&gt;</div><div class="line">    &lt;text class=&quot;userinfo-nickname&quot;&gt;&#123;&#123;userInfo.nickName&#125;&#125;&lt;/text&gt;</div><div class="line">  &lt;/view&gt;</div><div class="line">  &lt;/view&gt;</div><div class="line">  &lt;view class=&quot;usermotto&quot;&gt;</div><div class="line">    &lt;text class=&quot;user-motto&quot;&gt;&#123;&#123;motto&#125;&#125;&lt;/text&gt;</div><div class="line">  &lt;/view&gt;</div><div class="line">&lt;/view&gt;</div></pre></td></tr></table></figure></p>
+<p>点击头像，可以发现：</p>
+<p><img src="http://i2.muimg.com/1949/313191b3fcefc58e.png" alt=""></p>
+<p>事件由里向外顺序触发，向冒泡一样。如果在第二层的 view 那里使用 <code>catchtap</code>，即：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&lt;view bindtap=&quot;test3&quot; class=&quot;container&quot;&gt;</div><div class="line">  &lt;view catchtap=&quot;test2&quot; data-num=&quot;1&quot; data-hi=&quot;hello&quot; id=&quot;view&quot; class=&quot;userinfo&quot;&gt;</div><div class="line">    &lt;view bindtap=&quot;test1&quot; class=&quot;classname&quot;&gt;</div><div class="line">    &lt;image id=&quot;image&quot; class=&quot;userinfo-avatar&quot; src=&quot;&#123;&#123;userInfo.avatarUrl&#125;&#125;&quot; background-size=&quot;cover&quot;&gt;&lt;/image&gt;</div><div class="line">    &lt;text class=&quot;userinfo-nickname&quot;&gt;&#123;&#123;userInfo.nickName&#125;&#125;&lt;/text&gt;</div><div class="line">  &lt;/view&gt;</div><div class="line">  &lt;/view&gt;</div><div class="line">  &lt;view class=&quot;usermotto&quot;&gt;</div><div class="line">    &lt;text class=&quot;user-motto&quot;&gt;&#123;&#123;motto&#125;&#125;&lt;/text&gt;</div><div class="line">  &lt;/view&gt;</div><div class="line">&lt;/view&gt;</div></pre></td></tr></table></figure></p>
+<p>点击头像：</p>
+<p><img src="http://i2.muimg.com/1949/234221acc5dba908.png" alt=""></p>
+<p>冒泡在第二层那里被中断了。<code>catch</code>就是这么玩。</p>
+<p>完。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">微信小程序</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/06/21/微信小程序-事件处理/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-微信小程序-demo代码分析" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -417,74 +517,6 @@
 
 
   
-    <article id="post-CSS学习小记（四）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/05/17/CSS学习小记（四）/">CSS学习小记（四）</a>
-    </h1>
-  
-
-        
-        <a href="/2017/05/17/CSS学习小记（四）/" class="archive-article-date">
-  	<time datetime="2017-05-17T14:15:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-17</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="box-sizing"><a href="#box-sizing" class="headerlink" title="box-sizing"></a>box-sizing</h4><p>在做项目的过程中，有时定义了两个宽度相同的 div ，但是为其中一个添加了 padding 和 border 之后，宽度却不一样了，因为被 padding 和 border 硬生生给撑开了，这种事情是非常苦恼的，之前是通过减少宽度来使总宽度保持一致。直到发现了这个属性。</p>
-<p><strong>box-sizing</strong> 属性用于更改用于计算元素宽度和高度的默认的 CSS 盒子模型。可以使用此属性来模拟不正确支持CSS盒子模型规范的浏览器的行为。</p>
-<p>我的那个问题只需要在两个 div 内设置<code>box-sizing:border-box</code>就 ok 了，这属性设置的意思是此元素的内边距和边框不再会增加它的宽度。这样 div 的宽度就不会因为 padding 和 border 的设置而改变了。</p>
-<p>默认值是<code>box-sizing:content-box</code>，这个就是平时说的标准盒子模型了，设置边框和内边框会使宽度增加。</p>
-<p>由于这也是实验中的属性，使用时最好加上浏览器前缀。<br>
-        
-          <a class="article-more-a" href="/2017/05/17/CSS学习小记（四）/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/05/17/CSS学习小记（四）/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
@@ -598,11 +630,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">JS</a>
+                <a href="javascript:void(0)" class="js-tag color5">JAVA</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">JAVA</a>
+                <a href="javascript:void(0)" class="js-tag color3">JS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -618,11 +650,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">PHP</a>
+                <a href="javascript:void(0)" class="js-tag color5">.NET</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">.NET</a>
+                <a href="javascript:void(0)" class="js-tag color4">PHP</a>
               </li>
              
               <li class="article-tag-list-item">
