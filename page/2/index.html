@@ -45,7 +45,7 @@
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="http://p1.bpimg.com/4851/a0c74de6c7f6c1b0.jpg" class="js-avatar">
+			<img src="http://i1.bvimg.com/1949/a0c74de6c7f6c1b0.jpg" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="/">柱铭</a></h1>
@@ -101,7 +101,7 @@
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="http://p1.bpimg.com/4851/a0c74de6c7f6c1b0.jpg" class="js-avatar">
+				<img src="http://i1.bvimg.com/1949/a0c74de6c7f6c1b0.jpg" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author">柱铭</h1>
@@ -149,6 +149,76 @@
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-AngularJS-Uncaught-Error-injector-modulerr-问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/27/AngularJS-Uncaught-Error-injector-modulerr-问题/">AngularJS:Uncaught Error: [$injector:modulerr]!问题</a>
+    </h1>
+  
+
+        
+        <a href="/2017/06/27/AngularJS-Uncaught-Error-injector-modulerr-问题/" class="archive-article-date">
+  	<time datetime="2017-06-27T12:47:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-27</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>使用控制器的时候，出现如下这种错误信息：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">angular.min.js:6 Uncaught Error: [$injector:modulerr] http://errors.angularjs.org/1.6.4/$injector/modulerr?p0=myApp&amp;p1=Error%3A%2…tp%3A%2F%2F127.0.0.1%3A8020%2FAngularTest%2Fjs%2Fangular.min.js%3A22%3A179)</div><div class="line">    at angular.min.js:6</div><div class="line">    at angular.min.js:42</div><div class="line">    at q (angular.min.js:7)</div><div class="line">    at g (angular.min.js:41)</div><div class="line">    at eb (angular.min.js:46)</div><div class="line">    at c (angular.min.js:21)</div><div class="line">    at Sc (angular.min.js:22)</div><div class="line">    at ue (angular.min.js:20)</div><div class="line">    at angular.min.js:331</div><div class="line">    at HTMLDocument.b (angular.min.js:38)</div></pre></td></tr></table></figure></p>
+<p>不能获取什么，模块什么的不懂，把压缩版的 Angular.min.js 切换 Angular.js 查看详细错误信息：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Uncaught Error: [$injector:modulerr] Failed to instantiate module myApp due to:</div><div class="line">Error: [$injector:nomod] Module &apos;myApp&apos; is not available! You either misspelled the module name or forgot to load it. If registering a module ensure that you specify the dependencies as the second argument.</div><div class="line">....</div></pre></td></tr></table></figure></p>
+<p>‘myApp’ 模块得不到。这个 myApp 就是声明 AngularJS 应用的 <code>ng-app=&quot;myApp&quot;</code>，要使用 angular.module 函数来创建模块：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var app = angular.module(&quot;myApp&quot;, []);</div></pre></td></tr></table></figure></p>
+<p>创建模块后错误变成：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">angular.js:14525 Error: [$controller:ctrlreg] The controller with the name &apos;MyController&apos; is not registered.</div></pre></td></tr></table></figure></p>
+<p>我定义的控制器 MyController 还没注册，使用以下方式注册：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">app.controller(&apos;MyController&apos;, function($scope)&#123;...&#125;);</div></pre></td></tr></table></figure></p>
+<p>然后就可以了。</p>
+<p>一般还有些情况是对应的模块文件没有加载，如 angular-route.js 作为一个单独的模块并没有合并到 angular.js 中，所以要单独加载。</p>
+<p>要是到这里还没有解决问题的话，就要看看代码有没有写错了，常见的错误是(我平时常犯的 orz)，没有关闭标签 <code>&lt;script&gt; &lt;/script&gt;</code></p>
+<p>学习愉快。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">AngularJS</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/06/27/AngularJS-Uncaught-Error-injector-modulerr-问题/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
   
     <article id="post-微信小程序-事件处理" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -452,71 +522,6 @@
 
 
   
-    <article id="post-用CSS实现的效果（一）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/05/21/用CSS实现的效果（一）/">用CSS实现的效果（一）</a>
-    </h1>
-  
-
-        
-        <a href="/2017/05/21/用CSS实现的效果（一）/" class="archive-article-date">
-  	<time datetime="2017-05-21T07:07:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-21</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>怎么用 CSS 实现鼠标指向某个图标会自动在该图标上方显现相关内容呢？效果如下：</p>
-<p><img src="http://i4.buimg.com/1949/52baf72c9964a050.png" alt=""><br>
-        
-          <a class="article-more-a" href="/2017/05/21/用CSS实现的效果（一）/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/05/21/用CSS实现的效果（一）/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
@@ -610,6 +615,10 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Angular2</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">AngularJS</a>
               </li>
              
@@ -618,15 +627,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Foundation</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">JS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -634,7 +643,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">JS</a>
+                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -646,19 +655,19 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Oracle</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">.NET</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">PHP</a>
+                <a href="javascript:void(0)" class="js-tag color2">Oracle</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">SVG</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">PHP</a>
               </li>
              
               <li class="article-tag-list-item">

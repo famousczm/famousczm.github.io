@@ -6,24 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://famousczm.github.io">
-  <title>树莓派初体验 | 柱铭</title>
+  <title>Angular2 Cannot find name &#39;$&#39;问题 | 柱铭</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="上课的时候突然想买个树莓派来玩玩，就马上入手了Raspberry Pi3 B+，等了三天，今天终于来了。这玩意看似便宜，其实为了能真正使用它，还要配备其它器件啊。我顺带买了32G的内存卡（树莓派要外带硬盘），电源适配器（Pi3要求有5V，2.5A的电源，懒得找，就买了）还有个官方外壳（保护作用，没错，树莓派来的时候是裸着的）。本来还需要个显示器的，因为树莓派的视频接口是HDMI，很遗憾我宿舍没有电">
+  <meta name="description" content="边做项目边学着 AngularJS ，MVC 模式，双向数据绑定等特性用着觉得很新鲜很舒服。然后突然网上看到 Angular2 的出现，继承了 Angular1.x 和 react.js 的优点，更方便快捷的开发体验。更重要的是它不是 Angular1.x 的延伸，而是全新的重写，新的概念和使用方法。犹豫了几秒，决定改战 Angular2…..
+搭建好开发环境后，在引入 jquery 和 boot">
 <meta property="og:type" content="article">
-<meta property="og:title" content="树莓派初体验">
-<meta property="og:url" content="http://famousczm.github.io/2016/10/12/树莓派初体验/index.html">
+<meta property="og:title" content="Angular2 Cannot find name '$'问题">
+<meta property="og:url" content="http://famousczm.github.io/2017/07/26/Angular2-Cannot-find-name-问题/index.html">
 <meta property="og:site_name" content="柱铭">
-<meta property="og:description" content="上课的时候突然想买个树莓派来玩玩，就马上入手了Raspberry Pi3 B+，等了三天，今天终于来了。这玩意看似便宜，其实为了能真正使用它，还要配备其它器件啊。我顺带买了32G的内存卡（树莓派要外带硬盘），电源适配器（Pi3要求有5V，2.5A的电源，懒得找，就买了）还有个官方外壳（保护作用，没错，树莓派来的时候是裸着的）。本来还需要个显示器的，因为树莓派的视频接口是HDMI，很遗憾我宿舍没有电">
-<meta property="og:image" content="http://i1.piimg.com/4851/cad680e0b2b57bf1.jpg">
-<meta property="og:image" content="http://i1.piimg.com/4851/6f62da8832b7f139.jpg">
-<meta property="og:image" content="http://i1.piimg.com/4851/c773e7d0ad053886.png">
-<meta property="og:image" content="http://i1.piimg.com/4851/8de3b85be8f69a85.png">
-<meta property="og:image" content="http://i1.piimg.com/4851/2cbf50924849e3af.png">
-<meta property="og:updated_time" content="2017-03-18T13:33:19.571Z">
+<meta property="og:description" content="边做项目边学着 AngularJS ，MVC 模式，双向数据绑定等特性用着觉得很新鲜很舒服。然后突然网上看到 Angular2 的出现，继承了 Angular1.x 和 react.js 的优点，更方便快捷的开发体验。更重要的是它不是 Angular1.x 的延伸，而是全新的重写，新的概念和使用方法。犹豫了几秒，决定改战 Angular2…..
+搭建好开发环境后，在引入 jquery 和 boot">
+<meta property="og:updated_time" content="2017-07-26T13:20:16.600Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="树莓派初体验">
-<meta name="twitter:description" content="上课的时候突然想买个树莓派来玩玩，就马上入手了Raspberry Pi3 B+，等了三天，今天终于来了。这玩意看似便宜，其实为了能真正使用它，还要配备其它器件啊。我顺带买了32G的内存卡（树莓派要外带硬盘），电源适配器（Pi3要求有5V，2.5A的电源，懒得找，就买了）还有个官方外壳（保护作用，没错，树莓派来的时候是裸着的）。本来还需要个显示器的，因为树莓派的视频接口是HDMI，很遗憾我宿舍没有电">
-<meta name="twitter:image" content="http://i1.piimg.com/4851/cad680e0b2b57bf1.jpg">
+<meta name="twitter:title" content="Angular2 Cannot find name '$'问题">
+<meta name="twitter:description" content="边做项目边学着 AngularJS ，MVC 模式，双向数据绑定等特性用着觉得很新鲜很舒服。然后突然网上看到 Angular2 的出现，继承了 Angular1.x 和 react.js 的优点，更方便快捷的开发体验。更重要的是它不是 Angular1.x 的延伸，而是全新的重写，新的概念和使用方法。犹豫了几秒，决定改战 Angular2…..
+搭建好开发环境后，在引入 jquery 和 boot">
   
     <link rel="alternative" href="/atom.xml" title="柱铭" type="application/atom+xml">
   
@@ -155,60 +152,32 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-树莓派初体验" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Angular2-Cannot-find-name-问题" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      树莓派初体验
+      Angular2 Cannot find name &#39;$&#39;问题
     </h1>
   
 
         
-        <a href="/2016/10/12/树莓派初体验/" class="archive-article-date">
-  	<time datetime="2016-10-12T06:13:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-10-12</time>
+        <a href="/2017/07/26/Angular2-Cannot-find-name-问题/" class="archive-article-date">
+  	<time datetime="2017-07-26T12:54:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-26</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>上课的时候突然想买个树莓派来玩玩，就马上入手了Raspberry Pi3 B+，等了三天，今天终于来了。这玩意看似便宜，其实为了能真正使用它，还要配备其它器件啊。我顺带买了32G的内存卡（树莓派要外带硬盘），电源适配器（Pi3要求有5V，2.5A的电源，懒得找，就买了）还有个官方外壳（保护作用，没错，树莓派来的时候是裸着的）。本来还需要个显示器的，因为树莓派的视频接口是HDMI，很遗憾我宿舍没有电视机，台式显示屏倒是有一个，可是我忘了买转VGA的转换器，而且人家也要用。所以就按照网上说的用笔记本远程连接咯。于是我又买了路由器，两条网线。一切准备就绪！</p>
-<p><img src="http://i1.piimg.com/4851/cad680e0b2b57bf1.jpg" alt="Aaron Swartz"><br><img src="http://i1.piimg.com/4851/6f62da8832b7f139.jpg" alt="Aaron Swartz"></p>
-<p>首先，格式化并烧录SD卡，格式化的时候系统提示磁盘写保护，不能写入数据也不能格式化。把读卡器的LOCK来回拨了几次，修改注册表也不行。其实是读卡器的问题，换一个就好了</p>
-<p>用软件<em>Win32DiskImager</em>把下载好的<em>2016-05-10-raspbian-jessie.img</em>镜像烧录进SD卡，几分钟就完事了</p>
-<p>把内存卡插进树莓派，接上电源，用网线连上路由器。打开软件<em>advanced_ip_scanner</em>，检索树莓派的IP地址</p>
-<p>再用<em>putty</em>输入IP，端口22连接。默认用户名：pi 密码：raspberry</p>
-<p><img src="http://i1.piimg.com/4851/c773e7d0ad053886.png" alt="Aaron Swartz"><br><a id="more"></a><br>登陆进之后，输入命令：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo raspi-config</div></pre></td></tr></table></figure>
-<p>进入配置界面</p>
-<p><img src="http://i1.piimg.com/4851/8de3b85be8f69a85.png" alt="Aaron Swartz"></p>
-<p>这里我选第一个扩展SD空间，因为树莓派安装完成后只用了部分SD卡的空间，所以不浪费资源，就扩展SD空间咯。另外我还改了登陆密码，其它就先不管它。</p>
-<p>接下来进行基础配置。添加国内的软件源，因为树莓派默认的服务器比较慢</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo vi /etc/apt/sources.list</div></pre></td></tr></table></figure>
-<p>把里面的内容删了，复制粘贴下面的内容</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">deb http://mirrors.ustc.edu.cn/raspbian/raspbian/ wheezy main non-free contrib</div><div class="line">deb-src http://mirrors.ustc.edu.cn/raspbian/raspbian/ wheezy main non-free contrib</div></pre></td></tr></table></figure>
-<p>保存退出，运行</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get update</div></pre></td></tr></table></figure>
-<p>配置一个静态地址，现在的ip地址是自动分配的，每次登陆都不相同，找ip地址也会费一些功夫，所以设置一个固定的地址方便以后登陆。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo vi /etc/network/interfaces</div></pre></td></tr></table></figure>
-<p>找到iface eth0 inet manual，改为</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">iface eth0 inet static</div><div class="line">address 192.168.1.102</div><div class="line">netmask 255.255.255.0</div></pre></td></tr></table></figure>
-<p>保存退出，重启网络</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo /etc/init.d/networking restart</div></pre></td></tr></table></figure>
-<p>为了能操作树莓派的界面，我用VNC来远程登陆，首先添加安装vnc server</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install tightvncserver</div></pre></td></tr></table></figure>
-<p>运行tightvncserver</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">tightvncserver</div></pre></td></tr></table></figure>
-<p>这时会要求输入几次密码，网上说这是控制密码，然后选择性输入查看密码，查看密码只能用来查看桌面，而控制密码才能对桌面进行操作。</p>
-<p>然后下载VNC软件安装后，输入ip地址：端口号（1,2,3都可以），端口号不同区分不同的用户</p>
-<p>连接后要求输入树莓派密码，输入后就能登陆树莓派操作界面了，尝试上网，能行。发现树莓派这个Liunx系统默认安装python2和3啊，以后编程还是以python为主了。</p>
-<p><img src="http://i1.piimg.com/4851/2cbf50924849e3af.png" alt="Aaron Swartz"></p>
-<p>最后就是如何关闭树莓派了，树莓派插上电源就自动开机，关闭它当然不是直接拔开，这算非正常断电，很容易损坏树莓派，正确方法是</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo shutdown -h now(或其它一切关机的命令)</div></pre></td></tr></table></figure>
-<p>然后知道黄色的指示灯不闪了，只剩红色的电源指示灯，这时就表明树莓派已经关机了，然后就可以拔电源了</p>
+        <p>边做项目边学着 AngularJS ，MVC 模式，双向数据绑定等特性用着觉得很新鲜很舒服。然后突然网上看到 Angular2 的出现，继承了 Angular1.x 和 react.js 的优点，更方便快捷的开发体验。更重要的是它不是 Angular1.x 的延伸，而是全新的重写，新的概念和使用方法。犹豫了几秒，决定改战 Angular2…..</p>
+<p>搭建好开发环境后，在引入 jquery 和 bootstrap 第三方插件的时候遇到一个问题，使用 JQuery 语法编译的时候显示 <strong>Cannot find name ‘$’</strong> 。无法识别这个符号，估计是没有引用到 JQuery 的原因，但我检查了一下那些配置确定正确无误了。</p>
+<p>后来在 <em>stack overflow</em> 上找到了解决方法：在 <strong>app.module.ts</strong> 中使用：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">import * as $ from &apos;jquery&apos;;</div></pre></td></tr></table></figure></p>
+<p>引入 JQuery，很多人不需要这句也能正常编译，虽然我也不知道具体原因是什么，但这方法确实解决了我的问题</p>
+<p>参考链接：<a href="https://stackoverflow.com/questions/40994719/cannot-find-name-jquery-in-angular2" target="_blank" rel="external">Cannot find name ‘jquery’ in angular2</a></p>
+<p></p>
 
       
 
@@ -243,7 +212,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">树莓派</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Angular2</a>
         		</li>
       		
 		</ul>
@@ -299,7 +268,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://famousczm.github.io/2016/10/12/树莓派初体验/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://famousczm.github.io/2017/07/26/Angular2-Cannot-find-name-问题/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -313,18 +282,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2016/10/18/PHP字符编码/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          PHP字符编码
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/10/08/Linux添加磁盘/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Linux添加磁盘</div>
+    <a href="/2017/07/23/AngularJS-ui-validate的使用/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">AngularJS ui-validate的使用</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -338,7 +298,7 @@
   
   <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="树莓派初体验" data-title="树莓派初体验" data-url="http://famousczm.github.io/2016/10/12/树莓派初体验/"></div>
+	<div class="ds-thread" data-thread-key="Angular2-Cannot-find-name-问题" data-title="Angular2 Cannot find name &#39;$&#39;问题" data-url="http://famousczm.github.io/2017/07/26/Angular2-Cannot-find-name-问题/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
