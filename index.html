@@ -150,6 +150,70 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Property-find-does-not-exist-on-type-XXX" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/09/07/Property-find-does-not-exist-on-type-XXX/">Property &#39;find&#39; does not exist on type XXX[]</a>
+    </h1>
+  
+
+        
+        <a href="/2017/09/07/Property-find-does-not-exist-on-type-XXX/" class="archive-article-date">
+  	<time datetime="2017-09-07T05:03:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-07</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>使用 数组的 <code>find</code>属性功能时，编译器提示错误，说什么数组不存在 <code>find</code>这个属性。</p>
+<p>简单的解决方法：</p>
+<p>在 TypeScript 的配置文件 <code>tsconfig.json</code>中把 <code>target</code> 设置为 <code>es6</code>，即把目标编译成 es6 规范的脚本，我之前设置的是 es5 ，es5 可能不支持 find 属性。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Angular2</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/09/07/Property-find-does-not-exist-on-type-XXX/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-Angular2-Cannot-find-name-问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -417,78 +481,6 @@
 
 
   
-    <article id="post-AngularJS-Directive-replace中的一些问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/07/AngularJS-Directive-replace中的一些问题/">AngularJS Directive replace中的一些问题</a>
-    </h1>
-  
-
-        
-        <a href="/2017/07/07/AngularJS-Directive-replace中的一些问题/" class="archive-article-date">
-  	<time datetime="2017-07-07T08:39:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-07</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>自定义 Directive 中使用 template 和 replace 来定义替换的内容时遇到了<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Error: [$compile:tplrt] Template for directive &apos;people&apos; must have exactly one root element.</div></pre></td></tr></table></figure></p>
-<p>这样的错误，自定义的名为‘ people ’的 directive 必须只能拥有一个根节点。</p>
-<p>部分源程序如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">var App = angular.module(&quot;myApp&quot;, []);</div><div class="line"></div><div class="line">App.directive(&quot;people&quot;, function()&#123;</div><div class="line">	return &#123;</div><div class="line">		restrict: &quot;E&quot;,</div><div class="line">		replace: true,</div><div class="line">		template: &quot;&lt;p&gt;姓名:&#123;&#123;data.name&#125;&#125;&lt;/p&gt;&lt;p&gt;性别:&#123;&#123;data.sex&#125;&#125;&lt;/p&gt;&quot;</div><div class="line">	&#125;;</div><div class="line">&#125;);</div><div class="line"></div><div class="line">App.controller(&quot;PhoneListCtrl&quot;, function($scope)&#123;</div><div class="line">	$scope.data = &#123;</div><div class="line">		name: &quot;Jack&quot;,</div><div class="line">		sex: &quot;男&quot;</div><div class="line">	&#125;;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
-<p>当 replace 为 false （默认）时，template 的内容插入到自定义的 Directive 中；当 replace 为 true 时，template 的内容替换掉自定义的 Directive 且 template 的内容只能有一个根节点，即只能有一个元素。</p>
-<p>所以解决方法是删掉一个 p 元素，或者把 replace 改为 false 。</p>
-<p>然后我想能不能在 people 元素内把删掉的 p 元素内容加进去即这样：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;people&gt;&lt;p&gt;性别:&#123;&#123;data.sex&#125;&#125;&lt;/p&gt;&lt;/people&gt;</div></pre></td></tr></table></figure></p>
-<p>结果是，不行。</p>
-<p>不论是 replace 为 true 或者 false，people 里面的内容全部都会被 template 替换掉，要想保存 people 里原有的内容，要加入<code>transclude: true</code>，并在 template 中加入 <code>&lt;div ng-transclude&gt;&lt;/div&gt;</code>来保存原有的内容，修改后的内容为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">App.directive(&quot;people&quot;, function()&#123;</div><div class="line">	return &#123;</div><div class="line">		restrict: &quot;E&quot;,</div><div class="line">		transclude: true,</div><div class="line">		template: &quot;&lt;p&gt;姓名:&#123;&#123;data.name&#125;&#125;&lt;/p&gt;&lt;p&gt;性别:&#123;&#123;data.sex&#125;&#125;&lt;/p&gt;&lt;div ng-transclude&gt;&lt;/div&gt;&quot;</div></pre></td></tr></table></figure></p>
-<hr>
-
-<p>这几天沉迷于《巫师3》，要是有机会参与开发这样的游戏该是多美妙的事情</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">AngularJS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/07/07/AngularJS-Directive-replace中的一些问题/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -582,11 +574,11 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Angular2</a>
+                <a href="javascript:void(0)" class="js-tag color5">AngularJS</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">AngularJS</a>
+                <a href="javascript:void(0)" class="js-tag color4">Angular2</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -594,15 +586,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Foundation</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">JS</a>
+                <a href="javascript:void(0)" class="js-tag color1">Foundation</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -610,7 +602,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
+                <a href="javascript:void(0)" class="js-tag color3">JS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -622,19 +614,19 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">.NET</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Oracle</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SVG</a>
+                <a href="javascript:void(0)" class="js-tag color5">.NET</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">PHP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">SVG</a>
               </li>
              
               <li class="article-tag-list-item">
